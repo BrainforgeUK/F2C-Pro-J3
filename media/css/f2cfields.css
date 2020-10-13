@@ -1,0 +1,60 @@
+fieldset.adminform label
+{
+    width: 35px;
+}
+
+div.checkbox_wrapper
+{
+	float: left;
+	position:relative;
+	margin-bottom: 3px;
+}
+
+div.checkbox_label
+{
+	position:absolute;
+	top:50%; 
+	height:1em; 
+	margin-top:-.5em; 
+	width: 200px;
+	margin-left: 22px;
+}
+
+.f2c_field_geocoder img {max-width: inherit;}
+.f2c_button_bar { float: right; }
+.form-horizontal .control-label { text-align: left; }
+#f2c_form .row-fluid { padding-top: 20px; }
+.mlt_charsleft { width: 40px; }
+.blockUI { font-weight: bold; font-size: 120%; margin: 25px;}
+
+table.f2c_image_gallery_tbl td, table.f2c_image_gallery_tbl th
+{
+	border: 1px solid #000000;
+}
+
+table.f2c_image_gallery_tbl_alt_title td
+{
+	border: 0px solid #000000;
+}
+
+.f2c_row_button {padding: 0 5px 0 5px;}
+.f2ccolorpicker { float:left; width:25px; height:25px; margin:5px 0 5px 5px; cursor: pointer;  border: 1px solid #ccc; }
+.f2ccolorpickericon { font-size: 15px; position: relative; top: 5px; left: 6px; }
+.f2ccolorpicker_hexvalue { float:left; height:25px; margin: 5px; }
+.valign { position: relative; top: 50%; transform: translateY(-50%); }
+
+.icon-f2cminus::before {
+    content: "K";
+}
+
+.icon-f2carrow-up::before {
+    content: "";
+}
+
+.icon-f2carrow-down::before {
+    content: "";
+}
+
+.icon-f2cplus::before {
+    content: "*";
+}

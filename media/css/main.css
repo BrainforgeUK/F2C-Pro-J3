@@ -1,0 +1,23 @@
+/*
+ * Image crop window - start
+ */
+ #modalCropWindow .modal-body
+ {
+ 	max-height: 550px;
+ 	position: static;
+ }
+ 
+#modalCropWindow 
+{
+	height: 700px; 
+	width: 900px;
+}
+
+#cropcontainer
+{
+	width: 600px; 
+	height: 600px; 
+}
+/*
+ * Image crop window - end
+ */

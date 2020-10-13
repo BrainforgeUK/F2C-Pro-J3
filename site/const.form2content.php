@@ -1,0 +1,32 @@
+<?php
+// No direct access
+defined('JPATH_PLATFORM') or die;
+
+defined('F2C_STATE_RETAIN')					or define('F2C_STATE_RETAIN', 100); // Retains the current state
+defined('F2C_STATE_ARCHIVED')				or define('F2C_STATE_ARCHIVED', 2);
+defined('F2C_STATE_PUBLISHED') 				or define('F2C_STATE_PUBLISHED', 1);
+defined('F2C_STATE_UNPUBLISHED') 			or define('F2C_STATE_UNPUBLISHED', 0);
+defined('F2C_STATE_TRASH') 					or define('F2C_STATE_TRASH', -2);
+
+defined('F2C_EXPORT_FILEMODE_LOCAL') 		or define('F2C_EXPORT_FILEMODE_LOCAL', 1);
+defined('F2C_EXPORT_FILEMODE_REMOTE') 		or define('F2C_EXPORT_FILEMODE_REMOTE', 0);
+defined('F2C_EXPORT_FILEMODE_ENCAPSULATE')	or define('F2C_EXPORT_FILEMODE_ENCAPSULATE', 2);
+
+defined('F2C_IMPORT_WRITEMODE_CREATENEW')	or define('F2C_IMPORT_WRITEMODE_CREATENEW', 0);
+defined('F2C_IMPORT_WRITEMODE_UPDATE')		or define('F2C_IMPORT_WRITEMODE_UPDATE', 1);
+
+defined('F2C_IMPORT_POSTACTION_DELETE')		or define('F2C_IMPORT_POSTACTION_DELETE', 0);
+defined('F2C_IMPORT_POSTACTION_ARCHIVE')	or define('F2C_IMPORT_POSTACTION_ARCHIVE', 1);
+
+defined('F2C_FIELD_IMAGE_UPLOAD')			or define('F2C_FIELD_IMAGE_UPLOAD', 0);
+defined('F2C_FIELD_IMAGE_BROWSE')			or define('F2C_FIELD_IMAGE_BROWSE', 1);
+
+defined('F2C_FIELD_IMAGE_CROP_NOT_ALLOWED')	or define('F2C_FIELD_IMAGE_CROP_NOT_ALLOWED', 0);
+defined('F2C_FIELD_IMAGE_CROP_ALLOWED')		or define('F2C_FIELD_IMAGE_CROP_ALLOWED', 1);
+defined('F2C_FIELD_IMAGE_CROP_MANDATORY')	or define('F2C_FIELD_IMAGE_CROP_MANDATORY', 2);
+
+defined('F2C_DOCUMENTATION_URL')			or define('F2C_DOCUMENTATION_URL', 'http://documentation.form2content.com/');
+
+defined('F2C_FIELD_JOOMLA_NATIVE')			or define('F2C_FIELD_JOOMLA_NATIVE', 0);
+defined('F2C_FIELD_F2C_NATIVE')				or define('F2C_FIELD_F2C_NATIVE', 1);
+?>

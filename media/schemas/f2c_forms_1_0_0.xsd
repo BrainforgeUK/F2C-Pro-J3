@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" targetNamespace="http://schemas.form2content.com/forms" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:f2c="http://schemas.form2content.com/forms">
+
+
+    <element name="forms" type="f2c:formsType"></element>
+    
+    <complexType name="formsType">
+    	<sequence maxOccurs="unbounded" minOccurs="1">
+    		<element name="form" type="f2c:formType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="formType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="id" type="f2c:formidType">
+    			<annotation>
+    				<documentation>The numeric F2C id for the Article. If the value is zero or blank a new Article will be created.
+
+Also an alternate (external) key may be used.
+Make sure the Content Type has a field of type Single Line Textbox that contains a unique value (unique for each Content Type).
+Specify the fieldname for this field in the attribute "fieldname" and the alternate key as the value of the id element.
+</documentation>
+    			</annotation></element>
+    		<element name="contenttype">
+                <annotation>
+                	<documentation>The title of the Content Type</documentation>
+                </annotation>
+                <simpleType>
+    				<restriction base="string">
+    					<minLength value="0"></minLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="title">
+                <annotation>
+                	<documentation>The title of the F2C Article</documentation>
+                </annotation>
+                <simpleType>
+    				<restriction base="string">
+    					<minLength value="1"></minLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="alias" type="string">
+    			<annotation>
+    				<documentation>The alias of the F2C Article.
+When empty, a unique alias will be generated.
+If the alias does not contain a unique value it will be altered so the result is a unique value.</documentation>
+    			</annotation></element>
+    		<element name="created_by_username" type="string">
+    			<annotation>
+    				<documentation>The username of the user who created this Article</documentation>
+    			</annotation></element>
+    		<element name="created_by_alias" type="string"></element>
+    		<element name="created" type="f2c:dateTimeType">
+    			<annotation>
+    				<documentation>Date in ISO 8601 format when the Article was created.
+When empty this date will be set to the current date and time of the import.</documentation>
+    			</annotation></element>
+    		<element name="modified" type="f2c:dateTimeType">
+    			<annotation>
+    				<documentation>Date in ISO 8601 format when the Article was modified.
+Upon import this date will be set to the current date and time of the import.
+An empty value is allowed for this field.</documentation>
+    			</annotation></element>
+    		<element name="metakey" type="string"></element>
+    		<element name="metadesc" type="string"></element>
+    		<element name="cat_alias_path">
+                <annotation>
+                	<documentation>Contains the category path of the Article build from category aliases separated by forward slashes.
+
+Example : /sample-data-articles/joomla/extensions/modules/articles-modules</documentation>
+                </annotation>
+                <simpleType>
+    				<restriction base="string">
+    					<minLength value="1"></minLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="intro_template">
+                <annotation>
+                	<documentation></documentation>
+                </annotation>
+                <simpleType>
+    				<restriction base="string">
+    					<minLength value="1"></minLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="main_template" type="string"></element>
+    		<element name="ordering" type="int"></element>
+    		<element name="publish_up" type="f2c:dateTimeType">
+    			<annotation>
+    				<documentation>Date in ISO 8601 format when the Article will be published.
+When empty this date will be set to the current date and time of the import.</documentation>
+    			</annotation></element>
+    		<element name="publish_down" type="f2c:dateTimeType">
+    			<annotation>
+    				<documentation>Date in ISO 8601 format when the Article will be unpublished.
+This value may be left blank.</documentation>
+    			</annotation></element>
+    		<element name="state">
+    			<annotation>
+    				<documentation>
+    					The state of the F2C Article.
+
+    					The following values are accepted: 0 -
+    					unpublished 1 - published -2 - deleted
+
+    					When a value of -2 is specified the F2C Article
+    					and the corresponding Joomla Article will be
+    					trashed. All remaing form and field values will
+    					be ignored.
+    				</documentation>
+    			</annotation>
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="deleted"></enumeration>
+    					<enumeration value="trashed"></enumeration>
+    					<enumeration value="unpublished"></enumeration>
+    					<enumeration value="published"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="featured">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="no"></enumeration>
+    					<enumeration value="yes"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="access">
+    			<simpleType>
+                    <annotation>
+                    	<documentation>Level Name of the Viewing Access Level as defined in Joomla</documentation>
+                    </annotation>
+                    <restriction base="string">
+    					<minLength value="1"></minLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="language">
+    			<simpleType>
+    				<restriction base="string">
+    					<minLength value="1"></minLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="attribs" type="f2c:freeFormatXmlType"></element>
+    		<element name="metadata" type="f2c:freeFormatXmlType"></element>
+    		<element name="fields" type="f2c:fieldsType"></element>
+    	</sequence>
+    </complexType>
+
+	<simpleType name="dateTimeType">
+		<union>
+			<simpleType>
+				<restriction base="string">
+				<minLength value="0" />
+				<maxLength value="0" />
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="dateTime" />
+			</simpleType>
+		</union>
+	</simpleType>
+	
+
+	<complexType name="freeFormatXmlType">
+		<sequence maxOccurs="unbounded" minOccurs="0">
+			<any processContents="lax"></any>
+		</sequence>
+	</complexType>
+
+	<complexType name="fieldsType">
+		<sequence>
+			<element name="field" type="f2c:fieldType" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="fieldType">
+		<sequence>
+			<element name="fieldname">
+				<simpleType>
+					<restriction base="string">
+						<minLength value="1"></minLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<choice>
+				<element name="contentBoolean"
+					type="f2c:contentBooleanType">
+				</element>
+				<element name="contentDate"
+					type="f2c:contentDateType">
+				</element>
+				<element name="contentEmail" type="f2c:contentEmailType"></element>
+				<element name="contentFileUpload"
+					type="f2c:contentFileType">
+				</element>
+				<element name="contentGeocoder"
+					type="f2c:contentGeoType">
+				</element>
+				<element name="contentHyperlink"
+					type="f2c:contentHyperlinkType">
+				</element>
+				<element name="contentIframe"
+					type="f2c:contentIframeType">
+				</element>
+				<element name="contentImage" type="f2c:contentImageType"></element>
+				<element name="contentSingleTextValue"
+					type="f2c:contentSingleTextValueType">
+				</element>
+				<element name="contentMultipleTextValue" type="f2c:contentMultipleTextValueType"></element>
+			</choice>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="contentBooleanType">
+		<sequence>
+			<element name="value" type="boolean"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="contentDateType">
+		<sequence>
+			<element name="value" type="f2c:dateTimeType"></element>
+		</sequence>
+	</complexType>
+
+
+
+	<complexType name="stringValuelistType">
+		<sequence maxOccurs="unbounded" minOccurs="0">
+			<element name="value" type="string" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="contentEmailType">
+		<sequence>
+			<element name="email" type="string"></element>
+			<element name="display_as" type="string"></element>
+		</sequence>
+	</complexType>
+
+
+
+	<simpleType name="includeModeType">
+		<restriction base="string">
+			<enumeration value="path"></enumeration>
+			<enumeration value="url"></enumeration>
+			<enumeration value="include"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="fileType">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="includemode" type="f2c:includeModeType" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="contentGeoType">
+		<sequence>
+			<element name="address" type="string"></element>
+			<element name="lat" type="string"></element>
+			<element name="lon" type="string"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="contentHyperlinkType">
+		<sequence>
+			<element name="url" type="string"></element>
+			<element name="display_as" type="string"></element>
+			<element name="title" type="string"></element>
+			<element name="target" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="contentIframeType">
+		<sequence>
+			<element name="url" type="string"></element>
+			<element name="width" type="string"></element>
+			<element name="height" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="contentImageType">
+		<sequence>
+			<element name="filename" type="string"></element>
+			<element name="alt" type="string"></element>
+			<element name="title" type="string"></element>
+			<element name="width" type="string"></element>
+			<element name="height" type="string"></element>
+			<element name="width_thumbnail" type="string"></element>
+			<element name="height_thumbnail" type="string"></element>
+            <element name="image" type="f2c:fileType"></element>
+            <element name="thumbnail" type="string"></element>
+        </sequence>
+	</complexType>
+
+
+
+
+	
+    
+
+
+    <complexType name="contentFileType">
+    	<sequence>
+    		<element name="filename" type="string"></element>
+            <element name="file" type="f2c:fileType">
+    			</element>
+        </sequence>
+    </complexType>
+
+
+
+    <complexType name="contentSingleTextValueType">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="contentMultipleTextValueType">
+    	<sequence>
+    		<element name="values" type="f2c:stringValuelistType"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="formidType">
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute name="fieldname" type="string"
+    				use="optional">
+    			</attribute>
+    		</extension>
+    	</simpleContent>
+    </complexType>
+</schema>

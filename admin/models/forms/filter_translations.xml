@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_CONTENT_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="translationstate"
+			type="list"
+			label=""
+			description=""
+			onchange="this.form.submit();"
+			>
+			<option value="">COM_FORM2CONTENT_SELECT_TRANSLATION_STATE_DROPDOWN</option>
+			<option value="0">COM_FORM2CONTENT_UNTRANSLATED_FIELDS</option>
+			<option value="1">COM_FORM2CONTENT_TRANSLATED_FIELDS</option>
+		</field>
+		<field
+			name="language"
+			type="contentlanguage"
+			label="JOPTION_FILTER_LANGUAGE"
+			description="JOPTION_FILTER_LANGUAGE_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_LANGUAGE</option>
+		</field>
+		<field
+			name="contenttype_id"
+			type="f2ccontenttype"
+			label=""
+			description=""
+			published="0"
+			onchange="this.form.submit();"
+			>
+			<option value="">COM_FORM2CONTENT_SELECT_CONTENTTYPE_DROPDOWN</option>
+		</field>		
+	</fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="COM_CONTENT_LIST_FULL_ORDERING"
+			description="COM_CONTENT_LIST_FULL_ORDERING_DESC"
+			onchange="this.form.submit();"
+			default="f.title ASC"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="f.title ASC">COM_FORM2CONTENT_DEFAULT_FIELD_NAME_ASC</option>
+			<option value="f.title DESC">COM_FORM2CONTENT_DEFAULT_FIELD_NAME_DESC</option>
+			<option value="p.title ASC">COM_FORM2CONTENT_PROJECT_ASC</option>
+			<option value="p.title DESC">COM_FORM2CONTENT_PROJECT_DESC</option>
+			<option value="l.lang_code ASC">JGRID_HEADING_LANGUAGE_ASC</option>
+			<option value="l.lang_code DESC">JGRID_HEADING_LANGUAGE_DESC</option>
+			<option value="t.title_translation ASC">COM_FORM2CONTENT_TRANSLATION_ASC</option>
+			<option value="t.title_translation DESC">COM_FORM2CONTENT_TRANSLATION_DESC</option>
+			<option value="t.modified ASC">COM_FORM2CONTENT_DATE_MODIFIED_ASC</option>
+			<option value="t.modified DESC">COM_FORM2CONTENT_DATE_MODIFIED_DESC</option>
+			<option value="t.modified_by ASC">COM_FORM2CONTENT_MODIFIED_BY_ASC</option>
+			<option value="t.modified_by DESC">COM_FORM2CONTENT_MODIFIED_BY_DESC</option>			
+		</field>
+		<field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

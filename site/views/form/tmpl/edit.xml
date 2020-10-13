@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_FORM2CONTENT_FORM_VIEW_DEFAULT_TITLE" option="COM_FORM2CONTENT_FORM_VIEW_DEFAULT_OPTION">
+		<message><![CDATA[COM_FORM2CONTENT_FORM_VIEW_DEFAULT_DESC]]></message>
+	</layout>	
+	<fields name="params">
+		<fieldset name="basic" addfieldpath="/administrator/components/com_form2content/models/fields">
+	        <field name="contenttypeid" type="f2ccontenttype"  published="1"
+	                label="COM_FORM2CONTENT_CONTENTTYPE_PARAM"
+	                description="COM_FORM2CONTENT_CONTENTTYPE_PARAM_DESC">
+	        </field>
+            <field name="editmode" type="list" label="COM_FORM2CONTENT_EDIT_MODE_PARAM" description="COM_FORM2CONTENT_EDIT_MODE_PARAM_DESC">
+                    <option value="0">COM_FORM2CONTENT_ALWAYS_CREATE_NEW</option>
+                    <option value="1">COM_FORM2CONTENT_EDIT_EXISTING_OR_CREATE_NEW</option>
+            </field>
+            <field name="redirectmode" type="list" label="COM_FORM2CONTENT_REDIRECT_MODE_PARAM" description="COM_FORM2CONTENT_REDIRECT_MODE_PARAM_DESC">
+                    <option value="0">COM_FORM2CONTENT_CUSTOM_URL</option>
+                    <option value="1">COM_FORM2CONTENT_NEW_OR_MODIFIED_ARTICLE</option>
+            </field>
+			<field name="redirectaftersave" type="text" label="COM_FORM2CONTENT_REDIRECT_AFTER_SAVE_PARAM"
+					description="COM_FORM2CONTENT_REDIRECT_AFTER_SAVE_PARAM_DESC" class="inputbox" size="45" default="index.php" />	        
+		</fieldset>
+	</fields>	
+</metadata>

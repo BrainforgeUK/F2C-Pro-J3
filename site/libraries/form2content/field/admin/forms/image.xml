@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0" 
+			readonly="true"  />
+			
+		<field name="projectid" type="hidden" />
+		
+		<field name="fieldname" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_FIELDNAME"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_FIELDNAME_DESC" class="inputbox" size="60" maxlength="200"
+			required="true" />
+			
+		<field name="title" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_TITLE"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_TITLE_DESC" class="inputbox" size="60" maxlength="200"
+			required="true" />
+			
+		<field name="description" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_DESCRIPTION"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_DESCRIPTION_DESC" class="inputbox" size="60" maxlength="200" />
+			
+		<field name="frontvisible" type="radio" label="COM_FORM2CONTENT_SHOW_IN_FRONT_END" default="1" class="btn-group">
+			<option	value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="fieldtypeid" type="F2cContentTypeFieldType" label="COM_FORM2CONTENT_FIELDTYPE" onchange="fieldTypeChanged(this.value);" />
+		
+		<field name="ordering" type="text" label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC" class="inputbox" size="6" default="0" />
+		
+	</fieldset>
+	
+	<fieldset name="settings">
+	
+		<fields name="settings">
+			<field name="requiredfield" type="radio" label="COM_FORM2CONTENT_REQUIRED_FIELD" description="COM_FORM2CONTENT_REQUIRED_FIELD_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="error_message_required" type="text" label="COM_FORM2CONTENT_ERROR_MESSAGE_REQUIRED"
+				description="COM_FORM2CONTENT_ERROR_MESSAGE_REQUIRED_DESC" class="inputbox" size="60" maxlength="200"/>
+			
+			<field name="img_input_type" type="list" label="COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE" description="COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_DESC" default="0">
+				<option	value="0">COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_UPLOAD</option>
+				<option value="1">COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_BROWSESERVER</option>
+			</field>
+			<field name="img_browseserver_root" type="text" label="COM_FORM2CONTENT_IMAGEFIELD_BROWSESERVER_ROOT" description="COM_FORM2CONTENT_IMAGEFIELD_BROWSESERVER_ROOT_DESC" class="inputbox" />					
+			<field name="img_max_width" type="text" label="" description="" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="img_max_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />
+			<field name="img_min_width" type="text" label="COM_FORM2CONTENT_MIN_IMAGE_SIZE" description="COM_FORM2CONTENT_MIN_IMAGE_SIZE_DESC" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="img_min_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />
+			<field name="img_thumb_width" type="text" label="" description="" class="inputbox img_thumbwidth" maxlength="4" size="4" />
+			<field name="img_thumb_height" type="text" label="" description="" class="inputbox img_thumbheight" maxlength="4" size="4" />
+			<field name="img_output_mode" type="list" label="COM_FORM2CONTENT_OUTPUT_AS" description="">
+				<option	value="0">COM_FORM2CONTENT_RAW_IMAGE_URL</option>
+				<option value="1">COM_FORM2CONTENT_HTML_IMAGE_TAG</option>
+			</field>
+			<field name="img_attributes_image" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_IMAGE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="img_attributes_delete" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_DELETE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="img_attributes_alt_text" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ALT_TEXT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="img_attributes_title" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TITLE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />				
+			<field name="img_show_alt_tag" type="radio" label="COM_FORM2CONTENT_SHOW_ALT_TAG" description="COM_FORM2CONTENT_SHOW_ALT_TAG_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="img_show_title_tag" type="radio" label="COM_FORM2CONTENT_SHOW_TITLE_TAG" description="COM_FORM2CONTENT_SHOW_TITLE_TAG_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="img_cropping" type="list" label="COM_FORM2CONTENT_CROPPING" description="COM_FORM2CONTENT_CROPPING_DESC" default="0">
+				<option	value="0">COM_FORM2CONTENT_NO_CROPPING</option>
+				<option value="1">COM_FORM2CONTENT_CROPPING_ALLOWED</option>
+				<option value="2">COM_FORM2CONTENT_CROPPING_MANDATORY</option>
+			</field>
+			<field name="img_crop_aspect_width" type="text" label="COM_FORM2CONTENT_CROPPING_ASPECT_RATIO" description="COM_FORM2CONTENT_CROPPING_ASPECT_RATIO_DESC" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="img_crop_aspect_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />									
+			<field name="img_crop_thumb_only" type="radio" label="COM_FORM2CONTENT_CROP_THUMB_ONLY" description="COM_FORM2CONTENT_CROP_THUMB_ONLY_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>			
+			<field name="allow_filetype" type="radio" label="COM_FORM2CONTENT_ALLOW_IMAGETYPE" description="COM_FORM2CONTENT_ALLOW_IMAGETYPE_DESC" default="0" class="btn-group">
+				<option	value="0">JALL</option>
+				<option value="1">JPG</option>
+				<option value="2">PNG</option>
+				<option value="3">GIF</option>
+			</field>			
+		</fields>		
+	</fieldset>		
+</form>

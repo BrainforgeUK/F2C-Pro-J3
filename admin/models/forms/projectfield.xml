@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0" 
+			readonly="true"  />
+			
+		<field name="projectid" type="hidden" />
+		
+		<field name="fieldname" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_FIELDNAME"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_FIELDNAME_DESC" class="inputbox" size="60" maxlength="200"
+			required="false" />
+			
+		<field name="title" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_TITLE"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_TITLE_DESC" class="inputbox" size="60" maxlength="200"
+			required="false" />
+			
+		<field name="description" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_DESCRIPTION"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_DESCRIPTION_DESC" class="inputbox" size="60" maxlength="200" />
+			
+		<field name="frontvisible" type="radio" label="COM_FORM2CONTENT_SHOW_IN_FRONT_END" default="1" class="btn-group">
+			<option	value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="fieldtypeid" type="F2cContentTypeFieldType" label="COM_FORM2CONTENT_FIELDTYPE" onchange="fieldTypeChanged(this.value);" />
+		
+		<field name="ordering" type="text" label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC" class="inputbox" size="6" default="0" />
+		
+	</fieldset>
+	
+	<fieldset name="settings">
+	
+		<fields name="settings">
+			<field name="requiredfield" type="radio" label="COM_FORM2CONTENT_REQUIRED_FIELD" description="COM_FORM2CONTENT_REQUIRED_FIELD_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="error_message_required" type="text" label="COM_FORM2CONTENT_ERROR_MESSAGE_REQUIRED"
+				description="COM_FORM2CONTENT_ERROR_MESSAGE_REQUIRED_DESC" class="inputbox" size="60" maxlength="200"/>
+				
+			<field name="slt_size" type="text" label="COM_FORM2CONTENT_SIZE"
+				description="" class="inputbox slt_size" maxlength="5" size="7" />
+			<field name="slt_max_length" type="text" label="COM_FORM2CONTENT_MAXLENGTH"
+				description="" class="inputbox slt_maxlength" maxlength="5" size="7" />
+			<field name="slt_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="slt_pattern_client" type="text" label="COM_FORM2CONTENT_VALIDATION_PATTERN_CLIENT" 
+				description="COM_FORM2CONTENT_VALIDATION_PATTERN_CLIENT_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="slt_pattern_server" type="text" label="COM_FORM2CONTENT_VALIDATION_PATTERN_SERVER" 
+				description="COM_FORM2CONTENT_VALIDATION_PATTERN_SERVER_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="slt_pattern_message" type="text" label="COM_FORM2CONTENT_VALIDATION_PATTERN_MESSAGE" 
+				description="COM_FORM2CONTENT_VALIDATION_PATTERN_MESSAGE_DESC" class="inputbox" maxlength="255" size="100" />
+						
+			<field name="mlt_num_rows" type="text" label="COM_FORM2CONTENT_NUM_ROWS"
+				description="" class="inputbox mlt_numrows" maxlength="3" size="5" />
+			<field name="mlt_num_cols" type="text" label="COM_FORM2CONTENT_NUM_COLS"
+				description="" class="inputbox mlt_numcols" maxlength="3" size="5" />
+			<field name="mlt_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="mlt_max_num_chars" type="text" label="COM_FORM2CONTENT_MAXIMUM_NUMBER_OF_CHARACTERS" 
+				description="COM_FORM2CONTENT_MAXIMUM_NUMBER_OF_CHARACTERS_DESC" class="inputbox mlt_maxnumchars" maxlength="6" size="10" />
+
+			<field name="mle_num_rows" type="text" label="COM_FORM2CONTENT_NUM_ROWS"
+				description="" class="inputbox" maxlength="5" size="7" />
+			<field name="mle_num_cols" type="text" label="COM_FORM2CONTENT_NUM_COLS"
+				description="" class="inputbox" maxlength="5" size="7" />
+			<field name="mle_width" type="text" label="COM_FORM2CONTENT_WIDTH"
+				description="" class="inputbox" maxlength="5" size="7" />
+			<field name="mle_height" type="text" label="COM_FORM2CONTENT_HEIGHT"
+				description="" class="inputbox" maxlength="5" size="7" />
+
+			<field name="chk_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+				
+			<field name="ssl_display_mode" type="list" label="COM_FORM2CONTENT_DISPLAY_AS" description="">
+				<option	value="0">COM_FORM2CONTENT_DROPDOWNLIST</option>
+				<option value="1">COM_FORM2CONTENT_RADIOBUTTONLIST</option>
+			</field>
+			<field name="ssl_show_empty_choice_text" type="checkbox" label="COM_FORM2CONTENT_SHOW_EMPTY_CHOICE_TEXT" description="" value="1" />
+			<field name="ssl_empty_choice_text" type="text" label="COM_FORM2CONTENT_EMPTY_CHOICE_TEXT" 
+				description="COM_FORM2CONTENT_EMPTY_CHOICE_TEXT_DESC" class="inputbox" maxlength="100" size="50" />
+			<field name="ssl_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+				
+			<field name="img_input_type" type="list" label="COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE" description="COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_DESC" default="0">
+				<option	value="0">COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_UPLOAD</option>
+				<option value="1">COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_BROWSESERVER</option>
+			</field>
+			<field name="img_browseserver_root" type="text" label="COM_FORM2CONTENT_IMAGEFIELD_BROWSESERVER_ROOT" description="COM_FORM2CONTENT_IMAGEFIELD_BROWSESERVER_ROOT_DESC" class="inputbox" />					
+			<field name="img_max_width" type="text" label="" description="" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="img_max_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />
+			<field name="img_min_width" type="text" label="COM_FORM2CONTENT_MIN_IMAGE_SIZE" description="COM_FORM2CONTENT_MIN_IMAGE_SIZE_DESC" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="img_min_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />
+			<field name="img_thumb_width" type="text" label="" description="" class="inputbox img_thumbwidth" maxlength="4" size="4" />
+			<field name="img_thumb_height" type="text" label="" description="" class="inputbox img_thumbheight" maxlength="4" size="4" />
+			<field name="img_output_mode" type="list" label="COM_FORM2CONTENT_OUTPUT_AS" description="">
+				<option	value="0">COM_FORM2CONTENT_RAW_IMAGE_URL</option>
+				<option value="1">COM_FORM2CONTENT_HTML_IMAGE_TAG</option>
+			</field>
+			<field name="img_attributes_image" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_IMAGE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="img_attributes_delete" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_DELETE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="img_attributes_alt_text" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ALT_TEXT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="img_attributes_title" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TITLE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />				
+			<field name="img_show_alt_tag" type="radio" label="COM_FORM2CONTENT_SHOW_ALT_TAG" description="COM_FORM2CONTENT_SHOW_ALT_TAG_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="img_show_title_tag" type="radio" label="COM_FORM2CONTENT_SHOW_TITLE_TAG" description="COM_FORM2CONTENT_SHOW_TITLE_TAG_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="img_cropping" type="list" label="COM_FORM2CONTENT_CROPPING" description="COM_FORM2CONTENT_CROPPING_DESC" default="0">
+				<option	value="0">COM_FORM2CONTENT_NO_CROPPING</option>
+				<option value="1">COM_FORM2CONTENT_CROPPING_ALLOWED</option>
+				<option value="2">COM_FORM2CONTENT_CROPPING_MANDATORY</option>
+			</field>
+			<field name="img_crop_aspect_width" type="text" label="COM_FORM2CONTENT_CROPPING_ASPECT_RATIO" description="COM_FORM2CONTENT_CROPPING_ASPECT_RATIO_DESC" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="img_crop_aspect_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />									
+			<field name="img_crop_thumb_only" type="radio" label="COM_FORM2CONTENT_CROP_THUMB_ONLY" description="COM_FORM2CONTENT_CROP_THUMB_ONLY_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+							
+			<field name="ifr_attributes_iframe" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_IFRAME" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="ifr_attributes_width" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_WIDTH" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="ifr_attributes_height" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_HEIGHT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+
+			<field name="eml_attributes_email" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_EMAIL" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="eml_attributes_display_as" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_DISPLAY_AS" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="eml_show_display_as" type="radio" label="COM_FORM2CONTENT_SHOW_DISPLAY_AS" description="COM_FORM2CONTENT_SHOW_DISPLAY_AS_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="lnk_output_mode" type="list" label="COM_FORM2CONTENT_OUTPUT_AS" description="">
+				<option	value="0">COM_FORM2CONTENT_RAW_LINK_URL</option>
+				<option value="1">COM_FORM2CONTENT_HTML_LINK_TAG</option>
+			</field>
+			<field name="lnk_attributes_url" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_URL" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="lnk_attributes_display_as" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_DISPLAY_AS" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="lnk_attributes_title" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TITLE" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="lnk_attributes_target" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TARGET" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="lnk_show_display_as" type="radio" label="COM_FORM2CONTENT_SHOW_DISPLAY_AS" description="COM_FORM2CONTENT_SHOW_DISPLAY_AS_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="lnk_show_title" type="radio" label="COM_FORM2CONTENT_SHOW_TITLE" description="COM_FORM2CONTENT_SHOW_TITLE_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="lnk_show_target" type="radio" label="COM_FORM2CONTENT_SHOW_TARGET" description="COM_FORM2CONTENT_SHOW_TARGET" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="lnk_add_http_prefix" type="radio" label="COM_FORM2CONTENT_ADD_HTTP_PREFIX" description="COM_FORM2CONTENT_ADD_HTTP_PREFIX_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="msl_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="msl_pre_list_tag" type="text" label="COM_FORM2CONTENT_PRE_LIST_TAG" 
+				description="COM_FORM2CONTENT_PRE_LIST_TAG_DESC" class="inputbox" maxlength="100" size="50" />
+			<field name="msl_post_list_tag" type="text" label="COM_FORM2CONTENT_POST_LIST_TAG" 
+				description="COM_FORM2CONTENT_POST_LIST_TAG_DESC" class="inputbox" maxlength="100" size="50" />
+			<field name="msl_pre_element_tag" type="text" label="COM_FORM2CONTENT_PRE_ELEMENT_TAG" 
+				description="COM_FORM2CONTENT_PRE_ELEMENT_TAG_DESC" class="inputbox" maxlength="100" size="50" />
+			<field name="msl_post_element_tag" type="text" label="COM_FORM2CONTENT_POST_ELEMENT_TAG" 
+				description="COM_FORM2CONTENT_POST_ELEMENT_TAG_DESC" class="inputbox" maxlength="100" size="50" />
+
+			<field name="inf_text" type="editor" class="inputbox" label="COM_FORM2CONTENT_TEXT" 
+				description="" filter="" buttons="false" width="500" />
+
+			<field name="dat_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+
+			<field name="dsp_output_mode" type="list" label="COM_FORM2CONTENT_OUTPUT_MODE" description="">
+				<option	value="0">COM_FORM2CONTENT_ORDERED_LIST</option>
+				<option value="1">COM_FORM2CONTENT_UNORDERED_LIST</option>
+			</field>
+			<field name="dsp_attributes_table" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TABLE_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dsp_attributes_tr" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TR_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dsp_attributes_th" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TH_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dsp_attributes_td" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TD_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dsp_attributes_item_text" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ITEM_TEXT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dsp_attributes_add_button" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ADD_BUTTON" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+
+			<field name="ful_output_mode" type="list" label="COM_FORM2CONTENT_OUTPUT_AS" description="">
+				<option	value="0">COM_FORM2CONTENT_RAW_LINK_URL</option>
+				<option value="1">COM_FORM2CONTENT_HTML_LINK_TAG</option>
+			</field>
+			<field name="ful_attributes_upload" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_FILE_UPLOAD" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="ful_attributes_delete" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_DELETE_FIELD" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="ful_max_file_size" type="text" label="COM_FORM2CONTENT_MAX_FILE_SIZE" 
+				description="COM_FORM2CONTENT_MAX_FILE_SIZE_DESC" class="inputbox" maxlength="6" size="10" />
+
+			<field name="dbl_display_mode" type="list" label="COM_FORM2CONTENT_DISPLAY_AS" description="">
+				<option	value="0">COM_FORM2CONTENT_DROPDOWNLIST</option>
+				<option value="1">COM_FORM2CONTENT_RADIOBUTTONLIST</option>
+			</field>
+			<field name="dbl_show_empty_choice_text" type="checkbox" label="COM_FORM2CONTENT_SHOW_EMPTY_CHOICE_TEXT" description="" value="1" />
+			<field name="dbl_empty_choice_text" type="text" label="COM_FORM2CONTENT_EMPTY_CHOICE_TEXT" 
+				description="COM_FORM2CONTENT_EMPTY_CHOICE_TEXT_DESC" class="inputbox" maxlength="100" size="50" />
+			<field name="dbl_attributes" type="text" label="COM_FORM2CONTENT_ATTRIBUTES" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dbl_query" type="textarea" label="COM_FORM2CONTENT_SQL_QUERY" 
+				description="COM_FORM2CONTENT_SQL_QUERY_DESC" class="inputbox" cols="70" rows="6" />
+				
+			<field name="gcd_show_map" type="radio" label="COM_FORM2CONTENT_SHOW_MAP" description="COM_FORM2CONTENT_SHOW_MAP_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="gcd_map_width" type="text" label="COM_FORM2CONTENT_MAP_SIZE" description="COM_FORM2CONTENT_MAP_SIZE_DESC" class="inputbox gcd_width" maxlength="4" size="4" />
+			<field name="gcd_map_height" type="text" label="COM_FORM2CONTENT_MAP_SIZE" description="COM_FORM2CONTENT_MAP_SIZE_DESC" class="inputbox gcd_height" maxlength="4" size="4" />
+			<field name="gcd_map_lat" type="text" label="COM_FORM2CONTENT_MAP_LATLON_DEFAULT" description="COM_FORM2CONTENT_MAP_LATLON_DEFAULT_DESC" class="inputbox gcd_lat" maxlength="15" size="20" />
+			<field name="gcd_map_lon" type="text" label="COM_FORM2CONTENT_MAP_LATLON_DEFAULT" description="COM_FORM2CONTENT_MAP_LATLON_DEFAULT_DESC" class="inputbox  gcd_lon" maxlength="15" size="20" />
+			<field name="gcd_map_zoom" type="list" label="COM_FORM2CONTENT_MAP_ZOOM_DEFAULT" description="COM_FORM2CONTENT_MAP_ZOOM_DEFAULT_DESC">
+				<option	value="1">1</option>
+				<option	value="2">2</option>
+				<option	value="3">3</option>
+				<option	value="4">4</option>
+				<option	value="5">5</option>
+				<option	value="6">6</option>
+				<option	value="7">7</option>
+				<option	value="8">8</option>
+				<option	value="9">9</option>
+				<option	value="10">10</option>
+				<option	value="11">11</option>
+				<option	value="12">12</option>
+				<option	value="13">13</option>
+				<option	value="14">14</option>
+				<option	value="15">15</option>
+				<option	value="16">16</option>
+				<option	value="17">17</option>
+				<option	value="18">18</option>
+				<option	value="19">19</option>
+			</field>
+			<field name="gcd_map_type" type="list" label="COM_FORM2CONTENT_MAP_TYPE" description="COM_FORM2CONTENT_MAP_TYPE_DESC">
+				<option	value="ROADMAP">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_ROADMAP</option>
+				<option	value="SATELLITE">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_SATELLITE</option>
+				<option	value="HYBRID">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_HYBRID</option>
+				<option	value="TERRAIN">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_TERRAIN</option>
+			</field>
+			<field name="gcd_attributes_address" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ADDRESS_FIELD" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="gcd_attributes_lookup_lat_lon" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_LOOKUP_LAT_LON_BUTTON" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="gcd_attributes_clear_results" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_CLEAR_RESULTS_BUTTON" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+
+			<field name="dlm_output_mode" type="list" label="COM_FORM2CONTENT_OUTPUT_MODE" description="">
+				<option	value="0">COM_FORM2CONTENT_ORDERED_LIST</option>
+				<option value="1">COM_FORM2CONTENT_UNORDERED_LIST</option>
+			</field>
+			<field name="dlm_attributes_table" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TABLE_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_attributes_tr" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TR_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_attributes_th" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TH_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_attributes_td" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_TD_ELEMENT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_attributes_item_text" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ITEM_TEXT" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_attributes_add_button" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ADD_BUTTON" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_attributes_select" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_SELECT_FIELD" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="dlm_show_empty_choice_text" type="checkbox" label="COM_FORM2CONTENT_SHOW_EMPTY_CHOICE_TEXT" description="" value="1" />
+			<field name="dlm_empty_choice_text" type="text" label="COM_FORM2CONTENT_EMPTY_CHOICE_TEXT" 
+				description="COM_FORM2CONTENT_EMPTY_CHOICE_TEXT_DESC" class="inputbox" maxlength="100" size="50" />
+			<field name="dlm_query" type="textarea" label="COM_FORM2CONTENT_SQL_QUERY" 
+				description="COM_FORM2CONTENT_SQL_QUERY_DESC" class="inputbox" cols="70" rows="6" />
+				
+			<field name="igl_fieldclass_sfx" type="text" label="COM_FORM2CONTENT_FIELD_CLASS_SFX_LABEL" description="COM_FORM2CONTENT_FIELD_CLASS_SFX_LABEL_DESC" />			
+			<field name="igl_image_quality" type="integer" default="" label="COM_FORM2CONTENT_IMAGE_QUALITY_IMAGE" description="COM_FORM2CONTENT_JPEG_QUALITY_DESC" first="1" last="100" step="1">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+			</field>
+			<field name="igl_thumb_quality" type="integer" default="" label="COM_FORM2CONTENT_IMAGE_QUALITY_THUMBNAIL" description="COM_FORM2CONTENT_JPEG_QUALITY_DESC" first="1" last="100" step="1">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+			</field>
+			<field name="igl_input_type" type="list" label="COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE" description="COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_DESC" default="0">
+				<option	value="0">COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_UPLOAD</option>
+				<option value="1">COM_FORM2CONTENT_IMAGEFIELD_INPUT_TYPE_BROWSESERVER</option>
+			</field>
+			<field name="igl_browseserver_root" type="text" label="COM_FORM2CONTENT_IMAGEFIELD_BROWSESERVER_ROOT" description="COM_FORM2CONTENT_IMAGEFIELD_BROWSESERVER_ROOT_DESC" class="inputbox" />					
+			<field name="igl_max_width" type="text" label="" description="" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="igl_max_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />
+			<field name="igl_min_width" type="text" label="COM_FORM2CONTENT_MIN_IMAGE_SIZE" description="COM_FORM2CONTENT_MIN_IMAGE_SIZE_DESC" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="igl_min_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />
+			<field name="igl_thumb_width" type="text" label="" description="" class="inputbox img_thumbwidth" maxlength="4" size="4" />
+			<field name="igl_thumb_height" type="text" label="" description="" class="inputbox img_thumbheight" maxlength="4" size="4" />
+			<field name="igl_show_alt_tag" type="radio" label="COM_FORM2CONTENT_SHOW_ALT_TAG" description="COM_FORM2CONTENT_SHOW_ALT_TAG_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="igl_show_title_tag" type="radio" label="COM_FORM2CONTENT_SHOW_TITLE_TAG" description="COM_FORM2CONTENT_SHOW_TITLE_TAG_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="igl_cropping" type="list" label="COM_FORM2CONTENT_CROPPING" description="COM_FORM2CONTENT_CROPPING_DESC" default="0">
+				<option	value="0">COM_FORM2CONTENT_NO_CROPPING</option>
+				<option value="1">COM_FORM2CONTENT_CROPPING_ALLOWED</option>
+				<option value="2">COM_FORM2CONTENT_CROPPING_MANDATORY</option>
+			</field>
+			<field name="igl_crop_aspect_width" type="text" label="COM_FORM2CONTENT_CROPPING_ASPECT_RATIO" description="COM_FORM2CONTENT_CROPPING_ASPECT_RATIO_DESC" class="inputbox img_maxwidth" maxlength="4" size="4" />
+			<field name="igl_crop_aspect_height" type="text" label="" description="" class="inputbox img_maxheight" maxlength="4" size="4" />								
+			<field name="igl_crop_thumb_only" type="radio" label="COM_FORM2CONTENT_CROP_THUMB_ONLY" description="COM_FORM2CONTENT_CROP_THUMB_ONLY_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+					</fields>		
+	</fieldset>		
+</form>

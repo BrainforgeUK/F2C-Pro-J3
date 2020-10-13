@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contenttype>
+	<title>All fields example</title>
+	<version>6.17.0</version>
+	<published>1</published>
+	<metakey></metakey>
+	<metadesc></metadesc>
+	<settings>
+		<article_caption></article_caption>
+		<max_forms></max_forms>
+		<required_field_text>*</required_field_text>
+		<create_joomla_article>1</create_joomla_article>
+	</settings>
+	<attribs>
+		<show_title></show_title>
+		<link_titles></link_titles>
+		<show_intro></show_intro>
+		<show_category></show_category>
+		<link_category></link_category>
+		<show_parent_category></show_parent_category>
+		<link_parent_category></link_parent_category>
+		<show_author></show_author>
+		<link_author></link_author>
+		<show_create_date></show_create_date>
+		<show_modify_date></show_modify_date>
+		<show_publish_date></show_publish_date>
+		<show_item_navigation></show_item_navigation>
+		<show_icons></show_icons>
+		<show_print_icon></show_print_icon>
+		<show_email_icon></show_email_icon>
+		<show_vote></show_vote>
+		<show_hits></show_hits>
+		<show_noauth></show_noauth>
+		<alternative_readmore></alternative_readmore>
+		<article_layout></article_layout>
+	</attribs>
+	<metadata>
+		<robots></robots>
+		<author></author>
+		<rights></rights>
+		<xreference></xreference>
+	</metadata>
+	<fields>
+		<field>
+			<fieldname>id</fieldname>
+			<title>JGLOBAL_FIELD_ID_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlaid</fieldtype>
+			<ordering>1</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>title</fieldname>
+			<title>JGLOBAL_TITLE</title>
+			<description></description>
+			<fieldtype>Joomlatitle</fieldtype>
+			<ordering>2</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>1</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>title_alias</fieldname>
+			<title>JFIELD_ALIAS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlaalias</fieldtype>
+			<ordering>3</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>meta_description</fieldname>
+			<title>JFIELD_META_DESCRIPTION_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlametadescription</fieldtype>
+			<ordering>4</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default></default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>meta_keywords</fieldname>
+			<title>JFIELD_META_KEYWORDS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlametakeywords</fieldtype>
+			<ordering>5</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default></default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>tags</fieldname>
+			<title>JTAG</title>
+			<description></description>
+			<fieldtype>Joomlatags</fieldtype>
+			<ordering>6</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<field_ajax_mode>1</field_ajax_mode>
+				<allow_custom>1</allow_custom>
+			</settings>
+		</field>
+		<field>
+			<fieldname>category</fieldname>
+			<title>JCATEGORY</title>
+			<description></description>
+			<fieldtype>Joomlacategory</fieldtype>
+			<ordering>7</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>1</requiredfield>
+				<error_message_required></error_message_required>
+				<default>-1</default>
+				<behaviour>1</behaviour>
+				<use_joomla_acl>0</use_joomla_acl>
+			</settings>
+		</field>
+		<field>
+			<fieldname>author</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_CREATED_BY_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlacreatedby</fieldtype>
+			<ordering>8</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>author_alias</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_CREATED_BY_ALIAS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlacreatedbyalias</fieldtype>
+			<ordering>9</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>access</fieldname>
+			<title>JFIELD_ACCESS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlaaccess</fieldtype>
+			<ordering>10</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>intro_template</fieldname>
+			<title>COM_FORM2CONTENT_INTRO_TEMPLATE</title>
+			<description></description>
+			<fieldtype>Joomlatemplate</fieldtype>
+			<ordering>11</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>intro_template_all_fields_example.tpl</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>main_template</fieldname>
+			<title>COM_FORM2CONTENT_MAIN_TEMPLATE</title>
+			<description></description>
+			<fieldtype>Joomlatemplate</fieldtype>
+			<ordering>12</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>main_template_all_fields_example.tpl</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>created</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_CREATED_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlacreated</fieldtype>
+			<ordering>13</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>publish_start</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_PUBLISH_UP_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlapublishup</fieldtype>
+			<ordering>14</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>publish_stop</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_PUBLISH_DOWN_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlapublishdown</fieldtype>
+			<ordering>15</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>published</fieldname>
+			<title>JSTATUS</title>
+			<description></description>
+			<fieldtype>Joomlapublished</fieldtype>
+			<ordering>16</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>0</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>language</fieldname>
+			<title>JFIELD_LANGUAGE_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlalanguage</fieldtype>
+			<ordering>17</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>featured</fieldname>
+			<title>JFEATURED</title>
+			<description></description>
+			<fieldtype>Joomlafeatured</fieldtype>
+			<ordering>18</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>0</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>associations</fieldname>
+			<title>JGLOBAL_FIELDSET_ASSOCIATIONS</title>
+			<description></description>
+			<fieldtype>Joomlaassociations</fieldtype>
+			<ordering>19</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>singleselect</fieldname>
+			<title>Single select list (radio buttons/drop-down)</title>
+			<description></description>
+			<fieldtype>Singleselectlist</fieldtype>
+			<ordering>20</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<ssl_display_mode>0</ssl_display_mode>
+				<ssl_show_empty_choice_text>0</ssl_show_empty_choice_text>
+				<ssl_empty_choice_text></ssl_empty_choice_text>
+				<ssl_attributes></ssl_attributes>
+				<ssl_options>
+					<arrayelement>
+						<key>1</key>
+						<value>Select 1</value>
+					</arrayelement>
+					<arrayelement>
+						<key>2</key>
+						<value>Select 2</value>
+					</arrayelement>
+					<arrayelement>
+						<key>3</key>
+						<value>Select 3</value>
+					</arrayelement>
+				</ssl_options>
+			</settings>
+		</field>
+		<field>
+			<fieldname>textbox</fieldname>
+			<title>Single line text (Textbox)</title>
+			<description></description>
+			<fieldtype>Singlelinetext</fieldtype>
+			<ordering>21</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<slt_size></slt_size>
+				<slt_max_length></slt_max_length>
+				<slt_attributes></slt_attributes>
+			</settings>
+		</field>
+		<field>
+			<fieldname>textarea</fieldname>
+			<title>Multi-line text (Text area)</title>
+			<description></description>
+			<fieldtype>Multilinetext</fieldtype>
+			<ordering>22</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<mlt_num_rows></mlt_num_rows>
+				<mlt_num_cols></mlt_num_cols>
+				<mlt_attributes>class="textarea"</mlt_attributes>
+				<mlt_max_num_chars>500</mlt_max_num_chars>
+			</settings>
+		</field>
+		<field>
+			<fieldname>editor</fieldname>
+			<title>Multi-line text (editor)</title>
+			<description></description>
+			<fieldtype>Editor</fieldtype>
+			<ordering>23</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<mle_num_rows></mle_num_rows>
+				<mle_num_cols></mle_num_cols>
+				<mle_width>100%</mle_width>
+				<mle_height>200px</mle_height>
+			</settings>
+		</field>
+		<field>
+			<fieldname>multiselectlist</fieldname>
+			<title>Multi select list</title>
+			<description></description>
+			<fieldtype>Multiselectlist</fieldtype>
+			<ordering>24</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<msl_attributes></msl_attributes>
+				<msl_pre_list_tag>&lt;span class="comma_list"&gt;</msl_pre_list_tag>
+				<msl_post_list_tag>&lt;/span&gt;</msl_post_list_tag>
+				<msl_pre_element_tag></msl_pre_element_tag>
+				<msl_post_element_tag>,&amp;nbsp;</msl_post_element_tag>
+				<msl_options>
+					<arrayelement>
+						<key>1</key>
+						<value>Option 1</value>
+					</arrayelement>
+					<arrayelement>
+						<key>2</key>
+						<value>Option 2</value>
+					</arrayelement>
+					<arrayelement>
+						<key>3</key>
+						<value>Option 3</value>
+					</arrayelement>
+				</msl_options>
+			</settings>
+		</field>
+		<field>
+			<fieldname>info</fieldname>
+			<title></title>
+			<description></description>
+			<fieldtype>Infotext</fieldtype>
+			<ordering>25</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<inf_text>Add anything you like in the submisison form. Good to let
+					users know what you want!</inf_text>
+			</settings>
+		</field>
+		<field>
+			<fieldname>image</fieldname>
+			<title>Image</title>
+			<description></description>
+			<fieldtype>Image</fieldtype>
+			<ordering>26</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<img_max_width>600</img_max_width>
+				<img_max_height>600</img_max_height>
+				<img_thumb_width>120</img_thumb_width>
+				<img_thumb_height>120</img_thumb_height>
+				<img_output_mode>0</img_output_mode>
+				<img_attributes_image></img_attributes_image>
+				<img_attributes_delete></img_attributes_delete>
+				<img_attributes_alt_text></img_attributes_alt_text>
+				<img_attributes_title></img_attributes_title>
+				<img_show_alt_tag>1</img_show_alt_tag>
+				<img_show_title_tag>1</img_show_title_tag>
+			</settings>
+		</field>
+		<field>
+			<fieldname>iframe</fieldname>
+			<title>Iframe</title>
+			<description></description>
+			<fieldtype>Iframe</fieldtype>
+			<ordering>27</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<ifr_attributes_iframe>class="iframe"</ifr_attributes_iframe>
+				<ifr_attributes_width></ifr_attributes_width>
+				<ifr_attributes_height></ifr_attributes_height>
+			</settings>
+		</field>
+		<field>
+			<fieldname>hyperlink</fieldname>
+			<title>Hyperlink (URL)</title>
+			<description></description>
+			<fieldtype>Hyperlink</fieldtype>
+			<ordering>28</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<linkOutputMode>0</linkOutputMode>
+				<lnk_attributes_link></lnk_attributes_link>
+				<lnk_attributes_display_as></lnk_attributes_display_as>
+				<lnk_attributes_title></lnk_attributes_title>
+				<lnk_attributes_target></lnk_attributes_target>
+				<lnk_show_display_as>1</lnk_show_display_as>
+				<lnk_show_title>1</lnk_show_title>
+				<lnk_show_target>1</lnk_show_target>
+			</settings>
+		</field>
+		<field>
+			<fieldname>geocoder</fieldname>
+			<title>Geo coder</title>
+			<description></description>
+			<fieldtype>Geocoder</fieldtype>
+			<ordering>29</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<gcd_show_map>1</gcd_show_map>
+				<gcd_map_width></gcd_map_width>
+				<gcd_map_height></gcd_map_height>
+				<gcd_map_lat></gcd_map_lat>
+				<gcd_map_lon>1</gcd_map_lon>
+				<gcd_map_zoom>1</gcd_map_zoom>
+				<gcd_map_type>ROADMAP</gcd_map_type>
+				<gcd_attributes_address></gcd_attributes_address>
+				<gcd_attributes_lookup_lat_lon></gcd_attributes_lookup_lat_lon>
+				<gcd_attributes_clear_results></gcd_attributes_clear_results>
+			</settings>
+		</field>
+		<field>
+			<fieldname>file</fieldname>
+			<title>File Upload</title>
+			<description></description>
+			<fieldtype>Fileupload</fieldtype>
+			<ordering>30</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<ful_output_mode>0</ful_output_mode>
+				<tblFileWhiteList_0key>pdf</tblFileWhiteList_0key>
+				<ful_attributes_upload>class="file"</ful_attributes_upload>
+				<ful_attributes_delete></ful_attributes_delete>
+				<ful_max_file_size></ful_max_file_size>
+			</settings>
+		</field>
+		<field>
+			<fieldname>email</fieldname>
+			<title>E-mail</title>
+			<description></description>
+			<fieldtype>Email</fieldtype>
+			<ordering>31</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<eml_attributes_email></eml_attributes_email>
+				<eml_attributes_display_as></eml_attributes_display_as>
+				<eml_show_display_as>1</eml_show_display_as>
+			</settings>
+		</field>
+		<field>
+			<fieldname>displaylist</fieldname>
+			<title>Display List</title>
+			<description></description>
+			<fieldtype>Displaylist</fieldtype>
+			<ordering>32</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<dsp_output_mode>0</dsp_output_mode>
+				<dsp_attributes_table>class="list"</dsp_attributes_table>
+				<dsp_attributes_tr></dsp_attributes_tr>
+				<dsp_attributes_th></dsp_attributes_th>
+				<dsp_attributes_td></dsp_attributes_td>
+				<dsp_attributes_item_text></dsp_attributes_item_text>
+				<dsp_attributes_add_button></dsp_attributes_add_button>
+			</settings>
+		</field>
+		<field>
+			<fieldname>date</fieldname>
+			<title>Date Picker</title>
+			<description></description>
+			<fieldtype>Datepicker</fieldtype>
+			<ordering>33</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<chk_attributes>class="date"</chk_attributes>
+			</settings>
+		</field>
+		<field>
+			<fieldname>database</fieldname>
+			<title>Database lookup</title>
+			<description></description>
+			<fieldtype>Databaselookup</fieldtype>
+			<ordering>34</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<dbl_display_mode>0</dbl_display_mode>
+				<dbl_show_empty_choice_text>1</dbl_show_empty_choice_text>
+				<dbl_empty_choice_text>Please select an article
+				</dbl_empty_choice_text>
+				<dbl_query>SELECT id, title FROM #__content WHERE STATE = 1 ORDER BY
+					title</dbl_query>
+				<dbl_attributes>class="database"</dbl_attributes>
+			</settings>
+		</field>
+		<field>
+			<fieldname>checkbox</fieldname>
+			<title>Checkbox</title>
+			<description></description>
+			<fieldtype>Checkbox</fieldtype>
+			<ordering>35</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<chk_attributes>class="checkbox"</chk_attributes>
+			</settings>
+		</field>
+	</fields>
+	<introtemplatefile><![CDATA[This template is based on the Smarty template engine. It has been made to display the complete list of Template Parameters for Form2Content version 2.8.0 based on the available field types.
+<hr/><h1>{$JOOMLA_TITLE}</h1>
+<p>&nbsp;</p>
+<table>
+<tr>
+<td colspan="2"><hr/><strong>General information</strong><hr/></td>
+</tr>
+<tr>
+<td>Title:</td><td>{$TITLE}</td>
+</tr>
+<tr>
+<td>Title alias:</td><td>{$TITLE_ALIAS}</td>
+</tr>
+<tr>
+<td>Link to article:</td><td>{$JOOMLA_ARTICLE_LINK}</td>
+</tr>
+<tr>
+<td>Meta keywords:</td><td>{$META_KEYWORDS}</td>
+</tr>
+<tr>
+<td>Meta description:</td><td>{$META_DESCRIPTION}</td>
+</tr>
+<tr>
+<td>Joomla Article Id:</td><td>{$JOOMLA_ID}</td>
+</tr>
+<tr>
+<td>Form2Content Form Id:</td><td>{$ID}</td>
+</tr>
+<tr>
+<td>Category Id:</td><td>{$CATEGORY_ID}</td>
+</tr>
+<tr>
+<td>Category title:</td><td>{$CATEGORY_TITLE}</td>
+</tr>
+<tr>
+<td>Category alias:</td><td>{$CATEGORY_ALIAS}</td>
+</tr>
+<tr>
+<td>Created:</td><td>{$CREATED}</td>
+</tr>
+<tr>
+<tr>
+<td>Modified:</td><td>{$JOOMLA_MODIFIED}</td>
+</tr>
+<tr>
+<tr>
+<td>Start publishing:</td><td>{$PUBLISH_START}</td>
+</tr>
+<tr>
+<td>Finish publishing:</td><td>{$PUBLISH_STOP}</td>
+</tr>
+<tr>
+<td>Author:</td><td>{$AUTHOR}</td>
+</tr>
+<tr>
+<td>Author username:</td><td>{$AUTHOR_USERNAME}</td>
+</tr>
+<tr>
+<td>Author e-mail:</td><td>{$AUTHOR_EMAIL}</td>
+</tr>
+<tr>
+<td>Author Id:</td><td>{$AUTHOR_ID}</td>
+</tr>
+<tr>
+<td>Author Alias:</td><td>{$AUTHOR_ALIAS}</td>
+</tr>
+<tr>
+<td colspan=\"2\"><hr/><strong>Images information</strong><hr/></td>
+</tr>
+<tr>
+<td>Images path absolute:</td><td>{$F2C_IMAGES_PATH_ABSOLUTE}</td>
+</tr>
+<tr>
+<td>Images path relative:</td><td>{$F2C_IMAGES_PATH_RELATIVE}</td>
+</tr>
+<tr>
+<td>Thumbs path absolute:</td><td>{$F2C_IMAGES_PATH_THUMBS_ABSOLUTE}</td>
+</tr>
+<tr>
+<td>Thumbs path relative:</td><td>{$F2C_IMAGES_PATH_THUMBS_RELATIVE}</td>
+</tr>
+<tr>
+<td colspan="2"><hr/>
+<strong>Custom Fields information</strong>
+<hr/></td>
+</tr>
+<tr>
+<td colspan="2"><p>The names used in the exampes below are <strong>CUSTOM</strong> and are set by the administrator creating the form.</p></td>
+</tr>
+<tr>
+<td>checkbox:</td><td>{$CHECKBOX}</td>
+</tr>
+<tr>
+<td>database (value):</td><td>{$DATABASE}</td>
+</tr>
+<tr>
+<td>database (text):</td><td>{$DATABASE_TEXT}</td>
+</tr>
+<tr>
+<td>date:</td><td>{$DATE}</td>
+</tr>
+<tr>
+<td>displaylist:</td><td>{$DISPLAYLIST}</td>
+</tr>
+<tr>
+<td>email:</td><td>{$EMAIL}</td>
+</tr>
+<tr>
+<td>file (url):</td><td>{$FILE}</td>
+</tr>
+<tr>
+<td>file (filename):</td><td>{$FILE_FILENAME}</td>
+</tr>
+<tr>
+<td>geocoder (addres):</td><td>{$GEOCODER_ADDRESS}</td>
+</tr>
+<tr>
+<td>geocoder (latitude):</td><td>{$GEOCODER_LAT}</td>
+</tr>
+<tr>
+<td>geocoder (longitude):</td><td>{$GEOCODER_LON}</td>
+</tr>
+<tr>
+<td>hyperlink:</td><td>{$HYPERLINK}</td>
+</tr>
+<tr>
+<td>iframe:</td><td>{$IFRAME}</td>
+</tr>
+<tr>
+<td>image:</td><td>{$IMAGE}</td>
+</tr>
+<tr>
+<td>multiselectlist:</td><td><ul>{$MULTISELECTLIST}</ul></td>
+</tr>
+<tr>
+<td>editor:</td><td>{$EDITOR}</td>
+</tr>
+<tr>
+<td>textarea:</td><td>{$TEXTAREA}</td>
+</tr>
+<tr>
+<td>textbox:</td><td>{$TEXTBOX}</td>
+</tr>
+<tr>
+<td>singleselect (value):</td><td>{$SINGLESELECT}</td>
+</tr>
+<tr>
+<td>singleselect (text):</td><td>{$SINGLESELECT_TEXT}</td>
+</tr>
+</table>
+]]></introtemplatefile>
+	<maintemplatefile><![CDATA[{*Since we are not placing anything here, there will be NO 'read more' button in the categroy blog layout of this article. Text between these tags is removed by the Smarty Template Engine*}]]></maintemplatefile>
+</contenttype>

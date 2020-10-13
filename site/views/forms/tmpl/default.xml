@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+   	<layout title="COM_FORM2CONTENT_FORMS_VIEW_DEFAULT_TITLE" option="COM_FORM2CONTENT_FORMS_VIEW_DEFAULT_OPTION">
+    	<message><![CDATA[COM_FORM2CONTENT_FORMS_VIEW_DEFAULT_DESC]]></message>
+   	</layout>
+   	<fields name="params">
+    	<fieldset name="basic" addfieldpath="/administrator/components/com_form2content/models/fields">
+	    	<field name="contenttypeid" type="f2ccontenttype" label="COM_FORM2CONTENT_CONTENTTYPE_FILTER"
+	                        description="COM_FORM2CONTENT_CONTENTTYPE_FILTER_DESC" default="0" published="1">
+			</field> 
+            <field name="classic_layout" type="radio" label="COM_FORM2CONTENT_CLASSIC_LAYOUT"
+                    description="COM_FORM2CONTENT_CLASSIC_LAYOUT_DESC" default="0" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+            </field>
+			<field name="max_forms" type="text" label="COM_FORM2CONTENT_MAX_FORMS" description="COM_FORM2CONTENT_MAX_FORMS_DESC" class="inputbox" size="3" maxlength="3" />             	                           	                	                	                	                            
+ 	        <field name="show_category_ordering" type="list" label="COM_FORM2CONTENT_SHOW_CATEGORY_ORDERING" 
+ 	        			description="COM_FORM2CONTENT_SHOW_CATEGORY_ORDERING_DESC" default="2">
+	                        <option value="0">COM_FORM2CONTENT_HIDE_CATEGORY_AND_ORDERING</option>
+	                        <option value="3">COM_FORM2CONTENT_HIDE_CATEGORY_AND_SHOW_ORDERING</option>
+	                        <option value="1">COM_FORM2CONTENT_SHOW_CATEGORY_WITH_ORDERING</option>
+	                        <option value="2">COM_FORM2CONTENT_SHOW_CATEGORY_WITHOUT_ORDERING</option>
+             </field>
+             <field name="show_own_items_only" type="radio" label="COM_FORM2CONTENT_SHOW_OWN_ITEMS_ONLY"
+                     description="COM_FORM2CONTENT_SHOW_OWN_ITEMS_ONLY_DESC" default="1" class="btn-group">
+                     <option value="0">JNO</option>
+                     <option value="1">JYES</option>
+             </field>
+             <field name="show_published_filter" type="radio" label="COM_FORM2CONTENT_SHOW_PUBLISHED_FILTER"
+                     description="COM_FORM2CONTENT_SHOW_PUBLISHED_FILTER_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>	                           	                	                
+             <field name="show_category_filter" type="radio" label="COM_FORM2CONTENT_SHOW_CATEGORY_FILTER"
+                     description="COM_FORM2CONTENT_SHOW_CATEGORY_FILTER_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_search_filter" type="radio" label="COM_FORM2CONTENT_SHOW_SEARCH_FILTER"
+                     description="COM_FORM2CONTENT_SHOW_SEARCH_FILTER_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_copy_button" type="radio" label="COM_FORM2CONTENT_SHOW_COPY_BUTTON" 
+                     description="COM_FORM2CONTENT_SHOW_COPY_BUTTON_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_archive_button" type="radio" label="COM_FORM2CONTENT_SHOW_ARCHIVE_BUTTON"
+                     description="COM_FORM2CONTENT_SHOW_ARCHIVE_BUTTON_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_delete_button" type="radio" label="COM_FORM2CONTENT_SHOW_DELETE_BUTTON"
+                     description="COM_FORM2CONTENT_SHOW_DELETE_BUTTON_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_new_button" type="radio" label="COM_FORM2CONTENT_SHOW_NEW_BUTTON"
+                     description="COM_FORM2CONTENT_SHOW_NEW_BUTTON_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_edit_button" type="radio" label="COM_FORM2CONTENT_SHOW_EDIT_BUTTON"
+                     description="COM_FORM2CONTENT_SHOW_EDIT_BUTTON_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_f2c_id" type="radio" label="COM_FORM2CONTENT_SHOW_F2C_ID_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_F2C_ID_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_joomla_id" type="radio" label="COM_FORM2CONTENT_SHOW_JOOMLA_ID_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_JOOMLA_ID_COLUMN_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_created" type="radio" label="COM_FORM2CONTENT_SHOW_CREATED_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_CREATED_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_modified" type="radio" label="COM_FORM2CONTENT_SHOW_MODIFIED_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_MODIFIED_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+
+             <field name="show_publish_up" type="radio" label="COM_FORM2CONTENT_SHOW_PUBLISH_UP_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_PUBLISH_UP_COLUMN_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_publish_down" type="radio" label="COM_FORM2CONTENT_SHOW_PUBLISH_DOWN_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_PUBLISH_DOWN_COLUMN_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             
+             <field name="show_author" type="radio" label="COM_FORM2CONTENT_SHOW_AUTHOR_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_AUTHOR_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_published" type="radio" label="COM_FORM2CONTENT_SHOW_PUBLISHED_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_PUBLISHED_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_featured" type="radio" label="COM_FORM2CONTENT_SHOW_FEATURED_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_FEATURED_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>	                
+             <field name="show_language" type="radio" label="COM_FORM2CONTENT_SHOW_LANGUAGE_COLUMN"
+                     description="COM_FORM2CONTENT_SHOW_LANGUAGE_COLUMN_DESC" default="1" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+             <field name="show_save_and_new_button" type="radio" label="COM_FORM2CONTENT_SHOW_SAVE_AND_NEW_BUTTON"
+                     description="COM_FORM2CONTENT_SHOW_SAVE_AND_NEW_BUTTON_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>	                           	                	                
+             <field name="show_save_as_copy_button" type="radio" label="COM_FORM2CONTENT_SHOW_SAVE_AS_COPY_BUTTON"
+                     description="COM_FORM2CONTENT_SHOW_SAVE_AS_COPY_BUTTON_DESC" default="0" class="btn-group">
+                     <option value="0">COM_FORM2CONTENT_HIDE</option>
+                     <option value="1">COM_FORM2CONTENT_SHOW</option>
+             </field>
+    	</fieldset>	        
+   	</fields>   	
+</metadata>

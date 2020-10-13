@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0" 
+			readonly="true"  />
+			
+		<field name="projectid" type="hidden" />
+		
+		<field name="fieldname" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_FIELDNAME"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_FIELDNAME_DESC" class="inputbox" size="60" maxlength="200"
+			required="true" />
+			
+		<field name="title" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_TITLE"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_TITLE_DESC" class="inputbox" size="60" maxlength="200"
+			required="true" />
+			
+		<field name="description" type="text" label="COM_FORM2CONTENT_CONTENTTYPEFIELD_DESCRIPTION"
+			description="COM_FORM2CONTENT_CONTENTTYPEFIELD_DESCRIPTION_DESC" class="inputbox" size="60" maxlength="200" />
+			
+		<field name="frontvisible" type="radio" label="COM_FORM2CONTENT_SHOW_IN_FRONT_END" default="1" class="btn-group">
+			<option	value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="fieldtypeid" type="F2cContentTypeFieldType" label="COM_FORM2CONTENT_FIELDTYPE" onchange="fieldTypeChanged(this.value);" />
+		
+		<field name="ordering" type="text" label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC" class="inputbox" size="6" default="0" />
+		
+	</fieldset>
+	
+	<fieldset name="settings">
+	
+		<fields name="settings">
+			<field name="requiredfield" type="radio" label="COM_FORM2CONTENT_REQUIRED_FIELD" description="COM_FORM2CONTENT_REQUIRED_FIELD_DESC" default="0" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="error_message_required" type="text" label="COM_FORM2CONTENT_ERROR_MESSAGE_REQUIRED"
+				description="COM_FORM2CONTENT_ERROR_MESSAGE_REQUIRED_DESC" class="inputbox" size="60" maxlength="200"/>
+			
+			<field name="api_key" type="text" label="COM_FORM2CONTENT_API_KEY" 
+				description="COM_FORM2CONTENT_API_KEY_DESC" class="inputbox" maxlength="255" size="100" />
+			
+			<field name="gcd_show_map" type="radio" label="COM_FORM2CONTENT_SHOW_MAP" description="COM_FORM2CONTENT_SHOW_MAP_DESC" default="1" class="btn-group">
+				<option	value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="gcd_map_width" type="text" label="COM_FORM2CONTENT_MAP_SIZE" description="COM_FORM2CONTENT_MAP_SIZE_DESC" class="inputbox gcd_width" maxlength="4" size="4" />
+			<field name="gcd_map_height" type="text" label="COM_FORM2CONTENT_MAP_SIZE" description="COM_FORM2CONTENT_MAP_SIZE_DESC" class="inputbox gcd_height" maxlength="4" size="4" />
+			<field name="gcd_map_lat" type="text" label="COM_FORM2CONTENT_MAP_LATLON_DEFAULT" description="COM_FORM2CONTENT_MAP_LATLON_DEFAULT_DESC" class="inputbox gcd_lat" maxlength="15" size="20" />
+			<field name="gcd_map_lon" type="text" label="COM_FORM2CONTENT_MAP_LATLON_DEFAULT" description="COM_FORM2CONTENT_MAP_LATLON_DEFAULT_DESC" class="inputbox  gcd_lon" maxlength="15" size="20" />
+			<field name="gcd_map_zoom" type="list" label="COM_FORM2CONTENT_MAP_ZOOM_DEFAULT" description="COM_FORM2CONTENT_MAP_ZOOM_DEFAULT_DESC">
+				<option	value="1">1</option>
+				<option	value="2">2</option>
+				<option	value="3">3</option>
+				<option	value="4">4</option>
+				<option	value="5">5</option>
+				<option	value="6">6</option>
+				<option	value="7">7</option>
+				<option	value="8">8</option>
+				<option	value="9">9</option>
+				<option	value="10">10</option>
+				<option	value="11">11</option>
+				<option	value="12">12</option>
+				<option	value="13">13</option>
+				<option	value="14">14</option>
+				<option	value="15">15</option>
+				<option	value="16">16</option>
+				<option	value="17">17</option>
+				<option	value="18">18</option>
+				<option	value="19">19</option>
+			</field>
+			<field name="gcd_map_type" type="list" label="COM_FORM2CONTENT_MAP_TYPE" description="COM_FORM2CONTENT_MAP_TYPE_DESC">
+				<option	value="ROADMAP">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_ROADMAP</option>
+				<option	value="SATELLITE">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_SATELLITE</option>
+				<option	value="HYBRID">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_HYBRID</option>
+				<option	value="TERRAIN">COM_FORM2CONTENT_GOOGLE_MAP_TYPE_TERRAIN</option>
+			</field>
+			<field name="gcd_attributes_address" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_ADDRESS_FIELD" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="gcd_attributes_lookup_lat_lon" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_LOOKUP_LAT_LON_BUTTON" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+			<field name="gcd_attributes_clear_results" type="text" label="COM_FORM2CONTENT_ATTRIBUTES_CLEAR_RESULTS_BUTTON" 
+				description="COM_FORM2CONTENT_ATTRIBUTES_DESC" class="inputbox" maxlength="255" size="100" />
+		</fields>		
+	</fieldset>		
+</form>

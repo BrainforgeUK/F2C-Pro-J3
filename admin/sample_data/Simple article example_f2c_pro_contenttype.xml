@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contenttype>
+	<title>Simple article example</title>
+	<version>6.17.0</version>
+	<published>1</published>
+	<metakey>This is the default meta keyword field. Change this in the
+		content type configuration</metakey>
+	<metadesc>This is the default meta description. Change this in the
+		content type configuration.</metadesc>
+	<settings>
+		<article_caption></article_caption>
+		<max_forms></max_forms>
+		<required_field_text>*</required_field_text>
+		<create_joomla_article>1</create_joomla_article>
+	</settings>
+	<attribs>
+		<show_title></show_title>
+		<link_titles></link_titles>
+		<show_intro></show_intro>
+		<show_category></show_category>
+		<link_category></link_category>
+		<show_parent_category></show_parent_category>
+		<link_parent_category></link_parent_category>
+		<show_author></show_author>
+		<link_author></link_author>
+		<show_create_date></show_create_date>
+		<show_modify_date></show_modify_date>
+		<show_publish_date></show_publish_date>
+		<show_item_navigation></show_item_navigation>
+		<show_icons></show_icons>
+		<show_print_icon></show_print_icon>
+		<show_email_icon></show_email_icon>
+		<show_vote></show_vote>
+		<show_hits></show_hits>
+		<show_noauth></show_noauth>
+		<alternative_readmore></alternative_readmore>
+		<article_layout></article_layout>
+	</attribs>
+	<metadata>
+		<robots></robots>
+		<author></author>
+		<rights></rights>
+		<xreference></xreference>
+	</metadata>
+	<fields>
+		<field>
+			<fieldname>id</fieldname>
+			<title>JGLOBAL_FIELD_ID_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlaid</fieldtype>
+			<ordering>1</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>title</fieldname>
+			<title>JGLOBAL_TITLE</title>
+			<description></description>
+			<fieldtype>Joomlatitle</fieldtype>
+			<ordering>2</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>1</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>title_alias</fieldname>
+			<title>JFIELD_ALIAS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlaalias</fieldtype>
+			<ordering>3</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>meta_description</fieldname>
+			<title>JFIELD_META_DESCRIPTION_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlametadescription</fieldtype>
+			<ordering>4</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>This is the default meta description. Change this in the
+					content type configuration.</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>meta_keywords</fieldname>
+			<title>JFIELD_META_KEYWORDS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlametakeywords</fieldtype>
+			<ordering>5</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>This is the default meta keyword field. Change this in the
+					content type configuration</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>tags</fieldname>
+			<title>JTAG</title>
+			<description></description>
+			<fieldtype>Joomlatags</fieldtype>
+			<ordering>6</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<field_ajax_mode>1</field_ajax_mode>
+				<allow_custom>1</allow_custom>
+			</settings>
+		</field>
+		<field>
+			<fieldname>category</fieldname>
+			<title>JCATEGORY</title>
+			<description></description>
+			<fieldtype>Joomlacategory</fieldtype>
+			<ordering>7</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>1</requiredfield>
+				<error_message_required></error_message_required>
+				<default>-1</default>
+				<behaviour>1</behaviour>
+				<use_joomla_acl>0</use_joomla_acl>
+			</settings>
+		</field>
+		<field>
+			<fieldname>author</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_CREATED_BY_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlacreatedby</fieldtype>
+			<ordering>8</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>author_alias</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_CREATED_BY_ALIAS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlacreatedbyalias</fieldtype>
+			<ordering>9</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>access</fieldname>
+			<title>JFIELD_ACCESS_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlaaccess</fieldtype>
+			<ordering>10</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>intro_template</fieldname>
+			<title>COM_FORM2CONTENT_INTRO_TEMPLATE</title>
+			<description></description>
+			<fieldtype>Joomlatemplate</fieldtype>
+			<ordering>11</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>intro_template_simple_article_example.tpl</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>main_template</fieldname>
+			<title>COM_FORM2CONTENT_MAIN_TEMPLATE</title>
+			<description></description>
+			<fieldtype>Joomlatemplate</fieldtype>
+			<ordering>12</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>main_template_simple_article_example.tpl</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>created</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_CREATED_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlacreated</fieldtype>
+			<ordering>13</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>publish_start</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_PUBLISH_UP_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlapublishup</fieldtype>
+			<ordering>14</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>publish_stop</fieldname>
+			<title>COM_FORM2CONTENT_FIELD_PUBLISH_DOWN_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlapublishdown</fieldtype>
+			<ordering>15</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>published</fieldname>
+			<title>JSTATUS</title>
+			<description></description>
+			<fieldtype>Joomlapublished</fieldtype>
+			<ordering>16</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>0</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>language</fieldname>
+			<title>JFIELD_LANGUAGE_LABEL</title>
+			<description></description>
+			<fieldtype>Joomlalanguage</fieldtype>
+			<ordering>17</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>featured</fieldname>
+			<title>JFEATURED</title>
+			<description></description>
+			<fieldtype>Joomlafeatured</fieldtype>
+			<ordering>18</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<default>0</default>
+			</settings>
+		</field>
+		<field>
+			<fieldname>associations</fieldname>
+			<title>JGLOBAL_FIELDSET_ASSOCIATIONS</title>
+			<description></description>
+			<fieldtype>Joomlaassociations</fieldtype>
+			<ordering>19</ordering>
+			<frontvisible>0</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+			</settings>
+		</field>
+		<field>
+			<fieldname>joomla_information</fieldname>
+			<title>Show article information</title>
+			<description>This is an option to display some extra article
+				information at the bottom ... just because we can.</description>
+			<fieldtype>Singleselectlist</fieldtype>
+			<ordering>20</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<ssl_display_mode>0</ssl_display_mode>
+				<ssl_show_empty_choice_text>0</ssl_show_empty_choice_text>
+				<ssl_empty_choice_text></ssl_empty_choice_text>
+				<ssl_attributes></ssl_attributes>
+				<ssl_options>
+					<arrayelement>
+						<key>1</key>
+						<value>Yes</value>
+					</arrayelement>
+					<arrayelement>
+						<key>2</key>
+						<value>No</value>
+					</arrayelement>
+				</ssl_options>
+			</settings>
+		</field>
+		<field>
+			<fieldname>joomla_info</fieldname>
+			<title></title>
+			<description></description>
+			<fieldtype>Infotext</fieldtype>
+			<ordering>21</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<inf_text>This is an option to display some extra Joomla article
+					information at the bottom of the article ... just because we can.
+					In the template you can see the Smarty conditional code used.
+				</inf_text>
+			</settings>
+		</field>
+		<field>
+			<fieldname>reference</fieldname>
+			<title>Reference</title>
+			<description>Text box with default value in template</description>
+			<fieldtype>Singlelinetext</fieldtype>
+			<ordering>22</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<slt_size></slt_size>
+				<slt_max_length></slt_max_length>
+				<slt_attributes></slt_attributes>
+			</settings>
+		</field>
+		<field>
+			<fieldname>image</fieldname>
+			<title>Image</title>
+			<description></description>
+			<fieldtype>Image</fieldtype>
+			<ordering>23</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<img_max_width>200</img_max_width>
+				<img_max_height>200</img_max_height>
+				<img_thumb_width>100</img_thumb_width>
+				<img_thumb_height>100</img_thumb_height>
+				<img_output_mode>0</img_output_mode>
+				<img_attributes_image></img_attributes_image>
+				<img_attributes_delete></img_attributes_delete>
+				<img_attributes_alt_text></img_attributes_alt_text>
+				<img_attributes_title></img_attributes_title>
+				<img_show_alt_tag>1</img_show_alt_tag>
+				<img_show_title_tag>1</img_show_title_tag>
+			</settings>
+		</field>
+		<field>
+			<fieldname>main</fieldname>
+			<title>Article main</title>
+			<description></description>
+			<fieldtype>Editor</fieldtype>
+			<ordering>24</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<mle_num_rows></mle_num_rows>
+				<mle_num_cols></mle_num_cols>
+				<mle_width></mle_width>
+				<mle_height></mle_height>
+			</settings>
+		</field>
+		<field>
+			<fieldname>main_info</fieldname>
+			<title></title>
+			<description></description>
+			<fieldtype>Infotext</fieldtype>
+			<ordering>25</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<inf_text>SHOW or HIDE the read more function automatically. If no
+					content is submitted in the field below (main article), there will
+					be NO 'read more' button in Joomla blog layouts. This is realised
+					by templating. Please see the template for more details.</inf_text>
+			</settings>
+		</field>
+		<field>
+			<fieldname>intro</fieldname>
+			<title>Article intro</title>
+			<description></description>
+			<fieldtype>Multilinetext</fieldtype>
+			<ordering>26</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<mlt_num_rows></mlt_num_rows>
+				<mlt_num_cols></mlt_num_cols>
+				<mlt_attributes></mlt_attributes>
+				<mlt_max_num_chars>250</mlt_max_num_chars>
+			</settings>
+		</field>
+		<field>
+			<fieldname>form_info</fieldname>
+			<title></title>
+			<description></description>
+			<fieldtype>Infotext</fieldtype>
+			<ordering>27</ordering>
+			<frontvisible>1</frontvisible>
+			<settings>
+				<requiredfield>0</requiredfield>
+				<error_message_required></error_message_required>
+				<inf_text>We have created this form example so you can experience
+					some of the powerful features of Form2Content Lite. The content of
+					this form is combined with the template to create your Joomla
+					article.</inf_text>
+			</settings>
+		</field>
+	</fields>
+	<introtemplatefile><![CDATA[
+{*Documentation can be found in the main template and on www.form2content.com/documentation.*}
+
+<p>
+{if $IMAGE}<a href="{$JOOMLA_ARTICLE_LINK}" target="_self"><img src="{$IMAGE}" align="left" style="padding-right:10px;" alt="{$TITLE}" /></a>{/if}
+{$INTRO}</p>
+
+
+]]></introtemplatefile>
+	<maintemplatefile><![CDATA[{* This template is used with the Simple Article Example and has some extra coding and explanations to help you underway with creating your own custom templates for Form2Content using the Smarty Template Engine. THESE COMMENTS WILL NOT SHOW IN YOUR ARTICLE *}
+
+{* Your INTRODUCTION TEXT is NOT shown since we have used a DEFAULT setting (override in the F2C Content Configuration) for your ADVANCED ARTICLE PARAMETERS and set it to HIDDEN. This is a JOOMLA NATIVE option.*}
+
+{*THE ENTIRE CONTENT IS BETWEEN the following 'if' TAGS, checking if there is content in the MAIN field and if not, nothing will be rendered and this template will be EMPTY. When the main_tempate is empty JOOMLA will NOT show a READ MORE.*}
+
+{if $MAIN}
+<div>
+{*PLEASE NOTE: We are using the RAW output for displaying te image. If NO image is uploaded, nothing will be shown.*}
+
+{if $IMAGE}<img src="{$IMAGE}" align="right" style="padding-left:10px;" alt="{$JOOMLA_TITLE}" />{/if}
+
+{$MAIN}
+
+<p><strong>Article reference:</strong> {$REFERENCE|default:'No reference available'}</p>
+<div style="clear:both;"></div>
+</div>
+{* The following code is an example of using conditional statements*}
+
+{if $JOOMLA_INFORMATION eq '1'}
+<div style=" padding:5px; border:1px solid #999; width:98%; margin:10px 0; clear:both;">
+<p>These are Form2Content LITE template parameters. In PRO you can access and display all the Joomla article data like section, category and author info.</p>
+<span style="font-size:90%;">
+Artice title: {$TITLE}<br/>
+Title alias: {$TITLE_ALIAS}<br/>
+Article URL (raw output, great for custom 'read more'): <a href="{$JOOMLA_ARTICLE_LINK}" target="_blank">{$JOOMLA_ARTICLE_LINK}</a><br/>
+Joomla Article ID: {$JOOMLA_ID}<br/>
+Start publishing: {if $PUBLISH_START}{$PUBLISH_START}{else}empty{/if}<br/>
+Stop publishing: {if $PUBLISH_STOP}{$PUBLISH_STOP}{else}empty{/if}<br/>
+Article create date: {$CREATED}<br/>
+Article modified date: {$JOOMLA_MODIFIED}</span>
+</div>
+{elseif $JOOMLA_INFORMATION eq '2'}
+<p>No extra information available.</p>
+{else}
+<p>No option to display additional information was made.</p>
+{/if}
+
+<p style="font-size:80%; border-top:1px dashed #666;">This article has been generated using <a href="http://www.joomla.org/" target="_blank">Joomla</a> and <a href="http://www.form2content.com" target="_blank">Form2Content</a>. Please find <a href="http://www.form2content.com/f2c-joomla/pro/f2c-documentation" target="_blank">F2C documentation here</a>.</p>
+
+{/if}]]></maintemplatefile>
+</contenttype>

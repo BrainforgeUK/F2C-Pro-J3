@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id"  type="hidden" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description ="JGLOBAL_FIELD_ID_DESC" size="10" default="" 
+			readonly="true"  />
+
+		<field name="title" type="text" label="COM_FORM2CONTENT_TITLE"
+			description="COM_FORM2CONTENT_TITLE_DESC" class="inputbox required validate-templatetitle" maxlength="200"
+			hint="COM_FORM2CONTENT_TEMPLATE_TITLE_HINT" required="true" />
+					
+		<field name="template" type="textarea"
+			label="COM_FORM2CONTENT_TEMPLATE" description="COM_FORM2CONTENT_TEMPLATE"
+			rows="30" filter="raw" />
+			
+		<field name="contentTypeId" type="sql" label="COM_FORM2CONTENT_TEMPLATE_CONTENTTYPE" description ="COM_FORM2CONTENT_TEMPLATE_CONTENTTYPE_DESC"
+		    query="SELECT id, title FROM #__f2c_project ORDER BY title" key_field="id" value_field="title"
+		    onchange="loadTemplateParameters();">
+		    <option value="-1">COM_FORM2CONTENT_SELECT_CONTENTTYPE</option>
+		</field>
+		<field name="templateType" type="radio" label="COM_FORM2CONTENT_TEMPLATE_TYPE" description="" default="article" 
+			class="btn-group" onchange="loadTemplateParameters();">
+			<option	value="article">COM_FORM2CONTENT_TEMPLATE_ARTICLE</option>
+			<option value="submission">COM_FORM2CONTENT_TEMPLATE_SUBMISSION</option>
+		</field>
+	</fieldset>
+</form>	
