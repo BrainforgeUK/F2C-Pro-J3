@@ -1,0 +1,1 @@
+{*Since we are not placing anything here, there will be NO 'read more' button in the categroy blog layout of this article. Text between these tags is removed by the Smarty Template Engine*}

@@ -145,6 +145,8 @@ class Form2ContentTableContent extends JTableContent
 	}	
 }
 
+/*
+// Removed Brainforge.UK 2025-04-24 : Unused and parent:: causes fatal error
 class pp
 {
 	/**
@@ -155,7 +157,6 @@ class pp
 	 * @return	null|string	null is operation was satisfactory, otherwise returns an error
 	 * @see		JTable:bind
 	 * @since	1.5
-	 */
 	public function bind($array, $ignore = '')
 	{
 		if (isset($array['attribs']) && is_array($array['attribs'])) {
@@ -186,7 +187,6 @@ class pp
 	 *
 	 * @return	boolean	True on success.
 	 * @since	1.6
-	 */
 
 	/**
 	 * Method to set the publishing state for a row or list of rows in the database
@@ -200,7 +200,6 @@ class pp
 	 *
 	 * @return	boolean	True on success.
 	 * @since	1.0.4
-	 */
 	public function publish($pks = null, $state = 1, $userId = 0)
 	{
 		// Initialise variables.
@@ -266,3 +265,4 @@ class pp
 		return true;
 	}
 }
+*/

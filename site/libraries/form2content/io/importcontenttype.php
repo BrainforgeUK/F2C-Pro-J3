@@ -168,7 +168,8 @@ class F2cIoImportcontenttype
 		 
 		if($this->db->loadResult())
 		{
-			throw new Exception(JText::sprintf(JText::_('COM_FORM2CONTENT_ERROR_IMPORT_CONTENTTYPE_EXISTS'), $contentTypeTitle));
+			// Avoid undefined error Brainforge.uk 2025/04/28
+			throw new Exception(JText::sprintf(JText::_('COM_FORM2CONTENT_ERROR_IMPORT_CONTENTTYPE_EXISTS'), $contentTypeTitle ?? ''));
 		} 
 	}
 	

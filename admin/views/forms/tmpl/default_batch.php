@@ -1,5 +1,7 @@
 <?php
 // no direct access
+use Joomla\CMS\Layout\LayoutHelper;
+
 defined('_JEXEC') or die;
 
 $published 	= $this->state->get('filter.published');
@@ -13,23 +15,27 @@ $published 	= $this->state->get('filter.published');
 		<p><?php echo JText::_('COM_FORM2CONTENT_BATCH_TIP'); ?></p>
 		<div class="control-group">
 			<div class="controls">
-				<?php echo JHtml::_('batch.access');?>
+				<?php echo LayoutHelper::render('joomla.html.batch.access', []); ?>
+				<?php /* Deleted Brainforge.uk 2025/04/28 echo JHtml::_('batch.access');*/?>
 			</div>
 		</div>
 		<div class="control-group">
 			<div class="controls">
-            	<?php echo JHtml::_('batch.tag');?>
+				<?php echo LayoutHelper::render('joomla.html.batch.tag', []); ?>
+				<?php /* Deleted Brainforge.uk 2025/04/28 echo JHtml::_('batch.tag');*/?>
             </div>
          </div>
 		<div class="control-group">
 			<div class="controls">
-				<?php echo JHtml::_('batch.language'); ?>
+				<?php echo LayoutHelper::render('joomla.html.batch.language', []); ?>
+				<?php /* Deleted Brainforge.uk 2025/04/28 echo JHtml::_('batch.language');*/?>
 			</div>
 		</div>
 		<?php if ($published >= 0) : ?>
 		<div class="control-group">
 			<div class="controls">
-				<?php echo JHtml::_('batch.item', 'com_content');?>
+				<?php echo LayoutHelper::render('joomla.html.batch.item', 'com_content'); ?>
+				<?php /* Deleted Brainforge.uk 2025/04/28 echo JHtml::_('batch.item', 'com_content'); */?>
 			</div>
 		</div>
 		<?php endif; ?>

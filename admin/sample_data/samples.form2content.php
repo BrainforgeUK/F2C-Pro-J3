@@ -113,7 +113,7 @@ class F2cSampleDataHelper
 			// Check for errors.
 			if (count($errors = $model->getErrors())) 
 			{
-				JFactory::getApplication()->enqueueMessage(implode("\n", $errors), 'notice');
+				JFactory::getApplication()->enqueueMessage(implode("\n", array_unique($errors)), 'notice');
 				echo implode("\n", $errors);
 			}
 			

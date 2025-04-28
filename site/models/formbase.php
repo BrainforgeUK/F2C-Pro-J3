@@ -2186,7 +2186,8 @@ class Form2ContentModelFormBase extends JModelAdmin
 			$query->from('#__f2c_form');
 			$query->where('projectid = ' . (int)$table->projectid);
 			$query->where('created_by = ' . (int)$user->id);
-			$query->where('id <> ' . (int)$pk);
+			// Modified Brainforge.uk 2025-04-24 : $pk is not defined
+			$query->where('id <> ' . intval($pk??0));
 			$query->where('state <> ' . F2C_STATE_TRASH);
 
 			$db->setQuery($query);

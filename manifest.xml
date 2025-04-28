@@ -7,7 +7,7 @@
     <authorUrl>http://www.opensourcedesign.nl</authorUrl>
     <copyright>(c) 2009-2019 - Open Source Design</copyright>
     <license>Commercial GPL (See http://www.form2content.com/faqs for more information)</license>
-    <version>6.17.5</version>
+    <version>6.17.5bf2</version>
     <description>A Joomla! Content Creation Kit</description>
     <scriptfile>script.php</scriptfile>
  	<install>
@@ -38,11 +38,13 @@
 		<filename>utils.form2content.php</filename>
 		<folder>controllers</folder>
 		<folder>helpers</folder>
+		<folder>language</folder>
 		<folder>layouts</folder>
 		<folder>libraries</folder>
 		<folder>models</folder>
 		<folder>views</folder>
-    </files>    
+    </files>
+	<!-- Removed Brainforge.uk 2025/04/28
 	<languages folder="site">
 		<language tag="de-DE">language/de-DE/de-DE.com_form2content.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.com_form2content.ini</language>
@@ -52,57 +54,61 @@
 		<language tag="pl-PL">language/pl-PL/pl-PL.com_form2content.ini</language>
 		<language tag="pt-BR">language/pt-BR/pt-BR.com_form2content.ini</language>
 		<language tag="ru-RU">language/ru-RU/ru-RU.com_form2content.ini</language>
-	</languages>	
-	<media destination="com_form2content" folder="media">
-			<filename>index.html</filename>
-			<folder>css</folder>
-			<folder>images</folder>
-			<folder>js</folder>
-			<folder>schemas</folder>
-	</media>	
- 	<administration>
-		<menu>com_form2content</menu>
-		<submenu>
-			<menu link="option=com_form2content&amp;view=projects" view="projects">COM_FORM2CONTENT_CONTENTTYPE_MANAGER</menu>
-			<menu link="option=com_form2content&amp;view=forms" view="forms">COM_FORM2CONTENT_ARTICLE_MANAGER</menu>
-			<menu link="option=com_form2content&amp;view=translations" view="translations">COM_FORM2CONTENT_TRANSLATIONS</menu>
-			<menu link="option=com_form2content&amp;view=templates" view="templates">COM_FORM2CONTENT_TEMPLATE_MANAGER</menu>
-			<menu link="option=com_form2content&amp;view=documentation" view="documentation">COM_FORM2CONTENT_DOCUMENTATION</menu>
-			<menu link="option=com_form2content&amp;view=about" view="about">COM_FORM2CONTENT_ABOUT</menu>
-		</submenu>		
-        <files folder="admin">
-			<filename>access.xml</filename>
-			<filename>config.xml</filename>
-			<filename>controller.php</filename>
-			<filename>form2content.php</filename>
-			<filename>index.html</filename>
-			<folder>controllers</folder>
-			<folder>helpers</folder>
-			<folder>layouts</folder>
-			<folder>models</folder>
-			<folder>tables</folder>
-			<folder>views</folder>
-			<folder>sample_data</folder>
-			<folder>sql</folder>
-		</files>
-        <languages folder="admin">
-	        <language tag="de-DE">language/de-DE/de-DE.com_form2content.ini</language>
-	        <language tag="de-DE">language/de-DE/de-DE.com_form2content.sys.ini</language>
-	        <language tag="en-GB">language/en-GB/en-GB.com_form2content.ini</language>
-	        <language tag="en-GB">language/en-GB/en-GB.com_form2content.sys.ini</language>	        
-	        <language tag="fr-FR">language/fr-FR/fr-FR.com_form2content.ini</language>
-	        <language tag="fr-FR">language/fr-FR/fr-FR.com_form2content.sys.ini</language>
-	        <language tag="it-IT">language/it-IT/it-IT.com_form2content.ini</language>
-	        <language tag="it-IT">language/it-IT/it-IT.com_form2content.sys.ini</language>	        
-	        <language tag="nl-NL">language/nl-NL/nl-NL.com_form2content.ini</language>
-	        <language tag="nl-NL">language/nl-NL/nl-NL.com_form2content.sys.ini</language>
-	        <language tag="pl-PL">language/pl-PL/pl-PL.com_form2content.ini</language>
-	        <language tag="pl-PL">language/pl-PL/pl-PL.com_form2content.sys.ini</language>
-	        <language tag="pt-BR">language/pt-BR/pt-BR.com_form2content.ini</language>
-	        <language tag="pt-BR">language/pt-BR/pt-BR.com_form2content.sys.ini</language>
-	        <language tag="ru-RU">language/ru-RU/ru-RU.com_form2content.ini</language>
-	        <language tag="ru-RU">language/ru-RU/ru-RU.com_form2content.sys.ini</language>
-         </languages>		
+	</languages>
+	-->
+<media destination="com_form2content" folder="media">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+        <folder>schemas</folder>
+</media>
+ <administration>
+    <menu>com_form2content</menu>
+    <submenu>
+        <menu link="option=com_form2content&amp;view=projects" view="projects">COM_FORM2CONTENT_CONTENTTYPE_MANAGER</menu>
+        <menu link="option=com_form2content&amp;view=forms" view="forms">COM_FORM2CONTENT_ARTICLE_MANAGER</menu>
+        <menu link="option=com_form2content&amp;view=translations" view="translations">COM_FORM2CONTENT_TRANSLATIONS</menu>
+        <menu link="option=com_form2content&amp;view=templates" view="templates">COM_FORM2CONTENT_TEMPLATE_MANAGER</menu>
+        <menu link="option=com_form2content&amp;view=documentation" view="documentation">COM_FORM2CONTENT_DOCUMENTATION</menu>
+        <menu link="option=com_form2content&amp;view=about" view="about">COM_FORM2CONTENT_ABOUT</menu>
+    </submenu>
+    <files folder="admin">
+        <filename>access.xml</filename>
+        <filename>config.xml</filename>
+        <filename>controller.php</filename>
+        <filename>form2content.php</filename>
+        <filename>index.html</filename>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+		<folder>language</folder>
+        <folder>layouts</folder>
+        <folder>models</folder>
+        <folder>tables</folder>
+        <folder>views</folder>
+        <folder>sample_data</folder>
+        <folder>sql</folder>
+    </files>
+    <!-- Removed Brainforge.uk 2025/04/28
+    <languages folder="admin">
+        <language tag="de-DE">language/de-DE/de-DE.com_form2content.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.com_form2content.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.com_form2content.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.com_form2content.sys.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.com_form2content.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.com_form2content.sys.ini</language>
+        <language tag="it-IT">language/it-IT/it-IT.com_form2content.ini</language>
+        <language tag="it-IT">language/it-IT/it-IT.com_form2content.sys.ini</language>
+        <language tag="nl-NL">language/nl-NL/nl-NL.com_form2content.ini</language>
+        <language tag="nl-NL">language/nl-NL/nl-NL.com_form2content.sys.ini</language>
+        <language tag="pl-PL">language/pl-PL/pl-PL.com_form2content.ini</language>
+        <language tag="pl-PL">language/pl-PL/pl-PL.com_form2content.sys.ini</language>
+        <language tag="pt-BR">language/pt-BR/pt-BR.com_form2content.ini</language>
+        <language tag="pt-BR">language/pt-BR/pt-BR.com_form2content.sys.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.com_form2content.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.com_form2content.sys.ini</language>
+     </languages>
+     -->
 	</administration>
 	<updateservers>
 	   <server type="extension" priority="2" name="Form2content Pro">http://update.form2content.com/f2c_pro_j30.xml</server>

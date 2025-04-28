@@ -145,12 +145,22 @@ class ImageHelper
 {
     static function ResizeImage($srcFile, $dstFile = null, &$dstWidth, &$dstHeight, $imageQuality = 75) 
     {
+		// Add Brainforge.UK 2025-04-24
+		if (!is_file($srcFile))
+		{
+			if (!$dstFile || !is_file($dstFile))
+			{
+				throw new \Exception('Cannot resize image: ' . $srcFile);
+			}
+			$srcFile = $dstFile;
+		}
+
     	if(!$dstFile)
     	{
     		// Resize the source file
 			$dstFile = $srcFile;    		
     	}
-    	
+
     	$srcImage 	= new JImageF2cExtended($srcFile); 	
     	$srcProps 	= JImageF2cExtended::getImageFileProperties($srcFile);
     	$srcWidth 	= $srcImage->getWidth();

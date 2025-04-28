@@ -156,6 +156,18 @@ class F2cFieldImage extends F2cFieldBase
 		$this->values['WIDTH_THUMBNAIL']	= null;
 		$this->values['HEIGHT_THUMBNAIL']	= null;
 
+		// Added Brainforge.UK 2025-04-24 ... then no longer seemed necessary
+		if (($this->internal['imagelocation'] ?? null) && !is_file($this->internal['imagelocation']))
+		{
+			//JFactory::getApplication()->enqueueMessage('Invalid: $this->internal[\'imagelocation\']');
+			//unset($this->internal['imagelocation']);
+		}
+		if (($this->internal['thumblocation'] ?? null) && !is_file($this->internal['thumblocation']))
+		{
+			//JFactory::getApplication()->enqueueMessage('Invalid: $this->internal[\'thumblocation\']');
+			//unset($this->internal['thumblocation']);
+		}
+
 		return $this;
 	}
 	
@@ -163,9 +175,12 @@ class F2cFieldImage extends F2cFieldBase
 	{
 		$content 				= array();
 		$fieldId 				= $this->internal['fieldcontentid'];
-		$srcImage 				= $this->internal['imagelocation'];
-		$srcThumb 				= $this->internal['thumblocation'];
-		$filename				= $this->values['FILENAME'];
+		// Modified Brainforge.UK 2025-04-24
+		$srcImage 				= $this->internal['imagelocation'] ?? null;
+		// Modified Brainforge.UK 2025-04-24
+		$srcThumb 				= $this->internal['thumblocation'] ?? null;
+		// Modified Brainforge.UK 2025-04-24
+		$filename				= $this->values['FILENAME'] ?? null;
 		$imageContent 			= new Registry();
 		$saveImage				= false;
 		$imagePath 				= Path::Combine(Path::Combine(self::GetImagesRootPath(), 'p'.$this->projectid), 'f'.$formId);				

@@ -2,7 +2,8 @@
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 require_once(JPATH_SITE.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_form2content'.DIRECTORY_SEPARATOR.'utils.form2content.php');
-require_once(JPATH_SITE.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_content'.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARATOR.'route.php');
+// Removed Brainforge.uk : 2025-04-28
+//require_once(JPATH_SITE.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_content'.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARATOR.'route.php');
 
 defined('F2C_ENGINE_UNDEFINED')		or define('F2C_ENGINE_UNDEFINED', -1);
 defined('F2C_ENGINE_PATTEMPLATE')	or define('F2C_ENGINE_PATTEMPLATE', 0);

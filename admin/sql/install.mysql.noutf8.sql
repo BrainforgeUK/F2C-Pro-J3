@@ -1,3 +1,8 @@
+/* Added DEFAULT to asset_id
+   Default project text values to NULL
+   Changed projectfields description to VARCHAR(1000)
+   Brainforge.uk 2025/04/28
+ */
 DROP TABLE IF EXISTS `#__f2c_fieldcontent`;
 DROP TABLE IF EXISTS `#__f2c_fieldtype`;
 DROP TABLE IF EXISTS `#__f2c_form`;
@@ -7,7 +12,7 @@ DROP TABLE IF EXISTS `#__f2c_translation`;
 
 CREATE TABLE  `#__f2c_project` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `asset_id` int(10) unsigned NOT NULL,  
+  `asset_id` int(10) unsigned NOT NULL DEFAULT 0,
   `title` varchar(100) NOT NULL default '',
   `created_by` int(10) unsigned NOT NULL default '0',
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
@@ -16,11 +21,11 @@ CREATE TABLE  `#__f2c_project` (
   `published` tinyint(1) NOT NULL default '0',
   `settings` text NOT NULL,
   `attribs` text NOT NULL,
-  `metadata` text NOT NULL,  
-  `metakey` text NOT NULL,
-  `metadesc` text NOT NULL,
-  `images` text NOT NULL,
-  `urls` text NOT NULL,  
+  `metadata` text NULL,
+  `metakey` text NULL,
+  `metadesc` text NULL,
+  `images` text NULL,
+  `urls` text NULL,
   PRIMARY KEY  (`id`)
 );	  
 
@@ -29,7 +34,7 @@ CREATE TABLE  `#__f2c_projectfields` (
   `projectid` int(10) unsigned NOT NULL default '0',
   `fieldname` varchar(45) NOT NULL default '',
   `title` varchar(45) NOT NULL default '',
-  `description` varchar(100) NOT NULL default '',
+  `description` varchar(1000) NOT NULL default '',
   `fieldtypeid` int(10) unsigned NOT NULL default '0',
   `settings` text,
   `ordering` int(10) unsigned NOT NULL default '0',
@@ -95,7 +100,7 @@ INSERT INTO `#__f2c_fieldtype` (`id`, `description`, `name`, `classification_id`
 
 CREATE TABLE  `#__f2c_form` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `asset_id` int(10) unsigned NOT NULL,      
+  `asset_id` int(10) unsigned NOT NULL DEFAULT 0,
   `projectid` int(10) unsigned NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   `alias` varchar(255) NOT NULL default '',
