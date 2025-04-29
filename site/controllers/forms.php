@@ -24,7 +24,9 @@ class Form2ContentControllerForms extends Form2ContentControllerFormsBase
 		// Set the layout
 		$view->setLayout($viewLayout);
 
-		$view->assignRef('document', $document);
+		// Modified Brainforge.uk 2025/04/29
+		//$view->assignRef('document', $document);
+		$view->document = $document;
 
 		$conf = JFactory::getConfig();
 

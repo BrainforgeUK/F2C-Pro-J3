@@ -95,9 +95,12 @@ class Form2ContentModelForms extends JModelList
 		// Join over the language
 		$query->select('l.title AS language_title');
 		$query->join('LEFT', '`#__languages` AS l ON l.lang_code = a.language');
-		
+
+		// Modified Brainforge.uk 2025/04/29
+		$params = $activeMenu->getParams();
+
 		// Filter by published state
-		if($activeMenu->params->get('show_published_filter', 0))
+		if($params->get('show_published_filter', 0))
 		{
 			// State filter is visible
 			$published = $this->getState('filter.published');
@@ -139,7 +142,7 @@ class Form2ContentModelForms extends JModelList
 		$query->where('(projectid = '.(int)$this->getState('ContentTypeId').')');
 
 		// Own articles only?
-		if($activeMenu->params->get('show_own_items_only', 0)) // own items
+		if($params->get('show_own_items_only', 0)) // own items
 		{
 			$query->where('a.created_by = ' . $user->id);
 		}
