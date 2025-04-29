@@ -47,7 +47,7 @@ class Form2ContentControllerProjects extends JControllerAdmin
 			$model = $this->getModel();
 
 			// Make sure the item ids are integers
-			JArrayHelper::toInteger($cid);
+			F2cBrainforgeukArrayhelper::toInteger($cid);
 
 			if (!$model->copy($cid)) 
 			{
@@ -89,11 +89,20 @@ class Form2ContentControllerProjects extends JControllerAdmin
 	
 	function installSamples()
 	{
-		$sampleHelper = new F2cSampleDataHelper();
-		$sampleHelper->install();
-		
-		$this->setMessage(JText::_('COM_FORM2CONTENT_SAMPLE_DATA_INSTALLED'));		
-		$this->setRedirect('index.php?option=com_form2content&view=forms');	
+		if (true)
+		{
+			// Added Brainforge.uk 2025/04/29
+			$this->setMessage(JText::_('COM_FORM2CONTENT_SAMPLE_DATA_NOTINSTALLED'), 'warning');
+		}
+		else
+		{
+			$sampleHelper = new F2cSampleDataHelper();
+			$sampleHelper->install();
+
+			$this->setMessage(JText::_('COM_FORM2CONTENT_SAMPLE_DATA_INSTALLED'));
+		}
+
+		$this->setRedirect('index.php?option=com_form2content&view=forms');
 	}	
 }
 ?>

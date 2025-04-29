@@ -67,8 +67,8 @@ class Form2ContentControllerProjectFields extends JControllerAdmin
 		$order = $this->input->post->get('order', array(), 'array');
 
 		// Sanitize the input
-		JArrayHelper::toInteger($pks);
-		JArrayHelper::toInteger($order);
+		F2cBrainforgeukArrayhelper::toInteger($pks);
+		F2cBrainforgeukArrayhelper::toInteger($order);
 
 		// Get the model
 		$model = $this->getModel();

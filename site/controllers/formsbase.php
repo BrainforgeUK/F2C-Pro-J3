@@ -1,4 +1,6 @@
 <?php
+use \Joomla\Utilities\ArrayHelper;
+
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 jimport('joomla.application.component.controlleradmin');
@@ -38,7 +40,7 @@ class Form2ContentControllerFormsBase extends JControllerAdmin
 			$model = $this->getModel();
 
 			// Make sure the item ids are integers
-			JArrayHelper::toInteger($cid);
+			/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($cid);
 
 			// Access check.
 			foreach($cid as $id)
@@ -87,7 +89,7 @@ class Form2ContentControllerFormsBase extends JControllerAdmin
 	{
 		// Initialise variables.
 		$user				= JFactory::getUser();
-		$contentTypeId		= JArrayHelper::getValue($data, 'projectid', $this->input->getInt('forms_filter_contenttype_id'), 'int');
+		$contentTypeId		= /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::getValue($data, 'projectid', $this->input->getInt('forms_filter_contenttype_id'), 'int');
 		$allow				= null;
 		$allowContentType	= null;
 		$allowCategory		= null;
@@ -126,7 +128,7 @@ class Form2ContentControllerFormsBase extends JControllerAdmin
 		$ids	= $this->input->get('cid', array(), 'array');
 		$values	= array('featured' => 1, 'unfeatured' => 0);
 		$task	= $this->getTask();
-		$value	= JArrayHelper::getValue($values, $task, 0, 'int');
+		$value	= /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::getValue($values, $task, 0, 'int');
 
 		// Access checks.
 		foreach ($ids as $i => $id)
@@ -174,8 +176,8 @@ class Form2ContentControllerFormsBase extends JControllerAdmin
 		$order = $this->input->post->get('order', array(), 'array');
 
 		// Sanitize the input
-		JArrayHelper::toInteger($pks);
-		JArrayHelper::toInteger($order);
+		/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($pks);
+		/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($order);
 
 		// Get the model
 		$model = $this->getModel();

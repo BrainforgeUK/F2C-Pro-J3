@@ -77,7 +77,7 @@ class Form2ContentModelForm extends Form2ContentModelFormBase
 	public function batchRefresh(&$pks, $value = 1, $batchImportMode = false)
 	{
 		// Initialise variables.
-		$dispatcher	= JEventDispatcher::getInstance();
+		$dispatcher	= F2cBrainforgeukEvent::getInstance();
 		$user		= JFactory::getUser();
 		$table		= $this->getTable();
 		$pks		= (array)$pks;

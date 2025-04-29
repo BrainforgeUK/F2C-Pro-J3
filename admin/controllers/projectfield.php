@@ -66,7 +66,7 @@ class Form2ContentControllerProjectField extends JControllerForm
 			$model = $this->getModel();
 
 			// Make sure the item ids are integers
-			JArrayHelper::toInteger($cid);
+			F2cBrainforgeukArrayhelper::toInteger($cid);
 
 			if (!$model->copy($cid)) 
 			{

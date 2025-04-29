@@ -195,7 +195,7 @@ class Form2ContentModelForms extends JModelList
 		}
 		elseif (is_array($categoryId)) 
 		{
-			JArrayHelper::toInteger($categoryId);
+			F2cBrainforgeukArrayhelper::toInteger($categoryId);
 			$categoryId = implode(',', $categoryId);
 			$query->where('a.catid IN ('.$categoryId.')');
 		}

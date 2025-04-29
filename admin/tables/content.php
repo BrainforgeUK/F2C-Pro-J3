@@ -2,7 +2,7 @@
 // No direct access
 defined('JPATH_BASE') or die;
 
-use \Joomla\Registry\Registry;
+use Joomla\CMS\Workflow\Workflow;
 
 jimport('joomla.database.table.content');
 jimport('joomla.database.tableasset');
@@ -21,17 +21,21 @@ class Form2ContentTableContent extends JTableContent
 	function __construct(&$db)
 	{
 		parent::__construct($db);
-		
-		JObserverMapper::addObserverClassToClass('JTableObserverTags', 'Form2ContentTableContent', array('typeAlias' => 'com_content.article'));
+
+		// Removed Brainforge.uk 2025/04/29
+		//JObserverMapper::addObserverClassToClass('JTableObserverTags', 'Form2ContentTableContent', array('typeAlias' => 'com_content.article'));
 	}
 	
 	public function store($updateNulls = false)
 	{
 		// Initialise variables.
 		$k = $this->_tbl_key;
-		
-		$this->_observers->update('onBeforeStore', array($updateNulls, $k));
-		
+
+		// Modified Brainforge.uk 2025/04/29
+		$dispatcher	= F2cBrainforgeukEvent::getInstance();
+		$dispatcher->trigger('onBeforeStore', array($updateNulls, $k));
+		//$this->_observers->update('onBeforeStore', array($updateNulls, $k));
+
 		/*
 	
 		// Verify that the alias is unique
@@ -61,6 +65,13 @@ class Form2ContentTableContent extends JTableContent
 			else 
 			{
 				$result = $this->_db->insertObject($this->_tbl, $this, $this->_tbl_key);
+
+				// Added Brainforge.uk 2025/04/29
+				if ($result && class_exists('\Joomla\CMS\Workflow\Workflow'))
+				{
+					$workflow = new Workflow('com_content.article');
+					$workflow->createAssociation($this->$k, 1);
+				}
 			}
 		}
 		catch(Exception $e)
@@ -139,7 +150,10 @@ class Form2ContentTableContent extends JTableContent
 		}
 
 		// Implement JObservableInterface: Post-processing by observers
-		$this->_observers->update('onAfterStore', array(&$result));
+		// Modified Brainforge.uk 2025/04/29
+		$dispatcher	= F2cBrainforgeukEvent::getInstance();
+		$dispatcher->trigger('onAfterStore', array(&$result));
+		//$this->_observers->update('onAfterStore', array(&$result));
 				
 		return $result;
 	}	
@@ -206,7 +220,7 @@ class pp
 		$k = $this->_tbl_key;
 
 		// Sanitize input.
-		JArrayHelper::toInteger($pks);
+		F2cBrainforgeukArrayhelper::toInteger($pks);
 		$userId = (int) $userId;
 		$state  = (int) $state;
 
@@ -266,3 +280,20 @@ class pp
 	}
 }
 */
+/*
+====================================================================
+SELECT `a`.`id`,`a`.`asset_id`,`a`.`title`,`a`.`alias`,`a`.`checked_out`,`a`.`checked_out_time`,`a`.`catid`,`a`.`state`,`a`.`access`,`a`.`created`,`a`.`created_by`,`a`.`created_by_alias`,`a`.`modified`,`a`.`ordering`,`a`.`featured`,`a`.`language`,`a`.`hits`,`a`.`publish_up`,`a`.`publish_down`,`a`.`introtext`,`a`.`fulltext`,`a`.`note`,`a`.`images`,`a`.`metakey`,`a`.`metadesc`,`a`.`metadata`,`a`.`version`,`fp`.`featured_up`,`fp`.`featured_down`,`l`.`title` AS `language_title`,`l`.`image` AS `language_image`,`uc`.`name` AS `editor`,`ag`.`title` AS `access_level`,`c`.`title` AS `category_title`,`c`.`created_user_id` AS `category_uid`,`c`.`level` AS `category_level`,`c`.`published` AS `category_published`,`parent`.`title` AS `parent_category_title`,`parent`.`id` AS `parent_category_id`,`parent`.`created_user_id` AS `parent_category_uid`,`parent`.`level` AS `parent_category_level`,`ua`.`name` AS `author_name`,`wa`.`stage_id` AS `stage_id`,`ws`.`title` AS `stage_title`,`ws`.`workflow_id` AS `workflow_id`,`w`.`title` AS `workflow_title`
+FROM `#__content` AS `a`
+LEFT JOIN `#__languages` AS `l` ON `l`.`lang_code` = `a`.`language`
+LEFT JOIN `#__content_frontpage` AS `fp` ON `fp`.`content_id` = `a`.`id`
+LEFT JOIN `#__users` AS `uc` ON `uc`.`id` = `a`.`checked_out`
+LEFT JOIN `#__viewlevels` AS `ag` ON `ag`.`id` = `a`.`access`
+LEFT JOIN `#__categories` AS `c` ON `c`.`id` = `a`.`catid`
+LEFT JOIN `#__categories` AS `parent` ON `parent`.`id` = `c`.`parent_id`
+LEFT JOIN `#__users` AS `ua` ON `ua`.`id` = `a`.`created_by`
+INNER JOIN `#__workflow_associations` AS `wa` ON `wa`.`item_id` = `a`.`id`
+INNER JOIN `#__workflow_stages` AS `ws` ON `ws`.`id` = `wa`.`stage_id`
+INNER JOIN `#__workflows` AS `w` ON `w`.`id` = `ws`.`workflow_id`
+WHERE `wa`.`extension` = 'com_content.article' AND `a`.`state` IN (:preparedArray1,:preparedArray2)
+ORDER BY a.id DESC
+ */

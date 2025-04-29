@@ -1,7 +1,8 @@
 <?php 
 defined('JPATH_PLATFORM') or die;
 
-JHtml::_('behavior.tooltip');
+// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
 
@@ -14,7 +15,7 @@ JText::script('COM_FORM2CONTENT_FORM_TEMPLATE_WRITTEN');
 <script type="text/javascript">
 Joomla.submitbutton = function(task) 
 {
-	if (task == 'project.cancel' || document.formvalidator.isValid(document.id('adminForm'))) 
+	if (task == 'project.cancel' || document.formvalidator.isValid(/* Modified Brainforge.uk 2025/04/29 */ document.getElementById('adminForm'))) 
 	{
 		Joomla.submitform(task, document.getElementById('adminForm'));
 		return true;

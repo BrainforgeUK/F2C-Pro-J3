@@ -83,10 +83,15 @@ class F2cFieldAdminImage extends F2cFieldAdminBase
 	public function clientSideValidation($view)
 	{
 		?>
-		var aspectWidth = $('jform_settings_img_crop_aspect_width').value;
-		var aspectHeight = $('jform_settings_img_crop_aspect_height').value;
+        // Modified Brainforge.uk 2025/04/29
+		var aspectWidth = document.getElementById('jform_settings_img_crop_aspect_width').value;
+		var aspectHeight = document.getElementById('jform_settings_img_crop_aspect_height').value;
 
-		if(aspectWidth != '' || aspectHeight != '')
+        // Added (maybe undefined) Brainforge.uk 2025/04/29
+        if (!aspectWidth) aspectWidth = '';
+        if (!aspectHeight) aspectHeight = '';
+
+        if(aspectWidth != '' || aspectHeight != '')
 		{
 			regex=/^0*$/;
 			

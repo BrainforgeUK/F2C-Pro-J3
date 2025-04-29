@@ -2,6 +2,9 @@
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 use \Joomla\Registry\Registry;
+use Joomla\Filesystem\File;
+use Joomla\Filesystem\Folder;
+
 
 /**
  * Script file of Form2Content component
@@ -332,7 +335,16 @@ class com_Form2ContentInstallerScript
 			if(JFile::exists($adminFieldPath.'f2ctemplate.php'))
 			{
 				JFile::delete($adminFieldPath.'f2ctemplate.php');
-			}	
+			}
+
+			// Added Brainforge.uk 2025/04/29
+            foreach([JPATH_SITE, JPATH_ADMINISTRATOR] as $folder)
+			{
+				foreach(Folder::files($folder . '/language', 'com_form2content', true, true) as $file)
+				{
+                    File::delete($file);
+				}
+			}
       }
  
     /**

@@ -25,7 +25,7 @@ class Form2ContentControllerForms extends Form2ContentControllerFormsBase
 			$model = $this->getModel();
 
 			// Make sure the item ids are integers
-			JArrayHelper::toInteger($cid);
+			F2cBrainforgeukArrayhelper::toInteger($cid);
 
 			// Refresh the items -> publish with F2C_STATE_RETAIN retains the current state.
 			if (!$model->publish($cid, F2C_STATE_RETAIN)) 

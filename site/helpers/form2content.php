@@ -1,4 +1,6 @@
 <?php
+use \Joomla\Utilities\ArrayHelper;
+
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 class Form2ContentHelper
@@ -122,7 +124,7 @@ class Form2ContentHelper
 			} 
 			else if (is_array($config['filter.published'])) 
 			{
-				JArrayHelper::toInteger($config['filter.published']);
+				/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($config['filter.published']);
 				$query->where('a.published IN ('.implode(',', $config['filter.published']).')');
 			}
 		}
@@ -228,10 +230,11 @@ class Form2ContentHelper
 			0	=> array('star-empty',	'forms.featured',	'COM_FORM2CONTENT_UNFEATURED',	'COM_FORM2CONTENT_TOGGLE_TO_FEATURE'),
 			1	=> array('star',		'forms.unfeatured',	'COM_FORM2CONTENT_FEATURED',		'COM_FORM2CONTENT_TOGGLE_TO_UNFEATURE'),
 		);
-		$state	= JArrayHelper::getValue($states, (int) $value, $states[1]);
+		$state	= /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::getValue($states, (int) $value, $states[1]);
 		$icon	= $state[0];
 		if ($canChange) {
-			$html	= '<a href="#" onclick="return listItemTask(\'cb'.$i.'\',\''.$state[1].'\')" class="btn btn-micro hasTooltip' . ($value == 1 ? ' active' : '') . '" title="'.JText::_($state[3]).'"><i class="icon-'
+			// Modified Brainforge.uk 2025/04/29
+			$html	= '<a href="#" onclick="return Joomla.listItemTask(\'cb'.$i.'\',\''.$state[1].'\')" class="btn btn-micro hasTooltip' . ($value == 1 ? ' active' : '') . '" title="'.JText::_($state[3]).'"><i class="icon-'
 					. $icon.'"></i></a>';
 		}
 

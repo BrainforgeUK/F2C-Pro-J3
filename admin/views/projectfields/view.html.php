@@ -41,7 +41,8 @@ class Form2ContentViewProjectFields extends JViewLegacy
 		if ($this->getLayout() !== 'modal') 
 		{
 			$this->addToolbar();
-			$this->sidebar = JHtmlSidebar::render();
+			// Removed Brainforge.uk 2025/04/29
+// $this->sidebar = JHtmlSidebar::render();
 		}
 				
 		parent::display($tpl);
@@ -91,7 +92,8 @@ class Form2ContentViewProjectFields extends JViewLegacy
 		$task = $value ? 'setfrontinvisible' : 'setfrontvisible';
 		$action = $value ? JText::_('COM_FORM2CONTENT_SET_ITEM_FRONTINVISIBLE') : JText::_('COM_FORM2CONTENT_SET_ITEM_FRONTVISIBLE');
 
-		return '<a href="#" onclick="return listItemTask(\'cb' . $i . '\',\'' . $prefix . $task . '\')" title="' . $action . '">'
+		// Modified Brainforge.uk 2025/04/29
+		return '<a href="#" onclick="return Joomla.listItemTask(\'cb' . $i . '\',\'' . $prefix . $task . '\')" title="' . $action . '">'
 			. '<i class="'.$img.'"></i></a>';
 		
 	}

@@ -42,7 +42,8 @@ class Form2ContentViewTranslations extends JViewLegacy
 		if ($this->getLayout() !== 'modal') 
 		{
 			$this->addToolbar();
-			$this->sidebar = JHtmlSidebar::render();
+			// Removed Brainforge.uk 2025/04/29
+// $this->sidebar = JHtmlSidebar::render();
 		}
 				
 		parent::display($tpl);

@@ -2,7 +2,8 @@
 defined('JPATH_PLATFORM') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
-JHtml::_('behavior.tooltip');
+// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 JHtml::stylesheet('com_form2content/modal.css', array('relative' => true));
 
 $jinput		= JFactory::getApplication()->input;

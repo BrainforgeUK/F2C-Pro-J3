@@ -1,4 +1,7 @@
 <?php
+
+use Joomla\CMS\Form\Field\ListField;
+
 defined('JPATH_BASE') or die;
 
 require_once(JPATH_COMPONENT_SITE.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARATOR.'form2content.php');
@@ -8,7 +11,7 @@ jimport('joomla.form.formfield');
 jimport('joomla.form.helper');
 JFormHelper::loadFieldClass('list');
 
-class JFormFieldF2cCategory extends JFormFieldList
+class JFormFieldF2cCategory extends ListField
 {
 	public $type = 'F2cCategory';
 

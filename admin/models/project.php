@@ -183,7 +183,7 @@ class Form2ContentModelProject extends Form2ContentModelProjectBase
 	public function delete(&$pks)
 	{
 		// Initialise variables.
-		$dispatcher			= JEventDispatcher::getInstance();
+		$dispatcher			= F2cBrainforgeukEvent::getInstance();
 		$pks				= (array)$pks;
 		$context 			= $this->option.'.'.$this->name;
 		$modelForm			= new Form2ContentModelForm();

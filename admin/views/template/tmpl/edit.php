@@ -1,7 +1,8 @@
 <?php 
 defined('JPATH_PLATFORM') or die;
 
-JHtml::_('behavior.tooltip');
+// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
 

@@ -1,4 +1,6 @@
 <?php
+use \Joomla\Utilities\ArrayHelper;
+
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 jimport('joomla.application.component.controllerform');
@@ -17,7 +19,7 @@ class Form2ContentControllerFormBase extends JControllerForm
 	{
 		// Initialise variables.
 		$user				= JFactory::getUser();
-		$contentTypeId		= JArrayHelper::getValue($data, 'projectid', $this->input->getInt('forms_filter_contenttype_id'), 'int');
+		$contentTypeId		= /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::getValue($data, 'projectid', $this->input->getInt('forms_filter_contenttype_id'), 'int');
 		$allow				= null;
 		$allowContentType	= null;
 		$allowCategory		= null;

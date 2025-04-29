@@ -1,7 +1,8 @@
 <?php 
 defined('JPATH_PLATFORM') or die;
 
-JHtml::_('behavior.tooltip');
+// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
 JHtml::script('com_form2content/f2c_lists.js', array('relative' => true));
@@ -98,7 +99,7 @@ Joomla.submitbutton = function(task)
 		return true;
 	}
 	
-	if(!document.formvalidator.isValid(document.id('adminForm')))
+	if(!document.formvalidator.isValid(/* Modified Brainforge.uk 2025/04/29 */ document.getElementById('adminForm')))
 	{
 		return false;
 	}

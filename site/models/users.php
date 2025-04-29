@@ -2,6 +2,7 @@
 defined('JPATH_PLATFORM') or die;
 
 jimport('joomla.application.component.modellist');
+use \Joomla\Utilities\ArrayHelper;
 
 class Form2ContentModelUsers extends JModelList
 {
@@ -66,13 +67,13 @@ class Form2ContentModelUsers extends JModelList
 
 		$groups = json_decode(base64_decode($jinput->get('groups', '', 'BASE64')));
 		if (isset($groups)) {
-			JArrayHelper::toInteger($groups);
+			/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($groups);
 		}
 		$this->setState('filter.groups', $groups);
 
 		$excluded = json_decode(base64_decode($jinput->get('excluded', '', 'BASE64')));
 		if (isset($excluded)) {
-			JArrayHelper::toInteger($excluded);
+			/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($excluded);
 		}
 		$this->setState('filter.excluded', $excluded);
 

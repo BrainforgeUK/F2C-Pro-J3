@@ -20,8 +20,11 @@ class F2cModelContenttype extends JObject
 	var $urls;
 	var $fields;
 	
-	function __construct(JObject $object)
+	function __construct($object)
 	{
+		// Added Brainforge.uk 2025/04/29
+		if (empty($object)) return;
+
 		$this->id = $object->id;
 		$this->asset_id = $object->asset_id;
 		$this->title = $object->title;

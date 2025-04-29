@@ -389,7 +389,7 @@ class Form2ContentControllerForm extends Form2ContentControllerFormBase
 	{
 		JPluginHelper::importPlugin('form2content');
 
-		$dispatcher = JEventDispatcher::getInstance();
+		$dispatcher = F2cBrainforgeukEvent::getInstance();
 		$result = $dispatcher->trigger('onBeforeF2cSetRedirect', array(&$url, $args));
 
 		if (in_array(false, $result, true))

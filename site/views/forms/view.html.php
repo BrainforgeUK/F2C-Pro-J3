@@ -2,6 +2,7 @@
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 use \Joomla\Registry\Registry;
+use \Joomla\Utilities\ArrayHelper;
 
 require_once JPATH_COMPONENT.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARATOR.'form2content.php';
 require_once JPATH_COMPONENT.DIRECTORY_SEPARATOR.'utils.form2content.php';
@@ -272,11 +273,12 @@ class Form2ContentViewForms extends JViewLegacy
 			0	=> array('disabled.png',	'forms.featured',	'COM_CONTENT_UNFEATURED',	'COM_CONTENT_TOGGLE_TO_FEATURE'),
 			1	=> array('featured.png',		'forms.unfeatured',	'COM_CONTENT_FEATURED',		'COM_CONTENT_TOGGLE_TO_UNFEATURE'),
 		);
-		$state	= JArrayHelper::getValue($states, (int) $value, $states[1]);
+		$state	= /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::getValue($states, (int) $value, $states[1]);
 		
 		$html	= '<img src="media/com_form2content/images/'.$state[0].'" alt="'.JText::_($state[2]).'" />';
 		if ($canChange) {
-			$html	= '<a href="#" onclick="return listItemTask(\'cb'.$i.'\',\''.$state[1].'\')" title="'.JText::_($state[3]).'">'
+			// Modified Brainforge.uk 2025/04/29
+			$html	= '<a href="#" onclick="return Joomla.listItemTask(\'cb'.$i.'\',\''.$state[1].'\')" title="'.JText::_($state[3]).'">'
 					. $html.'</a>';
 		}
 

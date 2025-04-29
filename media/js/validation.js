@@ -9,7 +9,7 @@ Form2Content.Validation = Form2Content.Validation || {
     	}
     	
         var elm = jQuery('#'+id);
-        var label = this.FindLabel(id, document.id('adminForm'));
+        var label = this.FindLabel(id, /* Modified Brainforge.uk 2025/04/29 */ document.getElementById('adminForm'));
 
         if(valid)
         {

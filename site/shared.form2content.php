@@ -1,4 +1,6 @@
 <?php
+use \Joomla\Utilities\ArrayHelper;
+
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 require_once(JPATH_SITE.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_form2content'.DIRECTORY_SEPARATOR.'parser.form2content.php');
@@ -72,14 +74,15 @@ class HtmlHelper
 		$readonly = isset($attribs['readonly']) && $attribs['readonly'] == 'readonly';
 		$disabled = isset($attribs['disabled']) && $attribs['disabled'] == 'disabled';
 		if (is_array($attribs)) {
-			$attribs = JArrayHelper::toString($attribs);
+			$attribs = /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toString($attribs);
 		}
 
 		if ((!$readonly) && (!$disabled)) 
 		{
 			// Load the calendar behavior
 			JHtml::_('behavior.calendar');
-			JHtml::_('behavior.tooltip');
+			// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 
 			// Only display the triggers once for each control.
 			if (!in_array($id, $done))

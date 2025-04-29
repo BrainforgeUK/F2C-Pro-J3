@@ -117,12 +117,13 @@ abstract class JHtmlForm2ContentAdministrator
 			0	=> array('unfeatured',	'forms.featured',	'COM_CONTENT_UNFEATURED',	'COM_CONTENT_TOGGLE_TO_FEATURE'),
 			1	=> array('featured',	'forms.unfeatured',	'COM_CONTENT_FEATURED',		'COM_CONTENT_TOGGLE_TO_UNFEATURE'),
 		);
-		$state	= JArrayHelper::getValue($states, (int) $value, $states[1]);
+		$state	= F2cBrainforgeukArrayhelper::getValue($states, (int) $value, $states[1]);
 		$icon	= $state[0];
 
 		if ($canChange)
 		{
-			$html	= '<a href="#" onclick="return listItemTask(\'cb' . $i . '\',\'' . $state[1] . '\')" class="btn btn-micro hasTooltip' . ($value == 1 ? ' active' : '') . '" title="' . JHtml::tooltipText($state[3]) . '"><i class="icon-'
+			// Modified Brainforge.uk 2025/04/29
+			$html	= '<a href="#" onclick="return Joomla.listItemTask(\'cb' . $i . '\',\'' . $state[1] . '\')" class="btn btn-micro hasTooltip' . ($value == 1 ? ' active' : '') . '" title="' . JHtml::tooltipText($state[3]) . '"><i class="icon-'
 					. $icon . '"></i></a>';
 		}
 		else

@@ -2,7 +2,8 @@
 // No direct access.
 defined('JPATH_PLATFORM') or die('Restricted access');
 
-JHtml::_('behavior.tooltip');
+// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.framework');
@@ -40,12 +41,12 @@ Joomla.submitbutton = function(task)
 		return true;
 	}
 
-	if(!document.formvalidator.isValid(document.id('adminForm')))
+	if(!document.formvalidator.isValid(/* Modified Brainforge.uk 2025/04/29 */ document.getElementById('adminForm')))
 	{
 		return false;
 	}
 
-	var form = document.id('adminForm');
+	var form = /* Modified Brainforge.uk 2025/04/29 */ document.getElementById('adminForm');
 	messages = {"error": []};
 	
 	<?php echo $this->jsScripts['validation']; ?>

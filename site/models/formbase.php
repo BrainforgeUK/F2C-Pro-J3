@@ -1,7 +1,10 @@
 <?php
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
+use Joomla\CMS\Factory;
+use Joomla\Database\DatabaseInterface;
 use \Joomla\Registry\Registry;
+use \Joomla\Utilities\ArrayHelper;
 
 require_once(JPATH_SITE.'/components/com_form2content/shared.form2content.php');
 require_once(JPATH_SITE.'/components/com_form2content/utils.form2content.php');
@@ -289,7 +292,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 	{
 		$isNew				= empty($data['id']);
 		$app				= JFactory::getApplication();
-		$dispatcher 		= JEventDispatcher::getInstance();
+		$dispatcher 		= F2cBrainforgeukEvent::getInstance();
 		$config 			= JFactory::getConfig();
 		$jinput				= JFactory::getApplication()->input;
 		$table				= $this->getTable();
@@ -359,8 +362,9 @@ class Form2ContentModelFormBase extends JModelAdmin
 		}
 
 		JPluginHelper::importPlugin('form2content');
-		
-		$data['modified_by']	= JFactory::getUser()->name;
+
+		// Modified Brainforgeuk 2025/04/29
+		$data['modified_by']	= JFactory::getUser()->id;
 		$newFormData 			= $this->convertArrayToObject($data);
 		
 		$eventDataBeforeSave			= new F2cEventArgs();
@@ -509,7 +513,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 	public function delete(&$pks, $batchImportMode = false)
 	{
 		// Initialise variables.
-		$dispatcher		= JEventDispatcher::getInstance();
+		$dispatcher		= F2cBrainforgeukEvent::getInstance();
 		$pks			= (array)$pks;
 		$f2cFormTable 	= $this->getTable();
 
@@ -619,7 +623,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 	{
 		JPluginHelper::importPlugin('content');
 		
-		$dispatcher	= JEventDispatcher::getInstance();
+		$dispatcher	= F2cBrainforgeukEvent::getInstance();
 		$table		= JTable::getInstance('Content');
 		$context 	= 'com_content.article';
 
@@ -653,7 +657,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 	public function publish(&$pks, $value = 1, $batchImportMode = false)
 	{
 		// Initialise variables.
-		$dispatcher	= JEventDispatcher::getInstance();
+		$dispatcher	= F2cBrainforgeukEvent::getInstance();
 		$user		= JFactory::getUser();
 		$table		= $this->getTable();
 		$pks		= (array)$pks;
@@ -801,7 +805,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 	
 	public function copy(&$pks, $categoryId = null)
 	{
-		$dispatcher = JEventDispatcher::getInstance();
+		$dispatcher = F2cBrainforgeukEvent::getInstance();
 		$dateNow 	= JFactory::getDate();
 		$timestamp 	= $dateNow->toSql();
 		$data 		= array();
@@ -1192,7 +1196,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 	{
 		JPluginHelper::importPlugin('form2content');
 		
-		$dispatcher 		= JEventDispatcher::getInstance();
+		$dispatcher 		= F2cBrainforgeukEvent::getInstance();
 		$context			= $this->option.'.'.$this->name;	
 		$form 				= $this->getItem();
 
@@ -1268,7 +1272,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 		$user 			= JFactory::getUser();
 		$nullDate 		= $this->_db->getNullDate();
 		$datenow 		= JFactory::getDate();
-		$dispatcher 	= JEventDispatcher::getInstance();
+		$dispatcher 	= F2cBrainforgeukEvent::getInstance();
 		$row			= null;
 		$errorMsgPrefix	= JText::_('COM_FORM2CONTENT_FORM_ID') . ' ' . $form->id . ': ';
 		$parseResult	= new JObject();
@@ -1584,6 +1588,12 @@ class Form2ContentModelFormBase extends JModelAdmin
 		
 		$table = $this->getTable('Featured', 'ContentTable');
 
+		// Added Brainforge.uk 2025/04/29
+		if ($table === false)
+		{
+			$table = new \Joomla\Component\Content\Administrator\Table\FeaturedTable(Factory::getContainer()->get(DatabaseInterface::class));
+		}
+
 		try 
 		{
 			$db = $this->getDbo();
@@ -1635,12 +1645,12 @@ class Form2ContentModelFormBase extends JModelAdmin
 	public function featuredList($pks, $value)
 	{
 		// Initialise variables.
-		$dispatcher	= JEventDispatcher::getInstance();
+		$dispatcher	= F2cBrainforgeukEvent::getInstance();
 		$user		= JFactory::getUser();
 		$table		= $this->getTable();
 		$pks		= (array)$pks;
 		
-		JArrayHelper::toInteger($pks);
+		/* Modified Brainforge.uk 2025/04/29 */ArrayHelper::toInteger($pks);
 
 		if (empty($pks)) 
 		{
