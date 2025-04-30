@@ -53,7 +53,7 @@ class Form2ContentControllerFormsBase extends JControllerAdmin
 				$data['projectid'] = $item->projectid;
 
 				// Has the user exceeded the maximum number of forms?
-				if(!$app->isAdmin() && !$model->canSubmitArticle($item->projectid, -1))
+				if(!$app->isClient('administrator') && !$model->canSubmitArticle($item->projectid, -1))
 				{
 					$this->setMessage($model->getError(), 'error');
 					$this->setRedirect(JRoute::_('index.php?option='.$this->option.'&view='.$this->view_list, false));

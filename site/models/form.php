@@ -52,9 +52,9 @@ class Form2ContentModelForm extends Form2ContentModelFormBase
 	{
 		$user 					= JFactory::getUser();
 		$contentType 			= F2cFactory::getContentType($contentTypeId);
-		$menuParms 				= $this->getState('parameters.menu', null);
+		$menuParams 				= $this->getState('parameters.menu', null);
 		$maxFormsContentType	= (int)$contentType->settings['max_forms'];
-		$maxFormsMenu 			= $menuParms != null ? $menuParms->get('max_forms', 0) : 0;
+		$maxFormsMenu 			= $menuParams != null ? $menuParams->get('max_forms', 0) : 0;
 				
 		$maxForms = (empty($maxFormsContentType) || empty($maxFormsMenu)) ? max($maxFormsContentType, $maxFormsMenu) : min($maxFormsContentType, $maxFormsMenu);
 		

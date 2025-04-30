@@ -62,5 +62,17 @@ class Form2ContentControllerForms extends Form2ContentControllerFormsBase
 
 		return $this;
 	}
+
+	/*
+	 */
+	public function setRedirect($url, $msg = null, $type = null)
+	{
+		$return = $this->input->getBase64('return');
+		if (!empty($return)) {
+			$url = base64_decode($return);
+		}
+
+		return parent::setRedirect($url, $msg, $type);
+	}
 }
 ?>

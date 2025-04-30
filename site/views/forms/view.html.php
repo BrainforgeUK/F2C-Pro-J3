@@ -17,7 +17,7 @@ class Form2ContentViewForms extends JViewLegacy
 	protected $pagination;
 	protected $state;
 	protected $nullDate;
-	protected $menuParms;
+	protected $menuParams;
 	protected $activeMenu;
 	protected $params;
 	protected $numCols;
@@ -46,7 +46,7 @@ class Form2ContentViewForms extends JViewLegacy
 		$model->setState('ContentTypeId', $contentTypeId);		
 		
 		
-		if ((int)$this->menuParms->get('classic_layout', 0))
+		if ((int)$this->menuParams->get('classic_layout', 0))
 		{
 			$this->setLayout('classic');
 		}
@@ -98,15 +98,15 @@ class Form2ContentViewForms extends JViewLegacy
 		$lang->load('', JPATH_ADMINISTRATOR, $lang->getTag(), true);
 		
 		$this->numCols = 3;
-		if($this->menuParms->get('show_ordering')) $this->numCols++;
-		if($this->menuParms->get('show_published_column')) $this->numCols++;
-		if($this->menuParms->get('show_category')) $this->numCols++;
-		if($this->menuParms->get('show_author_column')) $this->numCols++;
-		if($this->menuParms->get('show_created_column')) $this->numCols++;
-		if($this->menuParms->get('show_modified_column')) $this->numCols++;
-		if($this->menuParms->get('show_publish_up_column')) $this->numCols++;
-		if($this->menuParms->get('show_publish_down_column')) $this->numCols++;
-		if($this->menuParms->get('show_language_column')) $this->numCols++;
+		if($this->menuParams->get('show_ordering')) $this->numCols++;
+		if($this->menuParams->get('show_published_column')) $this->numCols++;
+		if($this->menuParams->get('show_category')) $this->numCols++;
+		if($this->menuParams->get('show_author_column')) $this->numCols++;
+		if($this->menuParams->get('show_created_column')) $this->numCols++;
+		if($this->menuParams->get('show_modified_column')) $this->numCols++;
+		if($this->menuParams->get('show_publish_up_column')) $this->numCols++;
+		if($this->menuParams->get('show_publish_down_column')) $this->numCols++;
+		if($this->menuParams->get('show_language_column')) $this->numCols++;
 		
 		parent::display($tpl);
 	}
@@ -118,110 +118,110 @@ class Form2ContentViewForms extends JViewLegacy
 	
 	private function getMenuParameters($params)
 	{
-		$this->menuParms	= new Registry();
+		$this->menuParams	= new Registry();
 		$contentTypeId		= $params->get('contenttypeid');
 		$canDo				= Form2ContentHelper::getActions($contentTypeId);		
 		
-		$this->menuParms->set('show_published_filter', $params->get('show_published_filter', 0));
-		$this->menuParms->set('show_category_filter', $params->get('show_category_filter', 1));
-		$this->menuParms->set('show_search_filter', $params->get('show_search_filter', 1));
-		$this->menuParms->set('contenttypeid', $contentTypeId);
-		$this->menuParms->set('classic_layout', $params->get('classic_layout', 0));
+		$this->menuParams->set('show_published_filter', $params->get('show_published_filter', 0));
+		$this->menuParams->set('show_category_filter', $params->get('show_category_filter', 1));
+		$this->menuParams->set('show_search_filter', $params->get('show_search_filter', 1));
+		$this->menuParams->set('contenttypeid', $contentTypeId);
+		$this->menuParams->set('classic_layout', $params->get('classic_layout', 0));
 		
 		switch($params->get('show_category_ordering',1))
 		{
 			case 0: // hide both category and ordering
-				$this->menuParms->set('show_category', 0);
-				$this->menuParms->set('show_ordering', 0);
+				$this->menuParams->set('show_category', 0);
+				$this->menuParams->set('show_ordering', 0);
 				break;
 			case 1: // show both category and ordering
-				$this->menuParms->set('show_category', 1);
-				$this->menuParms->set('show_ordering', 1);
+				$this->menuParams->set('show_category', 1);
+				$this->menuParams->set('show_ordering', 1);
 				break;
 			case 2: // show category, hide ordering
-				$this->menuParms->set('show_category', 1);
-				$this->menuParms->set('show_ordering', 0);
+				$this->menuParams->set('show_category', 1);
+				$this->menuParams->set('show_ordering', 0);
 				break;
 			case 3: // hide category, show ordering
-				$this->menuParms->set('show_category', 0);
-				$this->menuParms->set('show_ordering', 1);
+				$this->menuParams->set('show_category', 0);
+				$this->menuParams->set('show_ordering', 1);
 				break;
 		}
 		
 		if ($canDo->get('core.create') && $params->get('show_new_button',1))
 		{
-			$this->menuParms->set('show_new_button', 1);
+			$this->menuParams->set('show_new_button', 1);
 		}
 		else
 		{
-			$this->menuParms->set('show_new_button', 0);
+			$this->menuParams->set('show_new_button', 0);
 		}
 		
 		if ($canDo->get('core.create') && $params->get('show_copy_button',1))
 		{
-			$this->menuParms->set('show_copy_button', 1);
+			$this->menuParams->set('show_copy_button', 1);
 		}
 		else
 		{
-			$this->menuParms->set('show_copy_button', 0);
+			$this->menuParams->set('show_copy_button', 0);
 		}
 		
 		if (($canDo->get('core.edit')) || ($canDo->get('core.edit.own'))) 
 		{
 			if($params->get('show_edit_button',1))
 			{
-				$this->menuParms->set('show_edit_button', 1);
+				$this->menuParams->set('show_edit_button', 1);
 			}
 			else 
 			{
-				$this->menuParms->set('show_edit_button', 0);
+				$this->menuParams->set('show_edit_button', 0);
 			}
 		}
 		else
 		{
-			$this->menuParms->set('show_edit_button', 0);
+			$this->menuParams->set('show_edit_button', 0);
 		}
 		
 		if ($canDo->get('core.edit.state') || $canDo->get('form2content.edit.state.own'))
 		{
-			$this->menuParms->set('show_publish_button', 1);
-			$this->menuParms->set('show_archive_button', $params->get('show_archive_button', 0));
+			$this->menuParams->set('show_publish_button', 1);
+			$this->menuParams->set('show_archive_button', $params->get('show_archive_button', 0));
 		}
 		else
 		{
-			$this->menuParms->set('show_publish_button', 0);
-			$this->menuParms->set('show_archive_button', 0);
+			$this->menuParams->set('show_publish_button', 0);
+			$this->menuParams->set('show_archive_button', 0);
 		}
 				
 		if($params->get('show_delete_button', 1))
 		{ 
 			if ((int)$this->state->get('filter.published') != (int)F2C_STATE_TRASH)
 			{
-					$this->menuParms->set('show_trash_button', $canDo->get('core.delete') || $canDo->get('form2content.delete.own'));
-					$this->menuParms->set('show_delete_button', 0);			
+					$this->menuParams->set('show_trash_button', $canDo->get('core.delete') || $canDo->get('form2content.delete.own'));
+					$this->menuParams->set('show_delete_button', 0);			
 			}
 			else
 			{
-				$this->menuParms->set('show_trash_button', 0);
-				$this->menuParms->set('show_delete_button', $canDo->get('form2content.trash') || $canDo->get('form2content.trash.own'));				
+				$this->menuParams->set('show_trash_button', 0);
+				$this->menuParams->set('show_delete_button', $canDo->get('form2content.trash') || $canDo->get('form2content.trash.own'));				
 			}
 		}
 		else 
 		{
-			$this->menuParms->set('show_trash_button', 0);
-			$this->menuParms->set('show_delete_button', 0);						
+			$this->menuParams->set('show_trash_button', 0);
+			$this->menuParams->set('show_delete_button', 0);						
 		}
 		
-		$this->menuParms->set('show_created_column', $params->get('show_created', 1));
-		$this->menuParms->set('show_modified_column', $params->get('show_modified', 1));
-		$this->menuParms->set('show_author_column', $params->get('show_author', 1));
-		$this->menuParms->set('show_published_column', $params->get('show_published', 1));
-		$this->menuParms->set('show_featured_column', $params->get('show_featured', 1));
-		$this->menuParms->set('show_language_column', $params->get('show_language', 1));
-		$this->menuParms->set('show_publish_up_column', $params->get('show_publish_up', 0));
-		$this->menuParms->set('show_publish_down_column', $params->get('show_publish_down', 0));
-		$this->menuParms->set('show_f2c_id_column', $params->get('show_f2c_id', 1));
-		$this->menuParms->set('show_joomla_id_column', $params->get('show_joomla_id', 0));
+		$this->menuParams->set('show_created_column', $params->get('show_created', 1));
+		$this->menuParams->set('show_modified_column', $params->get('show_modified', 1));
+		$this->menuParams->set('show_author_column', $params->get('show_author', 1));
+		$this->menuParams->set('show_published_column', $params->get('show_published', 1));
+		$this->menuParams->set('show_featured_column', $params->get('show_featured', 1));
+		$this->menuParams->set('show_language_column', $params->get('show_language', 1));
+		$this->menuParams->set('show_publish_up_column', $params->get('show_publish_up', 0));
+		$this->menuParams->set('show_publish_down_column', $params->get('show_publish_down', 0));
+		$this->menuParams->set('show_f2c_id_column', $params->get('show_f2c_id', 1));
+		$this->menuParams->set('show_joomla_id_column', $params->get('show_joomla_id', 0));
 	}
 	
 	/**

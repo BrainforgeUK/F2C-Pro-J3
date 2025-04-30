@@ -168,21 +168,25 @@ class Form2ContentViewForm extends JViewLegacy
 		$canDo 			= Form2ContentHelper::getActions($contentType->id, $this->item->id);
 		$canEditState	= $canDo->get('core.edit.state') || $canDo->get('form2content.edit.state.own');
 		$canTrash		= $canDo->get('core.delete') || $canDo->get('form2content.delete.own');
-		
+
+		// Modified Brainforge.uk 2025/04/30
 		if(!$activeMenu)
 		{
 			// no active menu => create an empty object to prevent errors
-			$activeMenu = new stdClass();
-			$activeMenu->params = new JRegistry();
+			$params = new JRegistry();
+		}
+		else
+		{
+			$params = $activeMenu->getParams();
 		}
 		
-		if(!($canEditState && $activeMenu->params->get('show_archive_button', 0)))
+		if(!($canEditState && $params->get('show_archive_button', 0)))
 		{
 			// disable archive option
 			$this->jsScripts['fieldInit'] .= 'jQuery(document).ready(function(){jQuery("#jform_state option[value='.F2C_STATE_ARCHIVED.']").attr("disabled","disabled");});';
 		}		
 		
-		if(!($canTrash && $activeMenu->params->get('show_delete_button', 0)))
+		if(!($canTrash && $params->get('show_delete_button', 0)))
 		{
 			// disable archive option
 			$this->jsScripts['fieldInit'] .= 'jQuery(document).ready(function(){jQuery("#jform_state option[value='.F2C_STATE_TRASH.']").attr("disabled","disabled");});';

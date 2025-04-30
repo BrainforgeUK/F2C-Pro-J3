@@ -307,6 +307,11 @@ class JFormFieldF2cCalendar extends JFormField
 			'direction'    => $direction,
 		);
 
-		return array_merge($data, $extraData);
+		// Modified Brainforge.uk 2025/04/30
+		$data = array_merge($data, $extraData);
+
+		$data['calendar'] ??= null;
+
+		return $data;
 	}
 }

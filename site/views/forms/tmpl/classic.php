@@ -27,26 +27,26 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 			<tr class="f2c_buttons">
 				<td>
 					<div style="float: left;">
-						<?php if($this->menuParms->get('show_new_button', 0)) : ?>
+						<?php if($this->menuParams->get('show_new_button', 0)) : ?>
 						<button type="button" class="f2c_button f2c_new" onclick="javascript:Joomla.submitbutton('form.add')"><?php echo JText::_('COM_FORM2CONTENT_NEW'); ?></button>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_copy_button', 1)) : ?>
+						<?php if($this->menuParams->get('show_copy_button', 1)) : ?>
 						<button type="button" class="f2c_button f2c_copy" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_COPY')); ?>');}else{  Joomla.submitbutton('forms.copy')}"><?php echo JText::_('COM_FORM2CONTENT_COPY'); ?></button>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_edit_button', 1)) : ?>
+						<?php if($this->menuParams->get('show_edit_button', 1)) : ?>
 						<button type="button" class="f2c_button f2c_edit" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_EDIT')); ?>');}else{  Joomla.submitbutton('form.edit')}"><?php echo JText::_('COM_FORM2CONTENT_EDIT'); ?></button>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_publish_button', 1)) : ?>
+						<?php if($this->menuParams->get('show_publish_button', 1)) : ?>
 						<button type="button" class="f2c_button f2c_publish" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_PUBLISH')); ?>');}else{  Joomla.submitbutton('forms.publish')}"><?php echo JText::_('COM_FORM2CONTENT_PUBLISH'); ?></button>
 						<button type="button" class="f2c_button f2c_unpublish" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_UNPUBLISH')); ?>');}else{  Joomla.submitbutton('forms.unpublish')}"><?php echo JText::_('COM_FORM2CONTENT_UNPUBLISH'); ?></button>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_archive_button', 0)) : ?>
+						<?php if($this->menuParams->get('show_archive_button', 0)) : ?>
 						<button type="button" class="f2c_button f2c_archive" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_ARCHIVE')); ?>');}else{  Joomla.submitbutton('forms.archive')}"><?php echo JText::_('COM_FORM2CONTENT_ARCHIVE'); ?></button>
 						<?php endif; ?>			
-						<?php if($this->menuParms->get('show_trash_button', 1)) : ?>
+						<?php if($this->menuParams->get('show_trash_button', 1)) : ?>
 						<button type="button" class="f2c_button f2c_delete" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_DELETE')); ?>');}else{  Joomla.submitbutton('forms.trash')}"><?php echo JText::_('COM_FORM2CONTENT_DELETE'); ?></button>
 						<?php endif; ?>			
-						<?php if($this->menuParms->get('show_delete_button', 1)) : ?>
+						<?php if($this->menuParams->get('show_delete_button', 1)) : ?>
 						<button type="button" class="f2c_button f2c_trash" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('<?php echo JText::sprintf(JText::_('COM_FORM2CONTENT_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO'), JText::_('COM_FORM2CONTENT_EMPTY_TRASH')); ?>');}else{  Joomla.submitbutton('forms.delete')}"><?php echo JText::_('COM_FORM2CONTENT_EMPTY_TRASH'); ?></button>
 						<?php endif; ?>			
 					</div>
@@ -55,7 +55,7 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 			</table>
 			<fieldset id="filter-bar" class="f2c_search">	
 				<div class="filter-search fltlft">
-					<?php if($this->menuParms->get('show_search_filter')) : ?>
+					<?php if($this->menuParams->get('show_search_filter')) : ?>
 						<label class="filter-search-lbl" for="filter_search"><?php echo JText::_('JSEARCH_FILTER_LABEL'); ?></label>
 						<input type="text" name="filter_search" id="filter_search" class="f2c_filter" value="<?php echo $this->escape($this->state->get('filter.search')); ?>" title="<?php echo JText::_('COM_FORM2CONTENT_FILTER_SEARCH_DESC'); ?>" />
 						<button type="submit" class="btn f2c_button f2c_submit"><?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?></button>
@@ -63,13 +63,13 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 					<?php endif; ?>
 				</div>
 				<div class="filter-select fltrt">
-					<?php if($this->menuParms->get('show_published_filter')) : ?>
+					<?php if($this->menuParams->get('show_published_filter')) : ?>
 					<select name="filter_published" class="inputbox f2c_pubfilter" onchange="this.form.submit()">
 						<option value=""><?php echo JText::_('JOPTION_SELECT_PUBLISHED');?></option>
 						<?php echo JHtml::_('select.options', JHtml::_('jgrid.publishedOptions', array()), 'value', 'text', $this->state->get('filter.published'), true);?>
 					</select>
 					<?php endif; ?>
-					<?php if($this->menuParms->get('show_category_filter')) : ?>
+					<?php if($this->menuParams->get('show_category_filter')) : ?>
 					<select name="filter_category_id" class="inputbox f2c_catfilter" onchange="this.form.submit()">
 						<option value=""><?php echo JText::_('JOPTION_SELECT_CATEGORY');?></option>
 						<?php echo JHtml::_('select.options', $this->categoryOptions, 'id', 'title', $this->state->get('filter.category_id'));?>
@@ -81,12 +81,12 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 			<table class="adminlist f2c_list">
 				<thead>
 					<tr class="f2c_header">
-						<?php if($this->menuParms->get('show_f2c_id_column')) : ?>
+						<?php if($this->menuParams->get('show_f2c_id_column')) : ?>
 						<th width="1%" class="nowrap f2c_id">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_GRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
 						</th>				
 						<?php endif; ?>	
-						<?php if($this->menuParms->get('show_joomla_id_column')) : ?>
+						<?php if($this->menuParams->get('show_joomla_id_column')) : ?>
 						<th width="1%" class="nowrap joomla_id">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_JOOMLA_ID', 'a.reference_id', $listDirn, $listOrder); ?>
 						</th>				
@@ -97,17 +97,17 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 						<th class="f2c_title">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_TITLE', 'a.title', $listDirn, $listOrder); ?>
 						</th>
-						<?php if($this->menuParms->get('show_published_column')) : ?>
+						<?php if($this->menuParams->get('show_published_column')) : ?>
 						<th width="5%" class="f2c_published">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_PUBLISHED', 'a.state', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>						
-						<?php if($this->menuParms->get('show_featured_column')) : ?>
+						<?php if($this->menuParams->get('show_featured_column')) : ?>
 						<th width="5%" class="f2c_featured">
 							<?php echo JHtml::_('grid.sort', 'JFEATURED', 'a.featured', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>						
-						<?php if($this->menuParms->get('show_ordering')) : ?>
+						<?php if($this->menuParams->get('show_ordering')) : ?>
 						<th width="15%" class="f2c_ordering">
 							<?php echo JHtml::_('grid.sort',  'COM_FORM2CONTENT_GRID_HEADING_ORDERING', 'a.ordering', $listDirn, $listOrder); ?>
 							<?php if ($saveOrder) :?>
@@ -115,37 +115,37 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 							<?php endif; ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_category')) : ?>
+						<?php if($this->menuParams->get('show_category')) : ?>
 						<th width="10%" class="f2c_category">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_CATEGORY', 'category_title', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_author_column')) : ?>
+						<?php if($this->menuParams->get('show_author_column')) : ?>
 						<th width="10%" class="f2c_author">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_GRID_HEADING_CREATED_BY', 'a.created_by', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_created_column')) : ?>
+						<?php if($this->menuParams->get('show_created_column')) : ?>
 						<th width="5%" class="f2c_created">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_CREATED', 'a.created', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_modified_column')) : ?>
+						<?php if($this->menuParams->get('show_modified_column')) : ?>
 						<th width="5%" class="f2c_modified">
 							<?php echo JHtml::_('grid.sort', 'COM_FORM2CONTENT_MODIFIED', 'a.modified', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_publish_up_column', 0)) : ?>
+						<?php if($this->menuParams->get('show_publish_up_column', 0)) : ?>
 						<th width="5%" class="f2c_publish_up">
 							<?php echo JHtml::_('grid.sort',  'COM_FORM2CONTENT_PUBLISH_UP', 'a.publish_up', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_publish_down_column', 0)) : ?>
+						<?php if($this->menuParams->get('show_publish_down_column', 0)) : ?>
 						<th width="5%" class="f2c_publish_down">
 							<?php echo JHtml::_('grid.sort',  'COM_FORM2CONTENT_PUBLISH_DOWN', 'a.publish_down', $listDirn, $listOrder); ?>
 						</th>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_language_column')) : ?>
+						<?php if($this->menuParams->get('show_language_column')) : ?>
 						<th width="5%" class="f2c_language">
 							<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_LANGUAGE', 'a.language', $listDirn, $listOrder); ?>
 						</th>
@@ -182,12 +182,12 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 								   $canCheckin;
 					?>
 					<tr class="f2c_row row<?php echo $i % 2; ?>">
-						<?php if($this->menuParms->get('show_f2c_id_column')) : ?>
+						<?php if($this->menuParams->get('show_f2c_id_column')) : ?>
 						<td class="center f2c_id">
 							<?php echo (int) $item->id; ?>
 						</td>	
 						<?php endif; ?>		
-						<?php if($this->menuParms->get('show_joomla_id_column')) : ?>
+						<?php if($this->menuParams->get('show_joomla_id_column')) : ?>
 						<td class="center joomla_id">
 							<?php echo empty($item->reference_id) ? '' : $item->reference_id; ?>
 						</td>	
@@ -203,17 +203,17 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 								<?php echo $this->escape($item->title); ?>
 							<?php endif; ?>
 						</td>
-						<?php if($this->menuParms->get('show_published_column')) : ?>
+						<?php if($this->menuParams->get('show_published_column')) : ?>
 						<td class="center f2c_published">
 							<?php echo $this->legacyPublished(JHtml::_('jgrid.published', $itemState, $i, 'forms.', $canChange, 'cb', $item->publish_up, $item->publish_down)); ?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_featured_column')) : ?>
+						<?php if($this->menuParams->get('show_featured_column')) : ?>
 						<td class="center">
 							<?php echo $this->legacyFeatured($item->featured, $i, $canChange); ?>
 						</td>
 						<?php endif; ?>										
-						<?php if($this->menuParms->get('show_ordering')) : ?>				
+						<?php if($this->menuParams->get('show_ordering')) : ?>				
 						<td class="order f2c_ordering">
 							<?php if ($canChange) : ?>
 								<?php if ($saveOrder) :?>
@@ -232,22 +232,22 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 							<?php endif; ?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_category')) : ?>
+						<?php if($this->menuParams->get('show_category')) : ?>
 						<td class="center f2c_category">
 							<?php echo $this->escape($item->category_title); ?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_author_column')) : ?>								
+						<?php if($this->menuParams->get('show_author_column')) : ?>								
 						<td class="center f2c_author">
 							<?php echo $this->escape($item->author_name); ?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_created_column')) : ?>				
+						<?php if($this->menuParams->get('show_created_column')) : ?>				
 						<td class="center nowrap f2c_created">
 							<?php echo JHTML::_('date',$item->created, $dateFormat); ?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_modified_column')) : ?>				
+						<?php if($this->menuParams->get('show_modified_column')) : ?>				
 						<td class="center nowrap f2c_modified">
 							<?php
 							if($item->modified && ($item->modified != $this->nullDate))
@@ -257,12 +257,12 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 							?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_publish_up_column')) : ?>	
+						<?php if($this->menuParams->get('show_publish_up_column')) : ?>	
 						<td class="center nowrap f2c_publish_up">
 							<?php echo JHtml::_('date', $item->publish_up, $dateFormat); ?>
 						</td>
 						<?php endif; ?>
-						<?php if($this->menuParms->get('show_publish_down_column')) : ?>
+						<?php if($this->menuParams->get('show_publish_down_column')) : ?>
 						<td class="center nowrap f2c_publish_down">
 							<?php
 							if($item->publish_down && ($item->publish_down != $this->nullDate))
@@ -272,7 +272,7 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 							?>
 						</td>
 						<?php endif; ?>												
-						<?php if($this->menuParms->get('show_language_column')) : ?>				
+						<?php if($this->menuParams->get('show_language_column')) : ?>				
 						<td class="center f2c_language">
 							<?php if ($item->language=='*'):?>
 								<?php echo JText::alt('JALL','language'); ?>

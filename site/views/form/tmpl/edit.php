@@ -27,6 +27,9 @@ JText::script('COM_FORM2CONTENT_DELETE');
 JText::script('COM_FORM2CONTENT_EXTENSION_UPLOAD_NOT_ALLOWED');
 
 JForm::addFieldPath(JPATH_COMPONENT_SITE.'/models/fields');
+
+// Added Brainforge.uk 2025/04/30
+$itemId = empty($this->activeMenu->id) ? '' : '&Itemid=' .  $this->activeMenu->id;
 ?>
 <script type="text/javascript">
 var dateFormat = '<?php echo $this->dateFormat; ?>';
@@ -65,7 +68,8 @@ Joomla.submitbutton = function(task)
 <div class="f2c-article<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 	<h1><?php echo $this->pageTitle; ?></h1>
 	<div id="f2c_form" class="content_type_<?php echo $this->item->projectid; ?>">
-		<form action="<?php echo JRoute::_('index.php?option=com_form2content&view=form&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate" enctype="multipart/form-data">		
+		<form action="<?php echo JRoute::_('index.php?option=com_form2content&view=form&layout=edit&id='.(int) $this->item->id) . $itemId; ?>"
+              method="post" name="adminForm" id="adminForm" class="form-validate" enctype="multipart/form-data">
 		<?php if(!$this->contentTypeSettings->get('use_form_template', 0)) 
 		{
 		?>
