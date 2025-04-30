@@ -13,6 +13,10 @@ JHtml::stylesheet('com_form2content/f2cjui.css', array('relative' => true));
 $wa = $this->getDocument()->getWebAssetManager();
 $wa->useStyle('form2content.admin');
 
+// Added Brainforge.uk 2025/04/30
+$itemId = empty($this->activeMenu->id) ? '' : '&Itemid=' .  $this->activeMenu->id;
+$actionUrl = JRoute::_(	'index.php?option=com_form2content&view=forms' . $itemId);
+
 $user		= JFactory::getUser();
 $userId		= $user->get('id');
 $listOrder	= $this->state->get('list.ordering');
@@ -26,8 +30,10 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 		<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 	<?php endif; ?>
 	<div id="f2c_form">
-		<form action="<?php echo JRoute::_('index.php?option=com_form2content&task=forms.display&view=forms');?>" method="post" name="adminForm" id="adminForm">
-		
+        <form action="<?php
+		    // Modified Brainforge.uk 2025/12/29
+		    echo $actionUrl;?>"
+              method="post" name="adminForm" id="adminForm">
 			<table class="f2c_header" style="width:100%;">
 			<tr class="f2c_buttons">
 				<td>
@@ -290,12 +296,12 @@ $dateFormat = str_replace('%', '', $f2cConfig->get('date_format'));
 					<?php endforeach; ?>
 				</tbody>
 			</table>	
-			<div>
-				<input type="hidden" name="task" value="" />
-				<input type="hidden" name="boxchecked" value="0" />
-				<input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>" />
-				<input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>" />
-				<?php echo JHtml::_('form.token'); ?>
+			<input type="hidden" name="task" value="forms.display" />
+			<input type="hidden" name="boxchecked" value="0" />
+            <input type="hidden" name="return" value="<?php echo base64_encode($actionUrl); ?>" />
+			<input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>" />
+			<input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>" />
+			<?php echo JHtml::_('form.token'); ?>
 			</div>	
 		</form>
 	</div>

@@ -11,6 +11,12 @@ JForm::addFieldPath(JPATH_COMPONENT_SITE.'/models/fields');
 JText::script('COM_FORM2CONTENT_SYNC_ARTICLES_CONFIRM');
 JText::script('COM_FORM2CONTENT_OVERWRITE_DEFAULT_FORM_TEMPLATE');
 JText::script('COM_FORM2CONTENT_FORM_TEMPLATE_WRITTEN');
+
+// Added Brainforge.uk 2025/04/30
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useStyle('form2content.admin');
+
 ?>
 <script type="text/javascript">
 Joomla.submitbutton = function(task) 

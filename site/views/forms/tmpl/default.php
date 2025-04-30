@@ -2,7 +2,8 @@
 // No direct access 
 defined('JPATH_PLATFORM') or die('Restricted access');
 
-JHtml::_('bootstrap.tooltip');
+// Removed Brainforge.uk 2025/04/29
+// JHtml::_('behavior.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 JHtml::stylesheet('com_form2content/f2cjui.css', array('relative' => true));

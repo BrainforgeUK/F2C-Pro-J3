@@ -35,6 +35,8 @@ $wa->useStyle('form2content.admin');
 JForm::addFieldPath(JPATH_COMPONENT_SITE.'/models/fields');
 
 $assocField = $this->contentType->getFieldByType('JoomlaAssociations');
+// Added Brainforge.uk 2025/04/30
+$itemId = empty($this->activeMenu->id) ? '' : '&Itemid=' .  $this->activeMenu->id;
 ?>
 <script type="text/javascript">	
 var dateFormat = '<?php echo $this->dateFormat; ?>';

@@ -1,0 +1,36 @@
+.mlt_charsleft {
+    width: 5rem !important;
+    text-align: right;
+}
+
+.choices[data-type*="select-multiple"] .choices__input {
+    padding-left: 1rem !important;
+}
+
+.row-fluid {
+    display: flex;
+}
+
+.row-fluid.form-horizontal {
+    display: block;
+}
+
+.row-fluid > div {
+    margin: 0.5rem;
+}
+
+textarea,
+#jform_template {
+    resize: both !important;
+}
+
+.chosen-single {
+    height: 40px !important;
+    font-size: 120% !important;
+    color: #000 !important;
+    padding: 5px !important;
+}
+
+select {
+    height: 40px !important;
+}
