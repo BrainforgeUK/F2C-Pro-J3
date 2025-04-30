@@ -3,6 +3,11 @@ defined('JPATH_PLATFORM') or die;
 
 JHtml::stylesheet('com_form2content/modal.css', array('relative' => true));
 
+// Added Brainforge.uk 2025/04/30
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useStyle('form2content.admin');
+
 $field = JFactory::getApplication()->input->get('field');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_form2content&task=templates.select&layout=modal&tmpl=component'); ?>" method="post" name="adminForm" id="adminForm">

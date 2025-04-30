@@ -5,6 +5,16 @@ JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::stylesheet('com_form2content/admin.css', array('relative' => true));
 
+// Added Brainforge.uk 2025/04/30
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useStyle('form2content.admin');
+
+// Added Brainforge.uk 2025/04/30
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useStyle('form2content.admin');
+
 $user		= JFactory::getUser();
 $userId		= $user->get('id');
 $listOrder	= $this->escape($this->state->get('list.ordering'));

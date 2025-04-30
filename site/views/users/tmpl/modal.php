@@ -6,6 +6,11 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 // JHtml::_('behavior.tooltip');
 JHtml::stylesheet('com_form2content/modal.css', array('relative' => true));
 
+// Added Brainforge.uk 2025/04/30
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useStyle('form2content.admin');
+
 $jinput		= JFactory::getApplication()->input;
 $field		= $jinput->getCmd('field');
 $function	= 'jSelectUser_'.$field;

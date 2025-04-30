@@ -9,6 +9,11 @@ JHtml::stylesheet('com_form2content/f2cjui.css', array('relative' => true));
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 
 // Added Brainforge.uk 2025/04/30
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useStyle('form2content.admin');
+
+// Added Brainforge.uk 2025/04/30
 $itemId = empty($this->activeMenu->id) ? '' : '&Itemid=' .  $this->activeMenu->id;
 $actionUrl = JRoute::_(	'index.php?option=com_form2content&view=forms' . $itemId);
 

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_form2content",
+  "version": "1.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "form2content.admin",
+      "type": "style",
+      "uri": "com_form2content/admin/main.css"
+    },
+    {
+      "name": "form2content.site",
+      "type": "style",
+      "uri": "com_form2content/site/main.css"
+    }
+  ]
+}
