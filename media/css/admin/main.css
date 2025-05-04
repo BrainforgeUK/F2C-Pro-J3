@@ -34,3 +34,7 @@ textarea,
 select {
     height: 40px !important;
 }
+
+select#templateParameters {
+    height: 30rem !important;
+}
