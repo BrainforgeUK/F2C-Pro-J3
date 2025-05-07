@@ -7,6 +7,7 @@ JHtml::stylesheet('com_form2content/modal.css', array('relative' => true));
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->getDocument()->getWebAssetManager();
 $wa->useStyle('form2content.admin');
+$wa->useStyle('form2content.site');
 
 $field = JFactory::getApplication()->input->get('field');
 ?>

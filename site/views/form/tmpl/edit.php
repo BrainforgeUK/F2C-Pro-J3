@@ -30,6 +30,7 @@ JText::script('COM_FORM2CONTENT_EXTENSION_UPLOAD_NOT_ALLOWED');
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->getDocument()->getWebAssetManager();
 $wa->useStyle('form2content.admin');
+$wa->useStyle('form2content.site');
 
 JForm::addFieldPath(JPATH_COMPONENT_SITE.'/models/fields');
 

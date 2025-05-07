@@ -16,6 +16,7 @@ JText::script('COM_FORM2CONTENT_ERROR_IMAGE_CROP_MIN_HEIGHT');
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->getDocument()->getWebAssetManager();
 $wa->useStyle('form2content.admin');
+$wa->useStyle('form2content.site');
 
 ?>
 <script type="text/javascript">
