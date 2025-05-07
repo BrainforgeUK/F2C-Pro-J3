@@ -1,5 +1,7 @@
 <?php
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 
 defined('JPATH_PLATFORM') or die('Restricted acccess');
@@ -74,7 +76,7 @@ class Form2ContentControllerForm extends Form2ContentControllerFormBase
 		// Clear the record edit information from the session.
 		$app->setUserState($context . '.data', null);
 
-		// Redirect to the edit screen.		
+		// Redirect to the edit screen.
 		$this->setRedirect('index.php?option=' . $this->option . '&view=' . $this->view_item . $this->getRedirectToItemAppend() . '&projectid=' . $contentTypeId . '&Itemid=' . $this->input->getInt('Itemid'));
 
 		return true;
@@ -167,9 +169,12 @@ class Form2ContentControllerForm extends Form2ContentControllerFormBase
 				// Access check.
 				if (!$this->allowAdd($permissionCheck))
 				{
+					/* Modified Brainforge.uk 2025/05/07 */
 					// Set the internal error and also the redirect error.
-					$this->setError(JText::_('JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED'));
-					$this->setMessage($this->getError(), 'error');
+					//$this->setError(JText::_('JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED'));
+					//$this->setMessage($this->getError(), 'error');
+					$errorMessage = Text::_('JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED');
+					Factory::getApplication()->enqueueMessage($errorMessage, 'error');
 					$this->setCustomizableRedirect($errorRedirect, $args);
 
 					return false;
@@ -412,4 +417,3 @@ class Form2ContentControllerForm extends Form2ContentControllerFormBase
 		}
 	}
 }
-?>
