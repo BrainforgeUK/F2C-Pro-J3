@@ -1,4 +1,5 @@
 <?php
+
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 class F2cFieldEditor extends F2cFieldBase
@@ -93,8 +94,20 @@ class F2cFieldEditor extends F2cFieldBase
 	{
 		$editor	= JEditor::getInstance(JFactory::getConfig()->get('editor'));
 		$script = parent::getClientSideInitializationScript();
-		$script .= 'function valEditor'.$this->elementId.'(){var editorText'.$this->elementId.'='.$editor->getContent($this->elementId).'var valid = editorText'.$this->elementId.'.trim().length != 0;if(valid){'.$editor->save($this->elementId).'}return valid;} ';
-		
+		// Modified Brainforge.uk 2025/05/07
+		if (method_exists($editor, 'getContent'))
+		{
+			$editorContent = $editor->getContent($this->elementId);
+			$script .= 'function valEditor'.$this->elementId.'(){' .
+				'var editorText'.$this->elementId.'='.$editorContent.
+				'var valid = editorText'.$this->elementId.'.trim().length != 0;' .
+				'if(valid){'.$editor->save($this->elementId).'}return valid;} ';
+		}
+		else
+		{
+			$script .= 'function valEditor'.$this->elementId.'(){ return true; }';
+		}
+
 		return $script;
 	}
 		

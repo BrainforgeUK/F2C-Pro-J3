@@ -2,6 +2,7 @@
 defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
 use Joomla\Database\DatabaseInterface;
 use \Joomla\Registry\Registry;
 use \Joomla\Utilities\ArrayHelper;
@@ -991,15 +992,23 @@ class Form2ContentModelFormBase extends JModelAdmin
 			
 			// Check if a default category is selected
 			$categoryField = $contentType->getFieldByType('JoomlaCategory');
-			
-			$defaultCategoryId = (int)$categoryField->settings->get('default');
-	
-			if($defaultCategoryId != -1)
+
+			// Modified Brainforge.uk 20250507
+			if (empty($categoryField))
 			{
-				if((int)$categoryField->settings->get('behaviour') == 0)
+				\Joomla\CMS\Factory::getApplication()->enqueueMessage(Text::_('COM_FORM2CONTENT_MISSINGJOOMLACATEGORY'), 'error');
+			}
+			else
+			{
+				$defaultCategoryId = (int)$categoryField->settings->get('default');
+
+				if($defaultCategoryId != -1)
 				{
-					// The category is fixed
-					$data->set('catid', $defaultCategoryId);
+					if((int)$categoryField->settings->get('behaviour') == 0)
+					{
+						// The category is fixed
+						$data->set('catid', $defaultCategoryId);
+					}
 				}
 			}
 		}

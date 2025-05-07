@@ -22,7 +22,8 @@ class JFormFieldF2cContentTypeFieldType extends JFormFieldList
 
 
 		// Initialize some field attributes.
-		$attr .= $this->element['class'] ? ' class="'.(string) $this->element['class'].'"' : '';
+		// Modified brainforge.uk 20250507
+		$attr .= $this->element['class'] ? ' class="form-select '.(string) $this->element['class'].'"' : 'class="form-select"';
 
 		// To avoid user's confusion, readonly="true" should imply disabled="true".
 		if ( (string) $this->element['readonly'] == 'true' || (string) $this->element['disabled'] == 'true') {

@@ -5,15 +5,8 @@ defined('JPATH_PLATFORM') or die('Restricted acccess');
 
 jimport('joomla.application.component.controllerform');
 
-if (!class_exists('\com_form2content\Traits\F2cBrainforgeukSiteControllerTrait'))
-{
-	include dirname(__DIR__) . '/Traits/F2cBrainforgeukSiteControllerTrait.php';
-}
-
 class Form2ContentControllerFormBase extends JControllerForm
 {
-	use \com_form2content\Traits\F2cBrainforgeukSiteControllerTrait;
-
 	/**
 	 * Method override to check if you can add a new record.
 	 *
@@ -189,6 +182,24 @@ class Form2ContentControllerFormBase extends JControllerForm
 				$contentTypeField->cancel();
 			}
 		}
+	}
+
+	// Added Brainforge.uk 2025/05/07
+
+	protected $errors = [];
+
+	/*
+	 */
+	protected function setError($msg)
+	{
+		$this->errors[] = $msg;
+	}
+
+	/*
+	 */
+	protected function getError()
+	{
+		return empty($this->errors) ? '' : end($this->errors);
 	}
 }
 ?>

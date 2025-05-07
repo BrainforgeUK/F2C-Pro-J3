@@ -349,14 +349,16 @@ class Form2ContentViewForm extends JViewLegacy
 					}
 					else 
 					{
-						throw new Exception(Jtext::_('COM_FORM2CONTENT_ERROR_F2C').' : '.sprintf(JText::_(COM_FORM2CONTENT_ERROR_TEMPLATE_FIELD_NOT_PRESENT), $fieldname));
+						// Corrected brainforge.uk 20250507
+						throw new Exception(Jtext::_('COM_FORM2CONTENT_ERROR_F2C').' : '.sprintf(JText::_('COM_FORM2CONTENT_ERROR_TEMPLATE_FIELD_NOT_PRESENT'), $fieldname));
 					}
 				}
 				else 
 				{
 					if(array_key_exists($fieldname, $varsInTemplate))
 					{
-						throw new Exception(Jtext::_('COM_FORM2CONTENT_ERROR_F2C').' : '.sprintf(JText::_(COM_FORM2CONTENT_ERROR_TEMPLATE_FIELD_PRESENT), $fieldname));
+						// Corrected brainforge.uk 20250507
+						throw new Exception(Jtext::_('COM_FORM2CONTENT_ERROR_F2C').' : '.sprintf(JText::_('COM_FORM2CONTENT_ERROR_TEMPLATE_FIELD_PRESENT'), $fieldname));
 					}
 				}
 			}
