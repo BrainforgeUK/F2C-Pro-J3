@@ -143,9 +143,10 @@ class Form2ContentHelper
 				
 				$db->setQuery($queryRootCategory);
 				$rootCategory = $db->loadObject();
-				
-				$query->where('a.lft > ' . (int)$rootCategory->lft);
-				$query->where('a.rgt < ' . (int)$rootCategory->rgt);
+
+				// Modified Brainforge.uk 2025/05/07
+				$query->where('a.lft > ' . (int)($rootCategory->lft ??0));
+				$query->where('a.rgt < ' . (int)($rootCategory->rgt ?? 0));
 				break;
 			case 2:
 				// only get root
