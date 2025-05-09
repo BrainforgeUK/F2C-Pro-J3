@@ -18,7 +18,8 @@ class Form2ContentModelForm extends Form2ContentModelFormBase
 		parent::populateState();
 		
 		$return = JFactory::getApplication()->input->get('return', null, 'base64');
-		$this->setState('return_page', base64_decode($return));
+		// Modified Brainforge.uk 20250509
+		$this->setState('return_page', base64_decode($return ?? ''));
 	}
 	
 	public function save($data)

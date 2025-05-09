@@ -151,7 +151,8 @@ abstract class F2cFieldBase
 	 * 
 	 * @since   6.8.0
 	 */
-	abstract protected function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId);
+	// Modified Brainforge.uk 20250509
+	abstract protected function render($translatedFields, $contentTypeSettings, $parms, $form, $formId);
 	
 	/**
 	 * Method to convert the submitted (post) data into the internal field data structure.

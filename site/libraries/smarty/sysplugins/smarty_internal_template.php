@@ -99,6 +99,14 @@ class Smarty_Internal_Template extends Smarty_Internal_TemplateBase {
      */
     public $_capture_stack = array(0 => array());
 
+	// Added Brainforge.uk 2025/05/09
+	// Unable to eliminate 'Deprecated: Creation of dynamic property' notices for these.
+	// Uncommenting causes other problems - use of 'unset()' ?
+	//public $source = null;
+	//public $compiled = null;
+	//public $cached = null;
+	//public $compiler = null;
+
     /**
      * Create template data object
      *
@@ -612,7 +620,8 @@ class Smarty_Internal_Template extends Smarty_Internal_TemplateBase {
             case 'compiled':
             case 'cached':
             case 'compiler':
-                $this->$property_name = $value;
+		        // Modified Brainforge.uk 20250509
+                @$this->$property_name = $value;
                 return;
 
             // FIXME: routing of template -> smarty attributes

@@ -56,6 +56,16 @@ class JFormFieldF2cCalendar extends JFormField
 	 */
 	protected $layout = 'joomla.form.field.calendar';
 
+	// Added Brainforge.uk 20250509
+	protected $todaybutton = '';
+	protected $singleheader = '';
+	protected $weeknumbers = '';
+	protected $showtime = '';
+	protected $filltable = '';
+	protected $timeformat = '';
+
+
+
 	/**
 	 * Method to get certain otherwise inaccessible properties from the form field object.
 	 *
@@ -310,7 +320,8 @@ class JFormFieldF2cCalendar extends JFormField
 		// Modified Brainforge.uk 2025/04/30
 		$data = array_merge($data, $extraData);
 
-		$data['calendar'] ??= null;
+		// Modified Brainforge.uk 2025/04/30
+		$data['calendar'] ??= '';
 
 		return $data;
 	}

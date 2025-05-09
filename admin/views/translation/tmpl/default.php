@@ -3,7 +3,8 @@ defined('JPATH_PLATFORM') or die;
 
 // Removed Brainforge.uk 2025/04/29
 // JHtml::_('behavior.tooltip');
-JHtml::_('behavior.formvalidation');
+// Modified Brainforge.uk 20250509
+//JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
 ?>
 <script type="text/javascript">

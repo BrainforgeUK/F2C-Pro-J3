@@ -23,17 +23,20 @@ class Form2ContentModelProjectBase extends JModelAdmin
 		{
 			// Convert the params field to an array.
 			$registry = new Registry;
-			$registry->loadString($item->attribs);
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->attribs ?? '');
 			$item->attribs = $registry->toArray();
 
 			// Convert the metadata field to an array.
 			$registry = new Registry;
-			$registry->loadString($item->metadata);
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->metadata ?? '');
 			$item->metadata = $registry->toArray();
 
 			// Convert the settings field to an array.
 			$registry = new Registry;
-			$registry->loadString($item->settings);			
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->settings ?? '');
 			$item->settings = $registry->toArray();
 			
 			// Convert the images field to an array.
@@ -43,7 +46,8 @@ class Form2ContentModelProjectBase extends JModelAdmin
 			}
 			
 			$registry = new Registry;
-			$registry->loadString($item->images);			
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->images ?? '');
 			$item->images = $registry->toArray();
 
 			// Convert the urls field to an array.
@@ -53,7 +57,8 @@ class Form2ContentModelProjectBase extends JModelAdmin
 			}
 			
 			$registry = new Registry;
-			$registry->loadString($item->urls);			
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->urls ?? '');
 			$item->urls = $registry->toArray();
 			
 			$item->fields = $this->getFieldDefinitions($pk);

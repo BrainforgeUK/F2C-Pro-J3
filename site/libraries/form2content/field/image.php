@@ -38,7 +38,8 @@ class F2cFieldImage extends F2cFieldBase
 		$this->internal['fieldcontentid']	= null;
 	}
 	
-	public function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId)
+	// Modified Brainforge.uk 20250509
+	public function render($translatedFields, $contentTypeSettings, $parms, $form, $formId)
 	{
 		$displayData = array();
 		

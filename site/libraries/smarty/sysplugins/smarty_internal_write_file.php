@@ -45,6 +45,9 @@ class Smarty_Internal_Write_File {
         }
 
 		$_tmp_file = $_dirpath.DIRECTORY_SEPARATOR.md5(JUserHelper::genRandomPassword(16));
+
+		// Added Brainforge.uk 20250509
+	    $_contents = str_replace(']->value;?>', ']->value ?? \'\';?>', $_contents);
 		
 		if(!JFile::write($_tmp_file, $_contents))
 		{

@@ -16,7 +16,8 @@ class F2cFieldDatabaseLookup extends F2cFieldBase
 		return 'dbl';
 	}
 	
-	public function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId)
+	// Modified Brainforge.uk 20250509
+	public function render($translatedFields, $contentTypeSettings, $parms, $form, $formId)
 	{
 		$displayData	= array();
 		$listOptions 	= array();

@@ -26,7 +26,8 @@ class F2cFieldGeocoder extends F2cFieldBase
 		$this->internal['lonid']		= null;
 	}
 	
-	public function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId)
+	// Modified Brainforge.uk 20250509
+	public function render($translatedFields, $contentTypeSettings, $parms, $form, $formId)
 	{
 		$displayData						= array();
 		$displayData['latLonDisplay'] 		= ($this->values['LAT'] && $this->values['LON']) ? '('.$this->values['LAT'].', '.$this->values['LON'].')' : '';

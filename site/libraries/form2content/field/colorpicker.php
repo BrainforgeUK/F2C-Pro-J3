@@ -120,7 +120,8 @@ class F2cFieldColorPicker extends F2cFieldBase
 	 * 
 	 * @since   6.8.0
 	 */
-	public function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId)
+	// Modified Brainforge.uk 20250509
+	public function render($translatedFields, $contentTypeSettings, $parms, $form, $formId)
 	{
 		$displayData			= array();
 		$displayData['color']	= empty($this->values['VALUE']) ? $this->settings->get('default_value') : $this->values['VALUE'];

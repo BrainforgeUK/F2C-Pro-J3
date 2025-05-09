@@ -31,6 +31,15 @@ abstract class Smarty_Resource {
      * @var array
      */
     public static $resources = array();
+
+	// Added Brainforge.uk 2025/05/09
+	// Unable to eliminate 'Deprecated: Creation of dynamic property' notices for these.
+	// Uncommenting causes other problems - use of 'unset()' ?
+	//public $timestamp = null;
+	//public $exists = null;
+	//public $content = null;
+	//public $template = null;
+
     /**
      * resource types provided by the core
      * @var array
@@ -752,7 +761,8 @@ class Smarty_Template_Source {
             case 'content':
             // required for extends: only
             case 'template':
-                $this->$property_name = $value;
+				// Modified Brainforge.uk 20250509
+                @$this->$property_name = $value;
                 break;
 
             default:

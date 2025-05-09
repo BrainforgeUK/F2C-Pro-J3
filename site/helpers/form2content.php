@@ -219,8 +219,9 @@ class Form2ContentHelper
 		
 		return $return;
 	}
-	
-	public static function CreateFeaturedButton($value = 0, $i, $canChange = true)
+
+	// Modified Brainforge.uk 20250509
+	public static function CreateFeaturedButton($value, $i, $canChange = true)
 	{
 		JHtml::_('bootstrap.tooltip');
 

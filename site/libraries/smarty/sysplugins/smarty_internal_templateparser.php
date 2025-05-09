@@ -34,17 +34,20 @@ class TP_yyToken implements ArrayAccess
         return $this->_string;
     }
 
-    function offsetExists($offset)
+	// Modified Brainforge.uk 20250509
+    function offsetExists($offset) : bool
     {
         return isset($this->metadata[$offset]);
     }
 
-    function offsetGet($offset)
+	// Modified Brainforge.uk 20250509
+    function offsetGet($offset) : mixed
     {
         return $this->metadata[$offset];
     }
 
-    function offsetSet($offset, $value)
+	// Modified Brainforge.uk 20250509
+    function offsetSet($offset, $value) : void
     {
         if ($offset === null) {
             if (isset($value[0])) {
@@ -67,7 +70,8 @@ class TP_yyToken implements ArrayAccess
         }
     }
 
-    function offsetUnset($offset)
+	// Modified Brainforge.uk 20250509
+    function offsetUnset($offset) : void
     {
         unset($this->metadata[$offset]);
     }
@@ -100,21 +104,34 @@ class Smarty_Internal_Templateparser#line 79 "smarty_internal_templateparser.php
 
     function __construct($lex, $compiler) {
         $this->lex = $lex;
-        $this->compiler = $compiler;
-        $this->smarty = $this->compiler->smarty;
-        $this->template = $this->compiler->template;
-        $this->compiler->has_variable_string = false;
-        $this->compiler->prefix_code = array();
-        $this->prefix_number = 0;
-        $this->block_nesting_level = 0;
-        if ($this->security = isset($this->smarty->security_policy)) {
-            $this->php_handling = $this->smarty->security_policy->php_handling;
+	    // Modified Brainforge.uk 20250509
+	    @$this->compiler = $compiler;
+	    // Modified Brainforge.uk 20250509
+	    @$this->smarty = $this->compiler->smarty;
+	    // Modified Brainforge.uk 20250509
+	    @$this->template = $this->compiler->template;
+	    // Modified Brainforge.uk 20250509
+        @$this->compiler->has_variable_string = false;
+	    // Modified Brainforge.uk 20250509
+        @$this->compiler->prefix_code = array();
+	    // Modified Brainforge.uk 20250509
+	    @$this->prefix_number = 0;
+	    // Modified Brainforge.uk 20250509
+	    @$this->block_nesting_level = 0;
+	    // Modified Brainforge.uk 20250509
+	    if (@$this->security = isset($this->smarty->security_policy)) {
+		    // Modified Brainforge.uk 20250509
+		    @$this->php_handling = $this->smarty->security_policy->php_handling;
         } else {
-            $this->php_handling = $this->smarty->php_handling;
+		    // Modified Brainforge.uk 20250509
+		    @$this->php_handling = $this->smarty->php_handling;
         }
-        $this->is_xml = false;
-        $this->asp_tags = (ini_get('asp_tags') != '0');
-        $this->current_buffer = $this->root_buffer = new _smarty_template_buffer($this);
+	    // Modified Brainforge.uk 20250509
+        @$this->is_xml = false;
+	    // Modified Brainforge.uk 20250509
+        @$this->asp_tags = (ini_get('asp_tags') != '0');
+	    // Modified Brainforge.uk 20250509
+        @$this->current_buffer = @$this->root_buffer = new _smarty_template_buffer($this);
     }
 
     public static function escape_start_tag($tag_text) {
@@ -2714,8 +2731,10 @@ static public $yy_action = array(
         $this->_retvalue = $smarty_var;
     } else {
         // used for array reset,next,prev,end,current
-        $this->last_variable = $this->yystack[$this->yyidx + 0]->minor['var'];
-        $this->last_index = $this->yystack[$this->yyidx + 0]->minor['smarty_internal_index'];
+	    // Modified Brainforge.uk 20250509
+        @$this->last_variable = $this->yystack[$this->yyidx + 0]->minor['var'];
+	    // Modified Brainforge.uk 20250509
+        @$this->last_index = $this->yystack[$this->yyidx + 0]->minor['smarty_internal_index'];
         $this->_retvalue = $this->compileVariable($this->yystack[$this->yyidx + 0]->minor['var']).$this->yystack[$this->yyidx + 0]->minor['smarty_internal_index'];
     }
     }

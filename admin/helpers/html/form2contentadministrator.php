@@ -108,7 +108,8 @@ abstract class JHtmlForm2ContentAdministrator
 	 *
 	 * @return  string       HTML code
 	 */
-	public static function featured($value = 0, $i, $canChange = true)
+	// Modified Brainforge.uk 20250509
+	public static function featured($value, $i, $canChange = true)
 	{
 		JHtml::_('bootstrap.tooltip');
 

@@ -170,8 +170,10 @@ abstract class Smarty_Internal_TemplateCompilerBase {
             $this->nocache_hash = $template->properties['nocache_hash'];
         }
         // flag for nochache sections
-        $this->nocache = false;
-        $this->tag_nocache = false;
+	    // Modified Brainforge.uk 2025/05/07
+        @$this->nocache = false;
+	    // Modified Brainforge.uk 2025/05/07
+        @$this->tag_nocache = false;
         // save template object in compiler class
         $this->template = $template;
         // reset has noche code flag
@@ -180,13 +182,14 @@ abstract class Smarty_Internal_TemplateCompilerBase {
         // template header code
         $template_header = '';
         if (!$this->suppressHeader) {
-            $template_header .= "<?php /* Smarty version " . Smarty::SMARTY_VERSION . ", created on " . strftime("%Y-%m-%d %H:%M:%S") . "\n";
+            $template_header .= "<?php /* Smarty version " . Smarty::SMARTY_VERSION . ", created on " . date("c") . "\n";
             $template_header .= "         compiled from \"" . $this->template->source->filepath . "\" */ ?>\n";
         }
 
         do {
             // flag for aborting current and start recompile
-            $this->abort_and_recompile = false;
+	        // Modified Brainforge.uk 20250509
+            @$this->abort_and_recompile = false;
             // get template source
             $_content = $template->source->content;
             // run prefilter if required
@@ -244,8 +247,10 @@ abstract class Smarty_Internal_TemplateCompilerBase {
     public function compileTag($tag, $args, $parameter = array()) {
         // $args contains the attributes parsed and compiled by the lexer/parser
         // assume that tag does compile into code, but creates no HTML output
-        $this->has_code = true;
-        $this->has_output = false;
+	    // Modified Brainforge.uk 20250509
+        @$this->has_code = true;
+	    // Modified Brainforge.uk 20250509
+        @$this->has_output = false;
         // log tag/attributes
         if (isset($this->smarty->get_used_tags) && $this->smarty->get_used_tags) {
             $this->template->used_tags[] = array($tag, $args);
@@ -253,7 +258,8 @@ abstract class Smarty_Internal_TemplateCompilerBase {
         // check nocache option flag
         if (in_array("'nocache'", $args) || in_array(array('nocache' => 'true'), $args)
                 || in_array(array('nocache' => '"true"'), $args) || in_array(array('nocache' => "'true'"), $args)) {
-            $this->tag_nocache = true;
+	        // Modified Brainforge.uk 20250509
+            @$this->tag_nocache = true;
         }
         // compile the smarty tag (required compile classes to compile the tag are autoloaded)
         if (($_output = $this->callTagCompiler($tag, $args, $parameter)) === false) {

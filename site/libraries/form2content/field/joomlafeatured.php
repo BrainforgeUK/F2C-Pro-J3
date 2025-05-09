@@ -14,7 +14,8 @@ class F2cFieldJoomlaFeatured extends F2cFieldBase
 	{
 	}
 	
-	public function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId)
+	// Modified Brainforge.uk 20250509
+	public function render($translatedFields, $contentTypeSettings, $parms, $form, $formId)
 	{
 		return $form->getInput('featured');	
 	}

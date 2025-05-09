@@ -80,12 +80,14 @@ class Form2ContentModelFormBase extends JModelAdmin
 		{
 			// Convert the params field to an array.
 			$registry = new Registry;
-			$registry->loadString($item->attribs);
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->attribs ?? '');
 			$item->attribs = $registry->toArray();
 
 			// Convert the metadata field to an array.
 			$registry = new Registry;
-			$registry->loadString($item->metadata);
+			// Modified Brainforge.uk 20250509
+			$registry->loadString($item->metadata ?? '');
 			$item->metadata = $registry->toArray();
 			
 			// Add the category title and alias

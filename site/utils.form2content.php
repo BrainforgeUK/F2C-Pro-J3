@@ -143,7 +143,8 @@ class JImageF2cExtended extends JImage
 
 class ImageHelper
 {
-    static function ResizeImage($srcFile, $dstFile = null, &$dstWidth, &$dstHeight, $imageQuality = 75) 
+	// Modified Brainforge.uk 20250509
+    static function ResizeImage($srcFile, $dstFile, &$dstWidth, &$dstHeight, $imageQuality = 75)
     {
 		// Add Brainforge.UK 2025-04-24
 		if (!is_file($srcFile))

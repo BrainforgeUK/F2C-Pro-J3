@@ -16,7 +16,8 @@ class F2cFieldDatePicker extends F2cFieldBase
 		return 'dat';
 	}
 	
-	public function render($translatedFields, $contentTypeSettings, $parms = array(), $form, $formId)
+	// Modified Brainforge.uk 20250509
+	public function render($translatedFields, $contentTypeSettings, $parms, $form, $formId)
 	{
 		$displayData			= array();
 		$displayValue 		 	= $this->values['VALUE'];
