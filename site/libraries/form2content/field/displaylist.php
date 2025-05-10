@@ -71,8 +71,9 @@ class F2cFieldDisplayList extends F2cFieldBase
 				$listNew[] = $displayItem;
 			}
 		}
-		
-		$valueList->loadArray($listNew);
+
+		// Modified Brainforge.uk 20250510
+		$valueList->loadArray($listNew ?? []);
 				
 		$value 		= $valueList->toString();		
 		$action 	= ($value) ? (($fieldId) ? 'UPDATE' : 'INSERT') : (($fieldId) ? 'DELETE' : '');

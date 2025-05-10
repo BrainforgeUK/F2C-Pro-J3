@@ -72,7 +72,11 @@ abstract class Smarty_Internal_CompileBase {
                 }
                 // named attribute
             } else {
-                $kv = each($mixed);
+				// Modified Brainforge.uk 20250510
+	            //$kv = each($mixed);
+	            foreach ($mixed as $k => $v) {
+		            $kv = [$k, $v];
+	            }
                 // option flag?
                 if (in_array($kv['key'], $this->option_flags)) {
                     if (is_bool($kv['value'])) {

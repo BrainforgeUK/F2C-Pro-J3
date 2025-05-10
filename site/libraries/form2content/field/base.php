@@ -858,7 +858,8 @@ abstract class F2cFieldBase
 			$accept = 'accept=\"'.implode(',', $extensions).'\"';
 		}
 
-		$html = '<button type=\"button\" class=\"btn f2c_select_file\">'.Jtext::_('COM_FORM2CONTENT_BROWSE').'...</button>';
+		// Modified Brainforge.uk 20250510
+		$html = '<button type=\"button\" class=\"btn btn-outline-primary f2c_select_file\">'.Jtext::_('COM_FORM2CONTENT_BROWSE').'...</button>';
 		$html .= '<input type=\"file\" id=\"'.$id.'_fileupload\" name=\"'.$id.'_fileupload\" class=\"inputbox f2c_upload_control\" style=\"display: none;\" onchange=\"'.$onchange.'\" '.$accept.' >';
 		
 		return $html;

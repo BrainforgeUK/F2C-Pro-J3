@@ -366,7 +366,7 @@ class Form2ContentModelFormBase extends JModelAdmin
 
 		JPluginHelper::importPlugin('form2content');
 
-		// Modified Brainforgeuk 2025/04/29
+		// Modified Brainforge.uk 2025/04/29
 		$data['modified_by']	= JFactory::getUser()->id;
 		$newFormData 			= $this->convertArrayToObject($data);
 		

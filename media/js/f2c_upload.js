@@ -29,7 +29,7 @@ function clearElement(elm)
 
 function uploadFile(field, extensions)
 {
-	var elm = (jQuery('#t'+field.id+'_fileupload'));	
+	var elm = (jQuery('#t'+field.id+'_fileupload'));
 
 	if(extensions != null && extensions.length > 0)
 	{
@@ -82,7 +82,8 @@ function uploadFile(field, extensions)
 	    type: 'POST',
 	    dataType: 'JSON',
 	    data: data,
-	    url: 'index.php',
+		/* Modified Brainforge.uk 20250510 */
+	    url: '',
 	    cache: false,
 	    contentType: false,
 	    processData: false,

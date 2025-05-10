@@ -63,7 +63,8 @@ class F2cFieldFileUpload extends F2cFieldBase
 		$displayData['tmpFileName']			= $tmpFileName;
 		$displayData['extensions']			= $extensions;
 		$displayData['link']				= $link;
-		$displayData['deleteAttribs']		= $this->settings->get('ful_attributes_delete') ? $this->settings->get('ful_attributes_delete') : 'class="btn"';
+		// Modified Brainforge.uk 20250510
+		$displayData['deleteAttribs']		= $this->settings->get('ful_attributes_delete') ? $this->settings->get('ful_attributes_delete') : 'class="btn btn-outline-danger"';
 		$displayData['jsExtensionsArray']	= $this->createJsExtensionsArray($extensions);
 		
 		$layout = new JLayoutFile('field.fileupload');

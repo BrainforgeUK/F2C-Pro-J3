@@ -98,7 +98,8 @@ class F2cFieldImage extends F2cFieldBase
 		$displayData['jsExtensionsArray']	= $jsExtensionsArray;
 		$displayData['thumbSrc']			= $thumbSrc;
 		$displayData['thumbVis']			= $thumbVis;
-		$displayData['attribsDelete']		= $this->settings->get('img_attributes_delete', 'class="btn"');
+		// Modified Brainforge.uk 20250510
+		$displayData['attribsDelete']		= $this->settings->get('img_attributes_delete', 'class="btn btn-outline-danger"');
 		$displayData['widthAltText']		= $this->settings->get('img_attributes_alt_text') ? '' : ' width="'.$parms[0].'"';
 		$displayData['maxLengthAltText']	= $this->settings->get('img_attributes_alt_text') ? '' : ' maxlength="'.$parms[1].'"';
 		$displayData['attribsAltText']		= $this->settings->get('img_attributes_alt_text') ? $this->settings->get('img_attributes_alt_text') : 'class="inputbox"'; 
