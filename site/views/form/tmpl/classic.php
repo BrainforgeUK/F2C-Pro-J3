@@ -82,19 +82,25 @@ Joomla.submitbutton = function(task)
 		?>
 			<div style="float: right;" class="f2c_buttons">
 				<?php if($this->settings->get('show_save_button')) :?>
-					<button type="button" class="f2c_button f2c_apply" onclick="javascript:Joomla.submitbutton('form.apply')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_APPLY'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-primary f2c_button f2c_apply" onclick="javascript:Joomla.submitbutton('form.apply')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_APPLY'); ?></button>
 				<?php endif;?>
+				<?php // Modified Brainforge.uk 20250511 ?>
 				<button type="button" class="f2c_button f2c_save" onclick="javascript:Joomla.submitbutton('form.save')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE'); ?></button>
-				<?php if($this->settings->get('show_save_and_new_button')) :?>
-					<button type="button" class="f2c_button f2c_saveandnew" onclick="javascript:Joomla.submitbutton('form.save2new')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AND_NEW'); ?></button>
+				<?php if($this->settings->get('btn btn-outline-success show_save_and_new_button')) :?>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-success f2c_button f2c_saveandnew" onclick="javascript:Joomla.submitbutton('form.save2new')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AND_NEW'); ?></button>
 				<?php endif;?>
 				<?php if($this->settings->get('show_save_as_copy_button')) :?>
-					<button type="button" class="f2c_button f2c_saveascopy" onclick="javascript:Joomla.submitbutton('form.save2copy')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AS_COPY'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-success f2c_button f2c_saveascopy" onclick="javascript:Joomla.submitbutton('form.save2copy')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AS_COPY'); ?></button>
 				<?php endif;?>
 				<?php if($this->item->id == 0) { ?>
-					<button type="button" class="f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CANCEL'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-danger f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CANCEL'); ?></button>
 				<?php } else { ?>
-					<button type="button" class="f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CLOSE'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-danger f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CLOSE'); ?></button>
 				<?php } ?>
 			</div>
 
@@ -139,18 +145,24 @@ Joomla.submitbutton = function(task)
 			<div class="clearfix"></div>
 			
 			<div style="float: right;" class="f2c_buttons">
-				<button type="button" class="f2c_button f2c_apply" onclick="javascript:Joomla.submitbutton('form.apply')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_APPLY'); ?></button>
-				<button type="button" class="f2c_button f2c_save" onclick="javascript:Joomla.submitbutton('form.save')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE'); ?></button>
+                <?php // Modified Brainforge.uk 20250511 ?>
+				<button type="button" class="btn btn-outline-primary f2c_button f2c_apply" onclick="javascript:Joomla.submitbutton('form.apply')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_APPLY'); ?></button>
+				<?php // Modified Brainforge.uk 20250511 ?>
+				<button type="button" class="btn btn-primary f2c_button f2c_save" onclick="javascript:Joomla.submitbutton('form.save')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE'); ?></button>
 				<?php if($this->settings->get('show_save_and_new_button')) :?>
-					<button type="button" class="f2c_button f2c_saveandnew" onclick="javascript:Joomla.submitbutton('form.save2new')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AND_NEW'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-success f2c_button f2c_saveandnew" onclick="javascript:Joomla.submitbutton('form.save2new')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AND_NEW'); ?></button>
 				<?php endif;?>
 				<?php if($this->settings->get('show_save_as_copy_button')) :?>
-					<button type="button" class="f2c_button f2c_saveascopy" onclick="javascript:Joomla.submitbutton('form.save2copy')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AS_COPY'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-success f2c_button f2c_saveascopy" onclick="javascript:Joomla.submitbutton('form.save2copy')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_SAVE_AS_COPY'); ?></button>
 				<?php endif;?>
 				<?php if($this->item->id == 0) { ?>
-					<button type="button" class="f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CANCEL'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-danger f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CANCEL'); ?></button>
 				<?php } else { ?>
-					<button type="button" class="f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CLOSE'); ?></button>
+					<?php // Modified Brainforge.uk 20250511 ?>
+					<button type="button" class="btn btn-outline-danger f2c_button f2c_cancel" onclick="javascript:Joomla.submitbutton('form.cancel')"><?php echo JText::_('COM_FORM2CONTENT_TOOLBAR_CLOSE'); ?></button>
 				<?php } ?>
 			</div>
 		<?php 
