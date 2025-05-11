@@ -190,15 +190,24 @@ class Form2ContentControllerFormBase extends JControllerForm
 
 	/*
 	 */
-	protected function setError($msg)
+	public function setError($msg)
 	{
+		if (is_callable('parent::func')) {
+			parent::setError($msg);
+			return;
+		}
+
 		$this->errors[] = $msg;
 	}
 
 	/*
 	 */
-	protected function getError()
+	public function getError($i = null, $toString = true)
 	{
+		if (is_callable('parent::getError')) {
+			return parent::getError($i, $toString);
+		}
+
 		return empty($this->errors) ? '' : end($this->errors);
 	}
 }

@@ -20,6 +20,15 @@ div.checkbox_label
 	margin-left: 22px;
 }
 
+/* Modified Brainforge.uk 20250511 */
+.controls.f2cfield  table .checkbox_wrapper div.checkbox_label {
+	position:relative;
+	margin-top:0;
+	margin-left: 0;
+	display: inline;
+	line-height: 2rem;
+}
+
 .f2c_field_geocoder img {max-width: inherit;}
 .f2c_button_bar { float: right; }
 .form-horizontal .control-label { text-align: left; }

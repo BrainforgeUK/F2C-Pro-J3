@@ -9,9 +9,20 @@ require_once(JPATH_COMPONENT_SITE.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARA
 jimport('joomla.html.html');
 jimport('joomla.form.formfield');
 jimport('joomla.form.helper');
-JFormHelper::loadFieldClass('list');
 
-class JFormFieldF2cCategory extends ListField
+// Modified Brainforge.uk 20250511
+if (class_exists('Joomla\CMS\Form\Field\ListField'))
+{
+	class BfListField extends ListField { }
+}
+else
+{
+	JFormHelper::loadFieldClass('list');
+
+	class BfListField extends JFormFieldList { }
+}
+
+class JFormFieldF2cCategory extends BfListField
 {
 	public $type = 'F2cCategory';
 

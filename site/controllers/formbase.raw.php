@@ -599,6 +599,31 @@ class Form2ContentControllerFormBase extends JControllerForm
 		
 		return '['.implode(',', $extensions).']';
 	}
-	
+
+	// Added Brainforge.uk 2025/05/07
+
+	protected $errors = [];
+
+	/*
+	 */
+	public function setError($msg)
+	{
+		if (is_callable('parent::func')) {
+			parent::setError($msg);
+			return;
+		}
+
+		$this->errors[] = $msg;
+	}
+
+	/*
+	 */
+	public function getError($i = null, $toString = true)
+	{
+		if (is_callable('parent::getError')) {
+			return parent::getError($i, $toString);
+		}
+
+		return empty($this->errors) ? '' : end($this->errors);
+	}
 }
-?>
