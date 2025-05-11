@@ -28,10 +28,13 @@ JText::script('COM_FORM2CONTENT_DELETE');
 JText::script('COM_FORM2CONTENT_EXTENSION_UPLOAD_NOT_ALLOWED');
 
 // Added Brainforge.uk 2025/04/30
-/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
-$wa = $this->getDocument()->getWebAssetManager();
-$wa->useStyle('form2content.admin');
-$wa->useStyle('form2content.site');
+if (method_exists($this, 'getDocument'))
+{
+	/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+	$wa = $this->getDocument()->getWebAssetManager();
+	$wa->useStyle('form2content.admin');
+	$wa->useStyle('form2content.site');
+}
 
 JForm::addFieldPath(JPATH_COMPONENT_SITE.'/models/fields');
 

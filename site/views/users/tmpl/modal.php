@@ -7,10 +7,13 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 JHtml::stylesheet('com_form2content/modal.css', array('relative' => true));
 
 // Added Brainforge.uk 2025/04/30
-/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
-$wa = $this->getDocument()->getWebAssetManager();
-$wa->useStyle('form2content.admin');
-$wa->useStyle('form2content.site');
+if (method_exists($this, 'getDocument'))
+{
+	/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+	$wa = $this->getDocument()->getWebAssetManager();
+	$wa->useStyle('form2content.admin');
+	$wa->useStyle('form2content.site');
+}
 
 $jinput		= JFactory::getApplication()->input;
 $field		= $jinput->getCmd('field');

@@ -11,9 +11,12 @@ JHtml::stylesheet('com_form2content/f2cadmin.css', array('relative' => true));
 JForm::addFieldPath(JPATH_COMPONENT.'/models/fields');
 
 // Added Brainforge.uk 2025/04/30
-/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
-$wa = $this->getDocument()->getWebAssetManager();
-$wa->useStyle('form2content.admin');
+if (method_exists($this, 'getDocument'))
+{
+	/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+	$wa = $this->getDocument()->getWebAssetManager();
+	$wa->useStyle('form2content.admin');
+}
 
 $fieldClassName = 'F2cFieldAdmin'.$this->fieldTypeName;
 $field 			= new $fieldClassName();

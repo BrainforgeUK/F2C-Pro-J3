@@ -8,9 +8,12 @@ JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 
 // Added Brainforge.uk 2025/04/30
-/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
-$wa = $this->getDocument()->getWebAssetManager();
-$wa->useStyle('form2content.admin');
+if (method_exists($this, 'getDocument'))
+{
+	/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+	$wa = $this->getDocument()->getWebAssetManager();
+	$wa->useStyle('form2content.admin');
+}
 
 $user		= JFactory::getUser();
 $userId		= $user->get('id');

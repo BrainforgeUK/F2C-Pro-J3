@@ -9,9 +9,12 @@ JHtml::_('behavior.formvalidator');
 JText::script('COM_FORM2CONTENT_ERROR_TEMPLATE_TITLE_INVALID_CHARS');
 
 // Added Brainforge.uk 2025/04/30
-/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
-$wa = $this->getDocument()->getWebAssetManager();
-$wa->useStyle('form2content.admin');
+if (method_exists($this, 'getDocument'))
+{
+	/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+	$wa = $this->getDocument()->getWebAssetManager();
+	$wa->useStyle('form2content.admin');
+}
 
 require_once(JPATH_COMPONENT_SITE.DIRECTORY_SEPARATOR.'shared.form2content.php');
 ?>

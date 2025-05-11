@@ -13,10 +13,13 @@ JText::script('COM_FORM2CONTENT_ERROR_IMAGE_CROP_MIN_WIDTH');
 JText::script('COM_FORM2CONTENT_ERROR_IMAGE_CROP_MIN_HEIGHT');
 
 // Added Brainforge.uk 2025/04/30
-/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
-$wa = $this->getDocument()->getWebAssetManager();
-$wa->useStyle('form2content.admin');
-$wa->useStyle('form2content.site');
+if (method_exists($this, 'getDocument'))
+{
+	/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+	$wa = $this->getDocument()->getWebAssetManager();
+	$wa->useStyle('form2content.admin');
+	$wa->useStyle('form2content.site');
+}
 
 ?>
 <script type="text/javascript">
