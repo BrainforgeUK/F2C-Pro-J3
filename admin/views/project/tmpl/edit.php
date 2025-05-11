@@ -81,7 +81,8 @@ function generateDefaultFormTemplate(id, overwrite, classicLayout)
 </script>
 
 <form action="<?php echo JRoute::_('index.php?option=com_form2content&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
-<div class="row-fluid">
+<?php // Modified Brainforge.uk 20250511 ?>
+<div class="row-fluid" style="flex-direction:column;">
 	<!-- Begin Content -->
 	<div class="span12 form-horizontal">
 		<div class="control-group">
@@ -205,7 +206,10 @@ function generateDefaultFormTemplate(id, overwrite, classicLayout)
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 	<!--  End Content -->
 	</div>
-	<?php echo F2cViewHelper::displayCredits(); ?>
+    <?php // Modified Brainforge.uk 20250511 ?>
+    <div>
+	    <?php echo F2cViewHelper::displayCredits(); ?>
+    </div>
 </div>
 <?php
 echo $this->form->getInput('published');		

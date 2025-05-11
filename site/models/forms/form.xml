@@ -128,10 +128,11 @@
 				<option value="1">JYES</option>
 			</field>
 
+			<!-- Modified Brainforge.uk 20250511 -->
 			<field name="show_tags" type="radio"
 				class="btn-group"
-				label="COM_CONTENT_FIELD_SHOW_TAGS_LABEL"
-				description="COM_CONTENT_FIELD_SHOW_TAGS_DESC"
+				label="COM_FORM2CONTENT_FIELD_SHOW_TAGS_LABEL"
+				description="COM_FORM2CONTENT_FIELD_SHOW_TAGS_DESC"
 				labelclass="control-label">
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="0">JHIDE</option>

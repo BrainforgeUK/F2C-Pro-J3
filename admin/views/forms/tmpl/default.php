@@ -157,7 +157,10 @@ if ($saveOrder)
 								JHtml::_('actionsdropdown.' . $action, 'cb' . $i, 'forms');
 
 								// Render dropdown list
-								echo JHtml::_('actionsdropdown.render', $this->escape($item->title));
+                                // Modified Brainforge.uk 20250511
+								$dropDownList = JHtml::_('actionsdropdown.render', $this->escape($item->title));
+                                $dropDownList = str_replace('btn btn-sm btn-secondary', '', $dropDownList);
+                                echo $dropDownList;
 								?>								
 							</div>
 						</td>

@@ -1665,7 +1665,8 @@ class Form2ContentModelFormBase extends JModelAdmin
 
 		if (empty($pks)) 
 		{
-			$this->setError(JText::_('COM_CONTENT_NO_ITEM_SELECTED'));
+			// Modified Brainforge.uk 20250511
+			$this->setError(JText::_('COM_FORM2CONTENT_NO_ITEM_SELECTED'));
 			return false;
 		}
 
@@ -1987,8 +1988,9 @@ class Form2ContentModelFormBase extends JModelAdmin
 			$all_language = $language == '*';
 
 			if ($all_language && !empty($associations))
-			{								
-				JError::raiseNotice(403, JText::_('COM_CONTENT_ERROR_ALL_LANGUAGE_ASSOCIATED'));
+			{
+				// Modified Brainforge.uk 20250511
+				JError::raiseNotice(403, JText::_('COM_FORM2CONTENT_ERROR_ALL_LANGUAGE_ASSOCIATED'));
 			}
 
 			$associations[$language] = $joomlaId;
@@ -2089,7 +2091,8 @@ class Form2ContentModelFormBase extends JModelAdmin
 			$fields->addAttribute('name', 'associations');
 			$fieldset = $fields->addChild('fieldset');
 			$fieldset->addAttribute('name', 'item_associations');
-			$fieldset->addAttribute('description', 'COM_CONTENT_ITEM_ASSOCIATIONS_FIELDSET_DESC');
+			// Modified Brainforge.uk 20250511
+			$fieldset->addAttribute('description', 'COM_FORM2CONTENT_ITEM_ASSOCIATIONS_FIELDSET_DESC');
 			$add = false;
 			foreach ($languages as $tag => $language)
 			{

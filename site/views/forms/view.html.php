@@ -274,8 +274,10 @@ class Form2ContentViewForms extends JViewLegacy
 	{
 		// Array of image, task, title, action
 		$states	= array(
-			0	=> array('disabled.png',	'forms.featured',	'COM_CONTENT_UNFEATURED',	'COM_CONTENT_TOGGLE_TO_FEATURE'),
-			1	=> array('featured.png',		'forms.unfeatured',	'COM_CONTENT_FEATURED',		'COM_CONTENT_TOGGLE_TO_UNFEATURE'),
+			// Modified Brainforge.uk 20250511
+			0	=> array('disabled.png',	'forms.featured',	'COM_FORM2CONTENT_UNFEATURED',	'COM_FORM2CONTENT_TOGGLE_TO_FEATURE'),
+			// Modified Brainforge.uk 20250511
+			1	=> array('featured.png',		'forms.unfeatured',	'COM_FORM2CONTENT_FEATURED',		'COM_FORM2CONTENT_TOGGLE_TO_UNFEATURE'),
 		);
 		$state	= /* Modified Brainforge.uk 2025/04/29 */ArrayHelper::getValue($states, (int) $value, $states[1]);
 		

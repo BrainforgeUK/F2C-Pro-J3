@@ -27,8 +27,9 @@ class JFormFieldF2cTemplate extends JFormField
 		$link .= 'index.php?option=com_form2content&amp;task=templates.select&amp;view=templates&amp;layout=modal&amp;tmpl=component&amp;field='.$this->id;
 
 		JHtml::script('com_form2content/form/field/template.js', array('relative' => true));
-		
-		if (strtolower($this->element['classiclayout']) == 'true')
+
+		// Modified Brainforge.uk 20250511
+		if (strtolower($this->element['classiclayout'] ?? '') == 'true')
 		{
 			$layoutFile .= '_classic';
 		}
