@@ -251,8 +251,8 @@
 			<field
 				name="show_icons"
 				type="list"
-				label="JGLOBAL_SHOW_ICONS_LABEL"
-				description="JGLOBAL_SHOW_ICONS_DESC">
+				label="COM_FORM2CONTENT_SHOW_ICONS_LABEL"
+				description="COM_FORM2CONTENT_SHOW_ICONS_DESC">
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option	value="0">JHIDE</option>
 				<option	value="1">JSHOW</option>
@@ -261,8 +261,8 @@
 			<field
 				name="show_print_icon"
 				type="list"
-				label="JGLOBAL_SHOW_PRINT_ICON_LABEL"
-				description="JGLOBAL_SHOW_PRINT_ICON_DESC">
+				label="COM_FORM2CONTENT_SHOW_PRINT_ICON_LABEL"
+				description="COM_FORM2CONTENT_SHOW_PRINT_ICON_DESC">
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option	value="0">JHIDE</option>
 				<option	value="1">JSHOW</option>
@@ -271,8 +271,8 @@
 			<field
 				name="show_email_icon"
 				type="list"
-				label="JGLOBAL_SHOW_EMAIL_ICON_LABEL"
-				description="JGLOBAL_SHOW_EMAIL_ICON_DESC">
+				label="COM_FORM2CONTENT_SHOW_EMAIL_ICON_LABEL"
+				description="COM_FORM2CONTENT_SHOW_EMAIL_ICON_DESC">
 				<option	value="">JGLOBAL_USE_GLOBAL</option>
 				<option	value="0">JHIDE</option>
 				<option	value="1">JSHOW</option>
