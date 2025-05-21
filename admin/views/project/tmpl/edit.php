@@ -125,8 +125,8 @@ function generateDefaultFormTemplate(id, overwrite, classicLayout)
 						<div class="control-group">
 							<div class="control-label">&nbsp;</div>
 							<div class="controls">
-								<input type="button" value="<?php echo JText::_('COM_FORM2CONTENT_GENERATE_DEFAULT_FORM_TEMPLATE');?>" onclick="generateDefaultFormTemplate(<?php echo $this->item->id; ?>, 0, 0);" class="btn" />
-								<input type="button" value="<?php echo JText::_('COM_FORM2CONTENT_GENERATE_DEFAULT_FORM_TEMPLATE').' ('.JText::_('COM_FORM2CONTENT_CLASSIC_LAYOUT').')';?>" onclick="generateDefaultFormTemplate(<?php echo $this->item->id; ?>, 0, 1);" class="btn" />
+								<input type="button" value="<?php echo JText::_('COM_FORM2CONTENT_GENERATE_DEFAULT_FORM_TEMPLATE');?>" onclick="generateDefaultFormTemplate(<?php echo $this->item->id; ?>, 0, 0);" class="btn btn-outline-primary" />
+								<input type="button" value="<?php echo JText::_('COM_FORM2CONTENT_GENERATE_DEFAULT_FORM_TEMPLATE').' ('.JText::_('COM_FORM2CONTENT_CLASSIC_LAYOUT').')';?>" onclick="generateDefaultFormTemplate(<?php echo $this->item->id; ?>, 0, 1);" class="btn btn-outline-primary" />
 							</div>
 						</div>
 					<?php endif; ?>
