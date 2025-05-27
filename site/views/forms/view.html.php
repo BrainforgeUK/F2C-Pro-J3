@@ -269,8 +269,9 @@ class Form2ContentViewForms extends JViewLegacy
 		
 		return $html;
 	}
-	
-	protected function legacyFeatured($value = 0, $i, $canChange = true)
+
+	// Modified Brainforge.uk 2025/05/27
+	protected function legacyFeatured($value, $i, $canChange = true)
 	{
 		// Array of image, task, title, action
 		$states	= array(
